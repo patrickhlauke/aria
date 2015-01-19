@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Faked button - ARIA demos</title>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="style.css">
+<script>
+window.addEventListener('load',function() {
+	document.getElementById("b").addEventListener('click',function () { document.getElementById("o").innerHTML += "Success!<br>"; });
+})
+</script>
+</head>
+<body>
+<div id="b" class="button">Test</div>
+<p>Just a <code>&lt;div&gt;</code> with a JavaScript <code>click</code> handler.</p>
+<output id="o"></output>
+</body>
+</html>

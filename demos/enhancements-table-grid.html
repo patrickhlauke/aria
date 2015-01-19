@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Table grid enhancements - ARIA examples</title>
+<meta charset=utf-8>
+<script src="jquery-1.11.2.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<style>
+label { font-weight: bold; }
+label, input { display: block;}
+input.invalid { outline: 2px #f00 solid; }
+#input1_extra, #input2_extra { font-size: 0.75em; }
+</style>
+</head>
+<body>
+<table>
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Field 1</th>
+			<th>Field 2</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row">1</th>
+			<td><input type="text"></td>
+			<td><input type="text"></td>
+		</tr>
+		<tr>
+			<th scope="row">2</th>
+			<td><input type="text"></td>
+			<td><input type="text"></td>
+		</tr>
+		<tr>
+			<th scope="row">3</th>
+			<td><input type="text"></td>
+			<td><input type="text"></td>
+		</tr>
+	</tbody>
+</table>
+
+<hr>
+
+<table>
+	<thead>
+		<tr>
+			<th id="th1">ID</th>
+			<th id="th2">Field 1</th>
+			<th id="th3">Field 2</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th id="trh1" scope="row">1</th>
+			<td><input type="text" aria-labelledby="th1 trh1 th2"></td>
+			<td><input type="text" aria-labelledby="th1 trh1 th3"></td>
+		</tr>
+		<tr>
+			<th id="trh2" scope="row">2</th>
+			<td><input type="text" aria-labelledby="th1 trh2 th2"></td>
+			<td><input type="text" aria-labelledby="th1 trh2 th3"></td>
+		</tr>
+		<tr>
+			<th id="trh3" scope="row">3</th>
+			<td><input type="text" aria-labelledby="th1 trh3 th2"></td>
+			<td><input type="text" aria-labelledby="th1 trh3 th3"></td>
+		</tr>
+	</tbody>
+</table>
+
+</body>
+</html>

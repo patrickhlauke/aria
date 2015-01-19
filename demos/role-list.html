@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>role="list"/role="listitem" - ARIA examples</title>
+<meta charset=utf-8>
+<link rel="stylesheet" href="style.css">
+<style>
+.list div { }
+</style>
+</head>
+<body>
+
+<h2>Native list</h2>
+<ul>
+	<li>first item</li>
+	<li>second item</li>
+	<li>third item</li>
+</ul>
+
+<hr>
+
+<h2>Faked list</h2>
+<div class="list">
+	<div>first item</div>
+	<div>second item</div>
+	<div>third item</div>
+</div>
+
+<hr>
+
+<h2>Faked list with ARIA</h2>
+<div class="list" role="list">
+	<div role="listitem">first item</div>
+	<div role="listitem">second item</div>
+	<div role="listitem">third item</div>
+</div>
+
+</body>
+</html>

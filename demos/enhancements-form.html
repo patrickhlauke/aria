@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form enhancements - ARIA examples</title>
+<meta charset=utf-8>
+<script src="jquery-1.11.2.min.js"></script>
+<script>
+$(function() {
+	$("#form1").on("submit", function() {
+		console.log($("#input1").val());
+		if ($("#input1").val() == "") {
+			$("#input1").addClass("invalid").focus();
+		} else {
+			$("#input1").removeClass("invalid");
+		}
+		return false;
+	})
+
+	$("#form2").on("submit", function() {
+		console.log($("#input2").val());
+		if ($("#input2").val() == "") {
+			$("#input2").addClass("invalid").attr("aria-invalid","true").focus();
+		} else {
+			$("#input2").removeClass("invalid").attr("aria-invalid","false");
+		}
+		return false;
+	})
+
+});
+</script>
+<link rel="stylesheet" href="style.css">
+<style>
+label { font-weight: bold; }
+label, input { display: block;}
+input.invalid { outline: 2px #f00 solid; }
+#input1_extra, #input2_extra { font-size: 0.75em; }
+</style>
+</head>
+<body>
+<form id="form1">
+<label for="input1">Form field 1 *</label>
+<input id="input1" type="text">
+<p id="input1_extra">Additional instructions to fill in the field</p>
+<input type="submit" value="submit">
+</form>
+<hr>
+<form id="form2">
+<label for="input2">Form field 2 *</label>
+<input id="input2" type="text" aria-required="true" aria-describedby="input2_extra">
+<p id="input2_extra">Additional instructions to fill in the field</p>
+<input type="submit" value="submit">
+</form>
+</body>
+</html>

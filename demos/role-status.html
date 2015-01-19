@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>role="status" - ARIA examples</title>
+<meta charset=utf-8>
+<script src="jquery-1.11.2.min.js"></script>
+<script>
+function showStatus() {
+	var d = $(this).attr("href");
+	$("#statusbar").addClass("visible").text("Link destination: "+d)
+}
+
+function hideStatus() {
+	$("#statusbar").removeClass("visible");
+}
+
+$(function() {
+	$("a").on("mouseover focus", showStatus);
+	$("a").on("mouseout blur", hideStatus);
+});
+</script>
+<link rel="stylesheet" href="style.css">
+<style>
+#statusbar { display: none; border: 1px #000 solid; background: #eee; padding: 0.5em; }
+#statusbar.visible { display: block; }
+</style>
+</head>
+<body>
+<p><a href="http://www.example.com">Test link 1</a>, <a href="http://www.example.org">test link 2</a></p>
+<p id="statusbar" role="status"></p>
+</body>
+</html>

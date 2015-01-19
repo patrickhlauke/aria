@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>role="checkbox" - ARIA examples</title>
+<meta charset=utf-8>
+<script src="jquery-1.11.2.min.js"></script>
+<script>
+
+
+function fakedCheckbox(e) {
+	$(this).toggleClass("checked");
+	if ($(this).attr("data-checked")=="true") {
+		$(this).attr("data-checked","false");
+	} else {
+		$(this).attr("data-checked","true");
+	}
+}
+
+function fakedCheckboxAria(e) {
+	$(this).toggleClass("checked");
+	if ($(this).attr("aria-checked")=="true") {
+		$(this).attr("aria-checked","false");
+	} else {
+		$(this).attr("aria-checked","true");
+	}
+}
+
+$(function() {
+	$("#checkbox2").bind('click', fakedCheckbox);
+	$("#checkbox3").bind('click', fakedCheckboxAria);
+});
+</script>
+<link rel="stylesheet" href="style.css">
+<style>
+input[type="checkbox"],
+.checkbox { display: inline-block; width: 1em; height: 1em; border: 1px #000 solid; background: #ddd; }
+input[type="checkbox"]:checked,
+.checkbox.checked {
+	background:#5f5;
+}
+</style>
+</head>
+<body>
+<p><input type="checkbox" id="checkbox1"> <label for="checkbox1">Native checkbox</label></p>
+<p><span class="checkbox" id="checkbox2" tabindex="0" data-checked="false"></span> <code>span</code> faked checkbox</p>
+<p><span class="checkbox" id="checkbox3" role="checkbox" aria-labelledby="label1" tabindex="0" aria-checked="false"></span> <span id="label1">faked checkbox with ARIA</span></p>
+</body>
+</html>

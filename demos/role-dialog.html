@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>role="dialog" - ARIA examples</title>
+<meta charset=utf-8>
+<link rel="stylesheet" href="./jquery-ui-1.11.2.custom/jquery-ui.min.css">
+<script src="./jquery-1.11.2.min.js"></script>
+<script src="./jquery-ui-1.11.2.custom/jquery-ui.min.js"></script>
+<script src="./a11yDialog.min.js"></script>
+<script>
+$(function() {
+	$( "#jqdialog1" ).dialog({
+      autoOpen: false,
+      modal: true,
+      role: "dialog"
+    });
+    $( "#jqdialog2" ).dialog({
+      autoOpen: false,
+      modal: true,
+      role: "alertdialog"
+    });
+ 
+    $( "#trig1" ).click(function() {
+      $( "#jqdialog1" ).dialog( "open" );
+    });
+    $( "#trig2" ).click(function() {
+      $( "#jqdialog2" ).dialog( "open" );
+    });
+  });
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>jQueryUI dialog</h1>
+<p>enhanced using <a href="https://github.com/karlgroves/a11yDialog">Karl Groves' a11yDialog</a> plugin</p>
+<p><button id="trig1"><code>role="dialog"</code> example.</p>
+<p><button id="trig2"><code>role="alertdialog"</code> example.</p>
+
+<div id="jqdialog1" title="Basic example">
+  <p>This is a dialog box...</p>
+</div>
+<div id="jqdialog2" title="Basic example">
+  <p>This is an alertdialog box...</p>
+</div>
+
+</body>
+</html>

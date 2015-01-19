@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>role="scrollbar" - ARIA examples</title>
+<meta charset=utf-8>
+<link rel="stylesheet" href="style.css">
+<style>
+#scrollbar { height: 1em; border: 1px #000 solid; }
+#scrollbar span { display: block; height: 1em; background: #05f; }
+</style>
+</head>
+<body>
+<div id="textbox">Textbox controlled by the scrollbar below</div>
+<div role="scrollbar" id="scrollbar" aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40" aria-controls="textbox" tabindex="0"><span style="width:40%"></span></div>
+</body>
+</html>

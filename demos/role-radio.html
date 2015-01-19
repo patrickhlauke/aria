@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>role="radio" - ARIA examples</title>
+<meta charset=utf-8>
+<script src="jquery-1.11.2.min.js"></script>
+<script>
+
+
+function fakedCheckbox(e) {
+	$(this).toggleClass("checked");
+	if ($(this).attr("data-checked")=="true") {
+		$(this).attr("data-checked","false");
+	} else {
+		$(this).attr("data-checked","true");
+	}
+}
+
+function fakedCheckboxAria(e) {
+	$(this).toggleClass("checked");
+	if ($(this).attr("aria-checked")=="true") {
+		$(this).attr("aria-checked","false");
+	} else {
+		$(this).attr("aria-checked","true");
+	}
+}
+
+$(function() {
+	$("#checkbox2").bind('click', fakedCheckbox);
+	$("#checkbox3").bind('click', fakedCheckboxAria);
+});
+</script>
+<link rel="stylesheet" href="style.css">
+<style>
+input[type="radio"],
+.radio { display: inline-block; width: 1em; height: 1em; border: 1px #000 solid; background: #ddd; }
+input[type="radio"]:checked,
+.radio.checked {
+	background:#5f5;
+}
+</style>
+</head>
+<body>
+<p><input type="radio" id="radio1" name="natRad"> <label for="radio1">Native radio button 1</label> <input type="radio" id="radio2" name="natRad"> <label for="radio2">Native radio button 2</label></p>
+<p><span class="radio" id="radio3" tabindex="0" data-checked="false"></span> <code>span</code> faked radio button 1
+<span class="radio" id="radio4" tabindex="0" data-checked="false"></span> <code>span</code> faked radio button 2</p>
+<p><span class="radio" id="radio5" role="radio" aria-labelledby="label1" tabindex="0" aria-checked="false"></span> <span id="label1">faked radio button 1 with ARIA</span>
+<span class="radio" id="radio6" role="radio" aria-labelledby="label2" tabindex="0" aria-checked="false"></span> <span id="label2">faked radio button 2 with ARIA</span></p>
+</body>
+</html>

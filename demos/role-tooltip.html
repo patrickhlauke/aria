@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>role="status" - ARIA examples</title>
+<meta charset=utf-8>
+<script src="jquery-1.11.2.min.js"></script>
+<script>
+function showTooltip(e) {
+	if ($(this).attr("data-title")) return;
+	$(this).attr("data-title",$(this).attr("title"));
+	$(this).attr("title","");
+	$(this).attr("aria-describedby","tooltip");
+	var x = e.originalEvent.pageX, y = e.originalEvent.pageY;
+	
+	if ((x == 0) && (y == 0)) {
+		x = $(this).offset().left + 10;
+		y = $(this).offset().top + 10;
+		console.log(x + ' ' + y)
+	}
+	$("#tooltip").css("top", (y+"px")).css("left", (x+"px")).addClass("visible").text($(this).attr("data-title"));
+}
+
+function hideTooltip() {
+	$("#tooltip").removeClass("visible");
+	$(this).removeAttr("aria-describedby");
+	$(this).attr("title",$(this).attr("data-title"));
+	$(this).removeAttr("data-title");
+}
+
+$(function() {
+	$(".tooltip").on("mouseover focus", showTooltip);
+	$(".tooltip").on("mouseout blur", hideTooltip);
+});
+</script>
+<link rel="stylesheet" href="style.css">
+<style>
+#tooltip { display: none; position: absolute; top: 1em; left: 1em; border: 1px #000 solid; background: #eee; padding: 0.5em; }
+#tooltip.visible { display: block; }
+</style>
+</head>
+<body>
+<p><a href="#" title="some additional information">Test link with title attribute</a></p>
+<p><a href="#" class="tooltip" title="some additional information">Test link with title and JS tooltip</a></p>
+<p id="tooltip" role="tooltip"></p>
+</body>
+</html>

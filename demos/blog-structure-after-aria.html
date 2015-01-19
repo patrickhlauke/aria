@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Demo: blog structure with ARIA</title>
+<meta charset=utf-8>
+<style>
+body {
+	text-transform: uppercase;
+	font-family: Aria, Helvetica, sans-serif;
+	font-weight: bold;
+}
+div { border-radius: 1em; min-width: 1em; min-height: 1em; padding: 1em 2em; margin: 1em; content: " ";}
+#header { background: #F1FC10; }
+#sidebar { background: #F95C02; }
+#content { background: #D8F1BB; }
+.post { background: #BAEFEE; }
+#footer { background: #F1BAF0; }
+</style>
+</head>
+<body>
+<div id="header" role="banner">logo and sitename</div>
+<div id="sidebar" role="navigation">navigation</div>
+<div id="content" role="main">
+	<div class="post" role="article">first blog post</div>
+	<div class="post" role="article">second blog post</div>
+	<div class="post" role="article">third blog post</div>
+</div>
+<div id="footer" role="contentinfo">copyright and stuff...</div>
+</body>
+</html>
