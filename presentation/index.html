@@ -575,6 +575,27 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
     &lt;span class="glyphicon glyphicon-remove-sign"&gt;&lt;/span&gt;
 &lt;/span&gt;
 </code></pre>
+</div></section>
+
+<!-- -->
+
+<section class="slide listing code"><div>
+	
+<pre><code class="html">
+&lt;span tabindex="0" role="button" <mark>aria-label="Delete"</mark>&gt;
+    &lt;span class="glyphicon glyphicon-remove-sign"&gt;&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span tabindex="0" role="button" <mark>title="Delete"</mark>&gt;
+    &lt;span class="glyphicon glyphicon-remove-sign"&gt;&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span tabindex="0" role="button"&gt;
+    &lt;span class="glyphicon glyphicon-remove-sign"&gt;
+      <mark>&lt;span class="..."&gt;Delete&lt;/span&gt;</mark>
+    &lt;/span&gt;
+&lt;/span&gt;
+</code></pre>
 	<p>Refer to <a target=_blank href="http://www.w3.org/TR/wai-aria/roles#namecalculation">WAI-ARIA 1.0 - 5.2.7. Accessible Name Calculation</a></p>
 </div></section>
 
@@ -686,11 +707,11 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;p class="heading1" <strong><mark>role="heading" aria-level="1"</mark></strong>&gt;Heading 1&lt;/p&gt;
+&lt;p class="heading1" <mark>role="heading"</mark> <mark>aria-level="1"</mark>&gt;Heading 1&lt;/p&gt;
 ...
-&lt;p class="heading2" <strong><mark>role="heading" aria-level="2"</mark></strong>&gt;Heading 2&lt;/p&gt;
+&lt;p class="heading2" <mark>role="heading"</mark> <mark>aria-level="2"</mark>&gt;Heading 2&lt;/p&gt;
 ...
-&lt;p class="heading3" <strong><mark>role="heading" aria-level="3"</mark></strong>&gt;Heading 3&lt;/p&gt;
+&lt;p class="heading3" <mark>role="heading"</mark> <mark>aria-level="3"</mark>&gt;Heading 3&lt;/p&gt;
 ...
 </code></pre>
 <p>Example: headings</p>
@@ -726,10 +747,10 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;div <strong><mark>role="list"</mark></strong>&gt;
-    &lt;div <strong><mark>role="listitem"</mark></strong>&gt;...&lt;/div&gt;
-    &lt;div <strong><mark>role="listitem"</mark></strong>&gt;...&lt;/div&gt;
-    &lt;div <strong><mark>role="listitem"</mark></strong>&gt;...&lt;/div&gt;
+&lt;div <mark>role="list"</mark>&gt;
+    &lt;div <mark>role="listitem"</mark>&gt;...&lt;/div&gt;
+    &lt;div <mark>role="listitem"</mark>&gt;...&lt;/div&gt;
+    &lt;div <mark>role="listitem"</mark>&gt;...&lt;/div&gt;
     ...
 &lt;/div&gt;
 </code></pre>
@@ -743,13 +764,13 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <!-- <section class="slide code listing"><div>
 <pre><code>&lt;!-- nested lists... --&gt;
-&lt;div <strong><mark>role="list"</mark></strong>&gt;
-    &lt;div <strong><mark>role="listitem"</mark></strong>&gt;...&lt;/div&gt;
-    &lt;div <strong><mark>role="group"</mark></strong>&gt;
-        &lt;div <strong><mark>role="listitem"</mark></strong>&gt;...&lt;/div&gt;
-        &lt;div <strong><mark>role="listitem"</mark></strong>&gt;...&lt;/div&gt;
+&lt;div <mark>role="list"</mark>&gt;
+    &lt;div <mark>role="listitem"</mark>&gt;...&lt;/div&gt;
+    &lt;div <mark>role="group"</mark>&gt;
+        &lt;div <mark>role="listitem"</mark>&gt;...&lt;/div&gt;
+        &lt;div <mark>role="listitem"</mark>&gt;...&lt;/div&gt;
     &lt;/div&gt;
-    &lt;div <strong><mark>role="listitem"</mark></strong>&gt;...&lt;/div&gt;
+    &lt;div <mark>role="listitem"</mark>&gt;...&lt;/div&gt;
     ...
 &lt;/div&gt;
 </code></pre>[TODO] check how this behaves! [SEEMS BROKEN?]
@@ -780,7 +801,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <!-- <section class="slide code listing"><div>
 <pre><code>&lt;!-- complex content (SVG, HTML, etc) acting as single image --&gt;
 ...
-&lt;svg <strong><mark>role="img"</mark></strong> <strong><mark>aria-label="..."</mark></strong> ... &gt;
+&lt;svg <mark>role="img"</mark> <mark>aria-label="..."</mark> ... &gt;
     ...
 &lt;/svg&gt;
 ...
@@ -878,7 +899,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;span tabindex="0" <strong><mark>role="button"</mark></strong> class="..."&gt;Button!&lt;/span&gt;
+&lt;span tabindex="0" <mark>role="button"</mark> class="..."&gt;Button!&lt;/span&gt;
 </code></pre>
 <ul>
 <li>add <code>role="button"</code></li>
@@ -910,11 +931,11 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;span tabindex="0" <strong><mark>role="button"</mark></strong>
-      <strong><mark>aria-pressed="false"</mark></strong> class="..."&gt;Option&lt;/span&gt;
+&lt;span tabindex="0" <mark>role="button"</mark>
+      <mark>aria-pressed="false"</mark> class="..."&gt;Option&lt;/span&gt;
 
-&lt;span tabindex="0" <strong><mark>role="button"</mark></strong>
-     <strong><mark>aria-pressed="true"</mark></strong> class="... pressed"&gt;Option&lt;/span&gt;
+&lt;span tabindex="0" <mark>role="button"</mark>
+     <mark>aria-pressed="true"</mark> class="... pressed"&gt;Option&lt;/span&gt;
 </code></pre>
 <ul>
 <li>add <code>role="button"</code></li>
@@ -947,11 +968,11 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;span tabindex="0" <strong><mark>role="checkbox"</mark></strong>
-      <strong><mark>aria-checked="false"</mark></strong> class="..."&gt;Option&lt;/span&gt;
+&lt;span tabindex="0" <mark>role="checkbox"</mark>
+      <mark>aria-checked="false"</mark> class="..."&gt;Option&lt;/span&gt;
 
-&lt;span tabindex="0" <strong><mark>role="checkbox"</mark></strong>
-     <strong><mark>aria-checked="true"</mark></strong> class="... checked"&gt;Option&lt;/span&gt;
+&lt;span tabindex="0" <mark>role="checkbox"</mark>
+     <mark>aria-checked="true"</mark> class="... checked"&gt;Option&lt;/span&gt;
 </code></pre>
 <ul>
 <li>add <code>role="checkbox"</code></li>
@@ -998,12 +1019,12 @@ aria-checked="false"
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;span tabindex="-1" <strong><mark>role="radio"</mark></strong>
-      <strong><mark>aria-checked="false"</mark></strong> class="..."&gt;Yes&lt;/span&gt;
-&lt;span tabindex="0" <strong><mark>role="radio"</mark></strong>
-      <strong><mark>aria-checked="true"</mark></strong> class="... selected"&gt;No&lt;/span&gt;
-&lt;span tabindex="-1" <strong><mark>role="radio"</mark></strong>
-      <strong><mark>aria-checked="false"</mark></strong> class="..."&gt;Maybe&lt;/span&gt;
+&lt;span tabindex="-1" <mark>role="radio"</mark>
+      <mark>aria-checked="false"</mark> class="..."&gt;Yes&lt;/span&gt;
+&lt;span tabindex="0" <mark>role="radio"</mark>
+      <mark>aria-checked="true"</mark> class="... selected"&gt;No&lt;/span&gt;
+&lt;span tabindex="-1" <mark>role="radio"</mark>
+      <mark>aria-checked="false"</mark> class="..."&gt;Maybe&lt;/span&gt;
 </code></pre>
 <ul>
 <li>add <code>role="radio"</code></li>
@@ -1035,7 +1056,7 @@ aria-checked="false"
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;span tabindex="0" <strong><mark>role="link"</mark></strong>
+&lt;span tabindex="0" <mark>role="link"</mark>
       onclick="document.location(...)"&gt;link&lt;/span&gt;
 </code></pre>
 <ul>
@@ -1069,9 +1090,9 @@ aria-checked="false"
 <section class="slide code listing"><div>
 <pre><code>
 &lt;span tabindex="0" onmouseover="..." onfocus="..."
-      <strong><mark>aria-describedby="tooltip"</mark></strong>&gt;...&lt;/span&gt;
+      <mark>aria-describedby="tooltip"</mark>&gt;...&lt;/span&gt;
 ...
-&lt;span <strong><mark>role="tooltip" id="tooltip"</mark></strong>&gt;
+&lt;span <mark>role="tooltip"</mark> id="tooltip"&gt;
       this is the tooltip text&lt;/span&gt;
 </code></pre>
 <p>Example: ARIA tooltip</p>
@@ -1093,7 +1114,7 @@ aria-checked="false"
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;span <strong><mark>role="status"</mark></strong>&gt;
+&lt;span <mark>role="status"</mark>&gt;
       some form of status bar message...&lt;/span&gt;
 </code></pre>
 <p>Example: ARIA status bar</p>
@@ -1115,7 +1136,7 @@ aria-checked="false"
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;span <strong><mark>role="alert"</mark></strong>&gt;
+&lt;span <mark>role="alert"</mark>&gt;
       an alert message (no user interaction)&lt;/span&gt;
 </code></pre>
 <p>Example: ARIA alert</p>
@@ -1147,9 +1168,9 @@ aria-checked="false"
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;div <strong><mark>tabindex="0" role="progressbar" aria-label="..."</mark></strong>
-     <strong><mark>aria-valuemin="0" aria-valuemax="100"</mark></strong>
-     <strong><mark>aria-valuenow="40" aria-valuetext="40% complete"</mark></strong>&gt;
+&lt;div tabindex="0" <mark>role="progressbar"</mark> <mark>aria-label="..."</mark>
+     <mark>aria-valuemin="0"</mark> <mark>aria-valuemax="100"</mark>
+     <mark>aria-valuenow="40"</mark> <mark>aria-valuetext="40% complete"</mark>&gt;
     &lt;span style="width:40%"&gt;&lt;/span&gt;
 &lt;/div&gt;
 </code></pre>
@@ -1188,9 +1209,9 @@ aria-checked="false"
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;div ... class="ui-slider ..." <strong><mark>role="slider"</mark></strong>
-     <strong><mark>aria-valuemin="0" aria-valuemax="100"</mark></strong>
-     <strong><mark>aria-valuenow="40" aria-valuetext="40%"</mark></strong>&gt;
+&lt;div ... class="ui-slider ..." <mark>role="slider"</mark>
+     <mark>aria-valuemin="0"</mark> <mark>aria-valuemax="100"</mark>
+     <mark>aria-valuenow="40"</mark> <mark>aria-valuetext="40%"</mark>&gt;
     &lt;span class="ui-slider-handle ..."
           tabindex="0" style="left: 40%;"&gt;&lt;/span&gt;
 &lt;/div&gt;
@@ -1223,7 +1244,7 @@ aria-checked="false"
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;div role="dialog" tabindex="0" aria-labelledby="dialog-header"&gt;
+&lt;div <mark>role="dialog"</mark> tabindex="0" <mark>aria-labelledby="dialog-header"</mark>&gt;
   &lt;div id="dialog-header"&gt;My custom dialog&lt;/div&gt;
   ...
 &lt;/div&gt;
@@ -1258,10 +1279,10 @@ aria-checked="false"
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;div role="menu"&lt;/div>
-    &lt;div role="menuitem" ...&gt;...&lt;/div&gt;
-    &lt;div role="menuitem" ...&gt;...&lt;/div&gt;
-    &lt;div role="menuitem" ...&gt;...&lt;/div&gt;
+&lt;div <mark>role="menu"</mark>&lt;/div>
+    &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
+    &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
+    &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
     ...
 &lt;/div&gt;
 </code></pre>
@@ -1271,12 +1292,12 @@ aria-checked="false"
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;div role="menubar"&gt;
-  &lt;div role="menuitem" ...&gt; ...
-    &lt;div role="menu"&lt;/div>
-      &lt;div role="menuitem" ...&gt;...&lt;/div&gt;
-      &lt;div role="menuitem" ...&gt;...&lt;/div&gt;
-      &lt;div role="menuitem" ...&gt;...&lt;/div&gt;
+&lt;div <mark>role="menubar"</mark>&gt;
+  &lt;div <mark>role="menuitem"</mark> ...&gt; ...
+    &lt;div <mark>role="menu"</mark>&lt;/div>
+      &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
+      &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
+      &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
       ...
     &lt;/div&gt;
   &lt;/div&gt;
@@ -1329,15 +1350,15 @@ aria-checked="false"
 <section class="slide code listing"><div>
 <pre><code>
 &lt;div role="tablist" ...&gt;
-  &lt;div role="tab" aria-controls="panel1"
-       aria-selected="true"...&gt;Tab 1&lt;/div&gt;
-  &lt;div role="tab" aria-controls="panel2" ...&gt;Tab 2&lt;/div&gt;
-  &lt;div role="tab" aria-controls="panel3" ...&gt;Tab 2&lt;/div&gt;
+  &lt;div <mark>role="tab"</mark> <mark>aria-controls="panel1"</mark>
+       <mark>aria-selected="true"</mark>...&gt;Tab 1&lt;/div&gt;
+  &lt;div <mark>role="tab"</mark> <mark>aria-controls="panel2"</mark> ...&gt;Tab 2&lt;/div&gt;
+  &lt;div <mark>role="tab"</mark> <mark>aria-controls="panel3"</mark> ...&gt;Tab 2&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div role="tabpanel" id="tab1" aria-hidden="false"&gt;...&lt;/div&gt;
-&lt;div role="tabpanel" id="tab2" aria-hidden="true"&gt;...&lt;/div&gt;
-&lt;div role="tabpanel" id="tab3" aria-hidden="true"&gt;...&lt;/div&gt;
+&lt;div <mark>role="tabpanel"</mark> id="panel1" <mark>aria-hidden="false"</mark>&gt;...&lt;/div&gt;
+&lt;div <mark>role="tabpanel"</mark> id="panel2" <mark>aria-hidden="true"</mark>&gt;...&lt;/div&gt;
+&lt;div <mark>role="tabpanel"</mark> id="panel3" <mark>aria-hidden="true"</mark>&gt;...&lt;/div&gt;
 </code></pre>
 <p>Example: <a target=_blank href="http://oaa-accessibility.org/examplep/tabpanel1/">Open Ajax Alliance: Tab Panel</p>
 <p>Variations on this theme: <a target=_blank href="http://www.marcozehe.de/2013/02/02/advanced-aria-tip-1-tabs-in-web-apps/">Marco Zehe - Advanced ARIA tip #1: Tabs in web apps</a></p>
@@ -1348,13 +1369,13 @@ aria-checked="false"
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;div role="tablist" ...&gt;
-  &lt;div role="tab" aria-controls="panel1" ...&gt;Tab 1&lt;/div&gt;
-  &lt;div role="tabpanel" id="tab1"&gt;...&lt;/div&gt;
-  &lt;div role="tab" aria-controls="panel2" ...&gt;Tab 2&lt;/div&gt;
-  &lt;div role="tabpanel" id="tab2"&gt;...&lt;/div&gt;
-  &lt;div role="tab" aria-controls="panel3" ...&gt;Tab 2&lt;/div&gt;
-  &lt;div role="tabpanel" id="tab3"&gt;...&lt;/div&gt;
+&lt;div <mark>role="tablist"</mark> ...&gt;
+  &lt;div <mark>role="tab"</mark> <mark>aria-controls="panel1"</mark> ...&gt;Tab 1&lt;/div&gt;
+  &lt;div <mark>role="tabpanel"</mark> id="panel1"&gt;...&lt;/div&gt;
+  &lt;div <mark>role="tab"</mark> <mark>aria-controls="panel2"</mark> ...&gt;Tab 2&lt;/div&gt;
+  &lt;div <mark>role="tabpanel"</mark> id="panel2"&gt;...&lt;/div&gt;
+  &lt;div <mark>role="tab"</mark> <mark>aria-controls="panel3"</mark> ...&gt;Tab 2&lt;/div&gt;
+  &lt;div <mark>role="tabpanel"</mark> id="panel3"&gt;...&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 <p>Example: <a target=_blank href="http://hanshillen.github.io/jqtest/#goto_accordion">Hans Hillen - Accessible jQuery-ui Components: Accordion</a></p>
 <p>Sometimes better to keep it simple (series of expand/collapse controls): <a target=_blank href="http://whatsock.com/tsg/">whatsock - AccDC Technical Style Guide</a> / <a target=_blank href="https://github.com/accdc/tsg">AccDC Technical Style Guide (GitHub)</a></p>
@@ -1372,10 +1393,10 @@ aria-checked="false"
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;div <strong><mark>role="listbox" aria-activedescendant="opt2"</mark></strong> tabindex="0"&gt;
-    &lt;div <strong><mark>role="option"</mark></strong> id="opt1"&gt;Option 1&lt;/div&gt;
-    &lt;div <strong><mark>role="option"</mark></strong> id="opt2" class="active"&gt;Option 2&lt;/div&gt;
-    &lt;div <strong><mark>role="option"</mark></strong> id="opt3"&gt;Option 3&lt;/div&gt;
+&lt;div <mark>role="listbox"</mark> <mark>aria-activedescendant="opt2"</mark> tabindex="0"&gt;
+    &lt;div <mark>role="option"</mark> id="opt1"&gt;Option 1&lt;/div&gt;
+    &lt;div <mark>role="option"</mark> id="opt2" class="active"&gt;Option 2&lt;/div&gt;
+    &lt;div <mark>role="option"</mark> id="opt3"&gt;Option 3&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 <p>Example: <a target=_blank href="http://cookiecrook.com/test/aria/multiselect/listbox.html">James Craig - multiselect listbox</a></p>
@@ -1399,14 +1420,14 @@ aria-checked="false"
 
 <section class="slide code listing"><div>
 <pre><code>&lt;!-- similar to &lt;select&gt; --&gt;
-&lt;input type="text" <strong><mark>role="combobox" aria-expanded="true"</mark></strong>
-     <strong><mark>aria-autocomplete="list" aria-owns="optlist"</mark></strong>
-     <strong><mark>aria-activedescendant="opt2"</mark></strong>&gt;
+&lt;input type="text" <mark>role="combobox"</mark> <mark>aria-expanded="true"</mark>
+     <mark>aria-autocomplete="list"</mark> <mark>aria-owns="optlist"</mark>
+     <mark>aria-activedescendant="opt2"</mark>&gt;
 
-&lt;div <strong><mark>role="listbox" id="optlist"</mark></strong>&gt;
-    &lt;div <strong><mark>role="option"</mark></strong> id="opt1"&gt;Option 1&lt;/div&gt;
-    &lt;div <strong><mark>role="option"</mark></strong> id="opt2" class="active"&gt;Option 2&lt;/div&gt;
-    &lt;div <strong><mark>role="option"</mark></strong> id="opt3"&gt;Option 3&lt;/div&gt;
+&lt;div <mark>role="listbox"</mark> id="optlist"&gt;
+    &lt;div <mark>role="option"</mark> id="opt1"&gt;Option 1&lt;/div&gt;
+    &lt;div <mark>role="option"</mark> id="opt2" class="active"&gt;Option 2&lt;/div&gt;
+    &lt;div <mark>role="option"</mark> id="opt3"&gt;Option 3&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 <p>Example: <a target=_blank href="http://oaa-accessibility.org/examplep/combobox3/">Open Ajax Alliance: Combobox with <code>aria-autocomplete=list</code></a></p>
@@ -1427,13 +1448,13 @@ aria-checked="false"
 
 <section class="slide code listing"><div>
 <pre><code>&lt;!-- list with selectable items, expand/collapse, nesting --&gt;
-&lt;div role="tree"&gt;
-  &lt;div role="treeitem"&gt;...&lt;/div&gt;
-  &lt;div role="treeitem"&gt;...&lt;/div&gt;
-  &lt;div role="treeitem"&gt;...
-    &lt;div role="group"&gt;
-      &lt;div role="treeitem"&gt;...&lt;/div&gt;
-      &lt;div role="treeitem"&gt;...&lt;/div&gt;
+&lt;div <mark>role="tree"</mark>&gt;
+  &lt;div <mark>role="treeitem"</mark>&gt;...&lt;/div&gt;
+  &lt;div <mark>role="treeitem"</mark>&gt;...&lt;/div&gt;
+  &lt;div <mark>role="treeitem"</mark>&gt;...
+    &lt;div <mark>role="group"</mark>&gt;
+      &lt;div <mark>role="treeitem"</mark>&gt;...&lt;/div&gt;
+      &lt;div <mark>role="treeitem"</mark>&gt;...&lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   ...
@@ -1455,14 +1476,14 @@ aria-checked="false"
 
 <section class="slide code listing"><div>
 <pre><code>&lt;!-- interactive table/spreadsheet --&gt;
-&lt;div role="grid"&gt;
-  &lt;div role="row"&gt;
-    &lt;div role="columnheader"&gt;...&lt;/div&gt;
-    &lt;div role="columnheader"&gt;...&lt;/div&gt;
+&lt;div <mark>role="grid"</mark>&gt;
+  &lt;div <mark>role="row"</mark>&gt;
+    &lt;div <mark>role="columnheader"</mark>&gt;...&lt;/div&gt;
+    &lt;div <mark>role="columnheader"</mark>&gt;...&lt;/div&gt;
   &lt;/div&gt;
-  &lt;div role="row"&gt;
-    &lt;div role="gridcell"&gt;...&lt;/div&gt;
-    &lt;div role="gridcell"&gt;...&lt;/div&gt;
+  &lt;div <mark>role="row"</mark>&gt;
+    &lt;div <mark>role="gridcell"</mark>&gt;...&lt;/div&gt;
+    &lt;div <mark>role="gridcell"</mark>&gt;...&lt;/div&gt;
   &lt;/div&gt;
   ...
 &lt;/div&gt;  
@@ -1775,6 +1796,14 @@ aria-checked="false"
 <section class="slide"><div>
 	<img src="pictures/sites/docs-angularjs-accessibility.png" alt="">
 	<p><a target=_blank href="https://docs.angularjs.org/guide/accessibility">AngularJS Developer Guide - Accessibility with ngAria</a></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide impact"><div>
+<div>
+	<h2>Recap</h2>
+</div>
 </div></section>
 
 <!-- -->
