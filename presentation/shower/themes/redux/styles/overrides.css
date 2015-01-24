@@ -1,4 +1,19 @@
 
+h1,h2,h3,h4,h5,h6 { font-weight:bold; }
+
+.slide.impact h1,
+.slide.impact h2,
+.slide.impact h3,
+.slide.impact h4,
+.slide.impact h5,
+.slide.impact h6,
+.slide.statement h2,
+.slide.statement h1,
+.slide.statement h3,
+.slide.statement h4,
+.slide.statement h5,
+.slide.statement h6 { font-weight: normal; }
+
 .list {
 	background: #242424;
 }
