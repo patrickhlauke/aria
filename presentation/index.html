@@ -72,6 +72,7 @@
 <div>
 	<img src="pictures/faked-button.png" alt="">
 	<pre><code>&lt;div onclick="..."&gt;Test&lt;/div&gt;</code></pre>
+	<p><small><a target=_blank href="../demos/faked-button/index.html">faked button</a></small></p>
 </div>
 </div></section>
 
@@ -82,6 +83,7 @@
 	<img src="pictures/faked-button.png" alt="">
 	<pre><code>&lt;div <mark>tabindex="0"</mark>
 onclick="..."&gt;Test&lt;/div&gt;</code></pre>
+<p><small><a target=_blank href="../demos/faked-button/index-keyboard-focus.html">faked button with focus</a></small></p>
 </div>
 </div></section>
 
@@ -93,6 +95,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 	<pre><code>&lt;div tabindex="0"
 <mark>onkeyup="..."</mark>
 onclick="..."&gt;Test&lt;/div&gt;</code></pre>
+<p><small><a target=_blank href="../demos/faked-button/index-keyboard-focus-handler.html">faked button with focus and keyboard handling</a></small></p>
 </div>
 </div></section>
 
@@ -118,6 +121,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <div>
 	<img src="pictures/faked-button.png" alt="">
 	<p>compare <code>&lt;div&gt;</code> to a real <code>&lt;button&gt;</code></p>
+	<p><small><a target=_blank href="../demos/faked-button/index-keyboard-focus-handler.html">faked button</a> versus <a target=_blank href="../demos/faked-button/index-real-button.html">real <code>&lt;button&gt;</code></a></small></p>
 </div>
 </div></section>
 
@@ -248,6 +252,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <div>
 	<img src="pictures/faked-button.png" alt="">
 	<p>compare <code>&lt;div&gt;</code> to a real <code>&lt;button&gt;</code></p>
+	<p><small><a target=_blank href="../demos/faked-button/index-keyboard-focus-handler.html">faked button</a> versus <a target=_blank href="../demos/faked-button/index-real-button.html">real <code>&lt;button&gt;</code></a></small></p>
 </div>
 </div></section>
 
@@ -323,7 +328,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <!-- -->
 
 <section class="slide listing"><div>
-<h3>What information does ARIA provide?</h3>
+<h3>what information does ARIA provide?</h3>
 <ul>
 <li><strong>role:</strong> what type of widget is this? (e.g. 'slider')</li>
 <li><strong>state:</strong> what is its situation?  (e.g. 'disabled')</li>
@@ -341,6 +346,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 	<pre><code>&lt;div tabindex="0"
 <mark>role="button"</mark> onkeyup="..."
 onclick="..."&gt;Test&lt;/div&gt;</code></pre>
+	<p><small><a target=_blank href="../demos/faked-button/index-keyboard-focus-handler-role.html">faked button with appropriate role</a></small></p>
 </div>
 </div></section>
 
@@ -353,7 +359,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <!-- -->
 
 <section class="slide listing"><div>
-	<h3>Use ARIA to:</h3>
+	<h3>use ARIA to:</h3>
 	<ul>
 	<li>make custom widgets understandable to assistive technology users</li>
 	<li>programmatically indicate relationships between elements</li>
@@ -378,15 +384,15 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <!-- -->
 
 <section class="slide listing"><div>
-	<h3>What ARIA <strong>doesn't</strong> do...</h3>
-	<p>ARIA is <strong>not</strong> magic: it only changes how assistive technology interprets content.</p>
+	<h3>what ARIA <strong>doesn't</strong> do...</h3>
+	<p>ARIA is <strong>not magic</strong>: it only changes how <strong>assistive technology</strong> interprets content.</p>
 	<ul>
 	<li>make an element focusable</li>
 	<li>provide keyboard events</li>
 	<li>add properties</li>
 	<li>change visible appearance</li>
 	</ul>
-	<p>All of this is still your responsibility...</p>
+	<p>all of this is still your responsibility...</p>
 </div></section>
 
 <!-- -->
@@ -605,7 +611,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
     &lt;/span&gt;
 &lt;/span&gt;
 </code></pre>
-	<p>Refer to <a target=_blank href="http://www.w3.org/TR/wai-aria/roles#namecalculation">WAI-ARIA 1.0 - 5.2.7. Accessible Name Calculation</a></p>
+	<p>refer to <a target=_blank href="http://www.w3.org/TR/wai-aria/roles#namecalculation">WAI-ARIA 1.0 - 5.2.7. Accessible Name Calculation</a></p>
 </div></section>
 
 <!-- -->
@@ -643,7 +649,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide"><div>
 	<img src="pictures/html5-slider.png" alt="Using aViewer we see that native HTML5 input with type='range' is exposed correctly as a 'slider'">
-	<p>Example: HTML5 slider</p>
+	<p>example: <a target=_blank href="../demos/html5-slider.html">HTML5 slider</a></p>
 </div></section>
 
 <!-- -->
@@ -723,7 +729,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 &lt;p class="heading3" <mark>role="heading"</mark> <mark>aria-level="3"</mark>&gt;Heading 3&lt;/p&gt;
 ...
 </code></pre>
-<p>Example: headings</p>
+<p>example: <a target=_blank href="../demos/role-heading.html">headings</a></p>
 <ul>
 <li>add <code>role="heading"</code></li>
 <li>if more than one hierarchical level, and can't be inferred from structure, add explicit <code>aria-level</code></li>
@@ -763,7 +769,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
     ...
 &lt;/div&gt;
 </code></pre>
-<p>Example: list/listitem
+<p>example: <a target=_blank href="../demos/role-list.html">list/listitem</a></p>
 <ul>
 <li>add <code>role="list"</code> and <code>role="listitem"</code></li>
 </ul>
@@ -815,7 +821,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 &lt;/svg&gt;
 ...
 </code></pre>
-<p>Example: SVG content</p>
+<p>example: SVG content</p>
 <ul>
 <li>add <code>role="img"</code></li>
 <li>provide alternative text (e.g. using <code>aria-label</code> or <code>aria-labelledby</code>)</li>
@@ -834,7 +840,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide"><div>
 	<img src="pictures/blog-structure-before.png" alt="Classic blog structure using div elements with id attributes 'header', 'sidebar', 'content', 'footer' and individual posts marked up with div elements given class name 'post'">
-	<p>Adapted from <a target=_blank href="http://html5doctor.com/designing-a-blog-with-html5/">HTML5 Doctor - Designing a blog with html5</a></p>
+	<p>adapted from <a target=_blank href="http://html5doctor.com/designing-a-blog-with-html5/">HTML5 Doctor - Designing a blog with html5</a></p>
 </div></section>
 
 <!-- -->
@@ -870,7 +876,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide"><div>
 	<img src="pictures/blog-structure-after-html5.png" alt="Classic blog structure, recoded using HTML5 structural elements: header, nav, main, article, footer">
-	<p>Adapted from <a target=_blank href="http://html5doctor.com/designing-a-blog-with-html5/">HTML5 Doctor - Designing a blog with html5</a></p>
+	<p>adapted from <a target=_blank href="http://html5doctor.com/designing-a-blog-with-html5/">HTML5 Doctor - Designing a blog with html5</a></p>
 </div></section>
 
 <!-- -->
@@ -901,7 +907,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <pre><code>
 &lt;span tabindex="0" class="..."&gt;Button?&lt;/span&gt;
 </code></pre>
-<p>Example: native <code>button</code>, <code>span</code> and fixed with ARIA</p>
+<p>example: <a target=_blank href="../demos/role-button.html">button</a></p>
 </div></section>
 
 <!-- -->
@@ -933,7 +939,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 &lt;span tabindex="0" class="... pressed"&gt;Option&lt;/span&gt;
 </code></pre>
-<p>Example: <code>span</code> and fixed with ARIA</p>
+<p>example: [TODO] <code>span</code> and fixed with ARIA</p>
 </div></section>
 
 <!-- -->
@@ -970,7 +976,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 &lt;span tabindex="0" class="... checked"&gt;Option&lt;/span&gt;
 </code></pre>
-<p>Example: <code>span</code> and fixed with ARIA</p>
+<p>example: <a target=_blank href="../demos/role-checkbox.html">checkbox</a></p>
 </div></section>
 
 <!-- -->
@@ -1002,7 +1008,7 @@ aria-checked="false"
 
 <strong>aria-checked="mixed"</strong> &lt;!-- "partially" checked --&gt;
 </code></pre>
-<p>Example: <a target=_blank href="http://files.paciellogroup.com/blogmisc/ARIA/tristatecheck.html">tri-state checkbox</a></p>
+<p>example: <a target=_blank href="http://files.paciellogroup.com/blogmisc/ARIA/tristatecheck.html">tri-state checkbox</a></p>
 </div></section>
 
 <!-- -->
@@ -1021,7 +1027,7 @@ aria-checked="false"
 &lt;span tabindex="0" class="... selected"&gt;No&lt;/span&gt;
 &lt;span tabindex="0" class="..."&gt;Maybe&lt;/span&gt;
 </code></pre>
-<p>Example: <code>span</code> and fixed with ARIA</p>
+<p>example: <a target=_blank href="../demos/role-radio.html">radio button</a></p>
 </div></section>
 
 <!-- -->
@@ -1091,7 +1097,6 @@ aria-checked="false"
 ...
 &lt;span&gt;this is the tooltip text&lt;/span&gt;
 </code></pre>
-<p>Example: basic tooltip</p>
 </div></section>
 
 <!-- -->
@@ -1104,7 +1109,7 @@ aria-checked="false"
 &lt;span <mark>role="tooltip"</mark> id="tooltip"&gt;
       this is the tooltip text&lt;/span&gt;
 </code></pre>
-<p>Example: ARIA tooltip</p>
+<p>example: <a target=_blank href="../demos/role-tooltip.html">tooltip</a></p>
 <ul>
 <li>add <code>role="tooltip"</code> (but seems to have no effect in AT)</li>
 <li>add <code>aria-describedby</code> pointing to <code>id</code> of tooltip</li>
@@ -1126,7 +1131,7 @@ aria-checked="false"
 &lt;span <mark>role="status"</mark>&gt;
       some form of status bar message...&lt;/span&gt;
 </code></pre>
-<p>Example: ARIA status bar</p>
+<p>example: <a target=_blank href="../demos/role-status.html">status bar</a></p>
 <ul>
 <li>add <code>role="status"</code> (varying support?)</li>
 <li>an example of a <em>live region</em> (more on this later)</li>
@@ -1148,7 +1153,7 @@ aria-checked="false"
 &lt;span <mark>role="alert"</mark>&gt;
       an alert message (no user interaction)&lt;/span&gt;
 </code></pre>
-<p>Example: ARIA alert</p>
+<p>example: <a target=_blank href="../demos/role-alert.html">alert</a></p>
 <ul>
 <li>add <code>role="alert"</code> (varying support?)</li>
 <li>an example of a <em>live region</em> (more on this later)</li>
@@ -1183,7 +1188,7 @@ aria-checked="false"
     &lt;span style="width:40%"&gt;&lt;/span&gt;
 &lt;/div&gt;
 </code></pre>
-<p>Example: ARIA progress bar</p>
+<p>example: <a target=_blank href="../demos/role-progressbar.html">progress bar</a></p>
 <ul>
 <li>add <code>role="progressbar"</code> (varying support?)</li>
 <li>add <code>aria-valuemin</code>, <code>aria-valuemax</code>, <code>aria-valuenow</code></li>
@@ -1211,7 +1216,7 @@ aria-checked="false"
           tabindex="0" style="left: 7%;"&gt;&lt;/span&gt;
 &lt;/div&gt;
 </code></pre>
-<p>Example: standard jQueryUI slider</p>
+<p>example: <a target=_blank href="http://jqueryui.com/slider/">standard jQueryUI slider</a></p>
 </div></section>
 
 <!-- -->
@@ -1258,7 +1263,7 @@ aria-checked="false"
   ...
 &lt;/div&gt;
 </code></pre>
-<p>Example: jQueryUI dialog (enhanced)</p>
+<p>example: <a target=_blank href="../demos/role-dialog.html">jQueryUI dialog (enhanced)</a></p>
 </div></section>
 
 <!-- -->
@@ -1313,7 +1318,7 @@ aria-checked="false"
   ...
 &lt;/div&gt;
 </code></pre>
-<p>Example: <a target=_blank href="http://oaa-accessibility.org/examplep/menubar1/">Open Ajax Alliance - Menubar</a></p>
+<p>example: <a target=_blank href="http://oaa-accessibility.org/examplep/menubar1/">Open Ajax Alliance - Menubar</a></p>
 <p>most suitable for real "application-like" web-apps - arguably not appropriate for general "website navigation"</li>
 </ul>
 </div></section>
@@ -1369,7 +1374,7 @@ aria-checked="false"
 &lt;div <mark>role="tabpanel"</mark> id="panel2" <mark>aria-hidden="true"</mark>&gt;...&lt;/div&gt;
 &lt;div <mark>role="tabpanel"</mark> id="panel3" <mark>aria-hidden="true"</mark>&gt;...&lt;/div&gt;
 </code></pre>
-<p>Example: <a target=_blank href="http://oaa-accessibility.org/examplep/tabpanel1/">Open Ajax Alliance: Tab Panel</p>
+<p>example: <a target=_blank href="http://oaa-accessibility.org/examplep/tabpanel1/">Open Ajax Alliance: Tab Panel</p>
 <p>Variations on this theme: <a target=_blank href="http://www.marcozehe.de/2013/02/02/advanced-aria-tip-1-tabs-in-web-apps/">Marco Zehe - Advanced ARIA tip #1: Tabs in web apps</a></p>
 <p>Not appropriate if you're just marking up a site navigation...</p>
 </div></section>
@@ -1386,8 +1391,8 @@ aria-checked="false"
   &lt;div <mark>role="tab"</mark> <mark>aria-controls="panel3"</mark> ...&gt;Tab 2&lt;/div&gt;
   &lt;div <mark>role="tabpanel"</mark> id="panel3"&gt;...&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-<p>Example: <a target=_blank href="http://hanshillen.github.io/jqtest/#goto_accordion">Hans Hillen - Accessible jQuery-ui Components: Accordion</a></p>
-<p>Sometimes better to keep it simple (series of expand/collapse controls): <a target=_blank href="http://whatsock.com/tsg/">whatsock - AccDC Technical Style Guide</a> / <a target=_blank href="https://github.com/accdc/tsg">AccDC Technical Style Guide (GitHub)</a></p>
+<p>example: <a target=_blank href="http://hanshillen.github.io/jqtest/#goto_accordion">Hans Hillen - Accessible jQuery-ui Components: Accordion</a></p>
+<p>sometimes better to keep it simple (series of expand/collapse controls): <a target=_blank href="http://whatsock.com/tsg/">whatsock - AccDC Technical Style Guide</a> / <a target=_blank href="https://github.com/accdc/tsg">AccDC Technical Style Guide (GitHub)</a></p>
 </div></section>
 
 <!-- -->
@@ -1408,7 +1413,7 @@ aria-checked="false"
     &lt;div <mark>role="option"</mark> id="opt3"&gt;Option 3&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p>Example: <a target=_blank href="http://cookiecrook.com/test/aria/multiselect/listbox.html">James Craig - multiselect listbox</a></p>
+<p>example: <a target=_blank href="http://cookiecrook.com/test/aria/multiselect/listbox.html">James Craig - multiselect listbox</a></p>
 <ul>
 <li>add <code>role="listbox"</code> on the container</li>
 <li>add <code>role="option"</code> on each option</li>
@@ -1439,7 +1444,7 @@ aria-checked="false"
     &lt;div <mark>role="option"</mark> id="opt3"&gt;Option 3&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p>Example: <a target=_blank href="http://oaa-accessibility.org/examplep/combobox3/">Open Ajax Alliance: Combobox with <code>aria-autocomplete=list</code></a></p>
+<p>example: <a target=_blank href="http://oaa-accessibility.org/examplep/combobox3/">Open Ajax Alliance: Combobox with <code>aria-autocomplete=list</code></a></p>
 <ul>
 <li>combination of focusable text input and listbox (like autocomplete/search suggestions)</li>
 </ul>
@@ -1469,7 +1474,7 @@ aria-checked="false"
   ...
 &lt;/div&gt;
 </code></pre>
-<p>Example: <a target=_blank href="https://dl.dropboxusercontent.com/u/573324/Samples/aria/badtree/noAriaTree.html">Tree Example (no ARIA used)</a> / <a target=_blank href="https://dl.dropboxusercontent.com/u/573324/Samples/aria/tree/index.html">Tree Example (with ARIA)</a></p>
+<p>example: <a target=_blank href="https://dl.dropboxusercontent.com/u/573324/Samples/aria/badtree/noAriaTree.html">Tree example (no ARIA used)</a> / <a target=_blank href="https://dl.dropboxusercontent.com/u/573324/Samples/aria/tree/index.html">Tree example (with ARIA)</a></p>
 <p>support very poor on mobile (as with many complex ARIA widgets)!</p>
 </div></section>
 
@@ -1497,8 +1502,8 @@ aria-checked="false"
   ...
 &lt;/div&gt;  
 </code></pre>
-<p>Example: <a target=_blank href="http://oaa-accessibility.org/examplep/grid1/">Open Ajax Alliance: Grid Example</a></p>
-<p>Sometimes better to simplify: <a target=_blank href="https://www.paypal-engineering.com/2013/05/14/interactive-elements-within-a-grid-layout/">Dennis Lembree - Interactive elements within a grid layout</a></li>
+<p>example: <a target=_blank href="http://oaa-accessibility.org/examplep/grid1/">Open Ajax Alliance: Grid example</a></p>
+<p>sometimes better to simplify: <a target=_blank href="https://www.paypal-engineering.com/2013/05/14/interactive-elements-within-a-grid-layout/">Dennis Lembree - Interactive elements within a grid layout</a></li>
 </div></section>
 
 <!-- -->
@@ -1562,7 +1567,7 @@ aria-checked="false"
 	<h4>keyboard navigation within widgets</h4>
 	<ul>
 	<li>either: "roving" <code>tabindex</code> (only one element inside widget has <code>tabindex="0"</code>, all others <code>tabindex="-1"</code>)</li>
-	<li>or: focus remains on widget itself, denote active child element with <code>aria-activedescendant</code> (and manually provide highlight via CSS)</li>
+	<li>or: focus remains on widget itself, denote active child element with <code>aria-activedescendant</code> (and manually scroll into view, provide highlight via CSS)</li>
 	</ul>
 	<p>not all complex widgets lend themselves to "roving" <code>tabindex</code> - e.g. <code>role="combobox"</code> needs <code>aria-activedescendant</code>, as actual focus must remain inside the textbox.</p>
 	<p><a target=_blank href="http://www.w3.org/TR/wai-aria-practices/#kbd_general_within">W3C WAI-ARIA 1.0 Authoring Practices - 3.1.3. Keyboard Navigation within Widgets</a></p>
@@ -1637,7 +1642,7 @@ aria-checked="false"
 	<h3>making AT aware of content changes</h3>
 	<p>best way to notify users of assistive technologies of new content (a new element added to the page, made visible, a change in text) is to move <code>focus()</code> programmatically to it.</p>
 	<p>but this is not always possible, as it would interrupt the user's current actions...</p>
-	<p>Example: faked button with notification via <code>focus()</code></p>
+	<p>example: <a target=_blank href="../demos/faked-button/index-keyboard-focus-handler-role-notify-focus.html">faked button with notification via <code>focus()</code></a></p>
 </div></section>
 
 <!-- -->
@@ -1650,8 +1655,8 @@ aria-checked="false"
 	<li><code>aria-atomic</code></li>
 	<li><code>aria-relevant</code></li>
 	</ul>
-	<p>Example: faked button with notification using <code>aria-live</code> and <code>aria-atomic</code></p>
-	<p>Some <code>role</code>s have implicit live region - e.g. <code>role="alert"</code></p>
+	<p>example: <a target=_blank href="../demos/faked-button/index-keyboard-focus-handler-role-notify-liveregion-atomic.html">faked button with notification using <code>aria-live</code> and <code>aria-atomic</code></a></p>
+	<p>some <code>role</code>s have implicit live region - e.g. <code>role="alert"</code></p>
 	<p>unfortunately, support is...flaky</p>
 </div></section>
 
@@ -1684,7 +1689,7 @@ aria-checked="false"
 	<li><code>aria-grabbed</code></li>
 	<li><code>aria-dropeffect</code></li>
 	</ul>
-	<p>Example: <a target=_blank href="http://oaa-accessibility.org/examplep/draganddrop1/">Open Ajax Alliance - Drag and Drop</a> / <a target=_blank href="https://dev.opera.com/articles/accessible-drag-and-drop/example.html">Gez Lemon's Drag and Drop Example</a></p>
+	<p>example: <a target=_blank href="http://oaa-accessibility.org/examplep/draganddrop1/">Open Ajax Alliance - Drag and Drop</a> / <a target=_blank href="https://dev.opera.com/articles/accessible-drag-and-drop/example.html">Gez Lemon's Drag and Drop example</a></p>
 	<p>support is still bad (particularly on mobile) - consider refactoring or providing alternative instead</p>
 </div></section>
 
@@ -1729,7 +1734,7 @@ aria-checked="false"
 <!-- -->
 
 <section class="slide"><div>
-	<img src="pictures/gmail.png" alt="Example of a complex web application: Google Mail">
+	<img src="pictures/gmail.png" alt="example of a complex web application: Google Mail">
 </div></section>
 
 <!-- -->
@@ -1788,14 +1793,14 @@ aria-checked="false"
 
 <section class="slide"><div>
 	<img src="pictures/extending-relationships-form-field.png" alt="Form field with a label and additional explanatory text below">
-	<p>Example: form enhancement using <code>aria-describedby</code></p>
+	<p>example: <a target=_blank href="../demos/enhancements-form.html">form enhancement using <code>aria-describedby</code> (plus <code>aria-required</code> and <code>aria-invalid</code>)</a></p>
 </div></section>
 
 <!-- -->
 
 <section class="slide"><div>
 	<img src="pictures/extending-relationships-form-grid.png" alt="A grid of text entry fields with row and column headers">
-	<p>Example: form enhancement using <code>aria-labelledby</code></p>
+	<p>example: <a target=_blank href="../demos/enhancements-table-grid.html">form enhancement using <code>aria-labelledby</code></a></p>
 </div></section>
 
 <!-- -->
@@ -1817,7 +1822,7 @@ aria-checked="false"
         &lt;td&gt;Layout column 2&lt;/td&gt;
     &lt;/tr&gt;
 &lt;/table&gt;</code></pre>
-	<p>Example: layout table remediation</p>
+	<p>example: <a target=_blank href="../demos/remediation-layout-table.html">layout table remediation</a></p>
 </div></section>
 
 <!-- -->
@@ -1846,7 +1851,7 @@ aria-checked="false"
 
 <section class="slide"><div>
 	<img src="pictures/sites/w3c-github-webcomponents-custom-tag-example.png" alt="">
-	<p><a target=_blank href="http://w3c.github.io/webcomponents/spec/custom/#custom-tag-example">W3C Editor's Draft - Custom Elements - 11.1 Custom Tag Example</a></p>
+	<p><a target=_blank href="http://w3c.github.io/webcomponents/spec/custom/#custom-tag-example">W3C Editor's Draft - Custom Elements - 11.1 Custom Tag example</a></p>
 </div></section>
 
 <!-- -->

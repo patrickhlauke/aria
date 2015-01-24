@@ -110,6 +110,7 @@ h1,h2,h3,h4,h5,h6 { font-weight:bold; }
 
 .slide.statement strong {
 	color: #66D9EF;
+	background: none;
 }
 
 .slide.impact div,
@@ -153,7 +154,8 @@ h1,h2,h3,h4,h5,h6 { font-weight:bold; }
 
 .slide p strong,
 .slide li strong {
-	color: #FD0B85;
+	background: #FD0B85;
+	color: #fff;
 }
 
 .slide.code {
@@ -201,6 +203,7 @@ pre code.html { text-align:left; }
 
 .slide.title strong {
 	color: #FD0B85;
+	background: none;
 }
 
 .slide.title .titlestrap {
