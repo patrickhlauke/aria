@@ -158,6 +158,7 @@ h1,h2,h3,h4,h5,h6 { font-weight:bold; }
 .slide li strong {
 	background: #FD0B85;
 	color: #fff;
+	padding: 0 0.25em;
 }
 
 .slide.code {
