@@ -166,8 +166,8 @@ h1,h2,h3,h4,h5,h6 { font-weight:bold; }
 	color: #fff;
 }
 
-a, .slide a { color: #FD0B85; text-decoration: none; border: none; }
-a:focus, a:hover, a:active { border-bottom: .05em solid; }
+a, .slide a { color: #FD0B85; text-decoration: none; border-bottom: rgba(253,11,133,0.2) .05em solid; }
+a:focus, a:hover, a:active { border-bottom: #FD0B85 .05em solid; }
 
 del { opacity: 0.5;}
 
