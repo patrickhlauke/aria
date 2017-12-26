@@ -66,7 +66,7 @@ h1,h2,h3,h4,h5,h6 { font-weight:bold; }
 	color: #FFF;
 	font-style: normal;
 	font-weight: bold;
-	padding: 0.25em;
+	padding: 0.05em 0.25em;
 	border: 1px #999 solid;
 }
 
