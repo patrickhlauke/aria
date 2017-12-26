@@ -1,5 +1,6 @@
-
 h1,h2,h3,h4,h5,h6 { font-weight:bold; }
+
+.caption { color: #fff; }
 
 .slide.impact h1,
 .slide.impact h2,
@@ -61,11 +62,12 @@ h1,h2,h3,h4,h5,h6 { font-weight:bold; }
 }
 
 .slide pre mark {
-	background: #444;
+	background: #151515;
 	color: #FFF;
 	font-style: normal;
 	font-weight: bold;
 	padding: 0.25em;
+	border: 1px #999 solid;
 }
 
 .slide pre code {
@@ -105,7 +107,7 @@ h1,h2,h3,h4,h5,h6 { font-weight:bold; }
 }
 
 .slide.impact {
-	background: #4CA3B3;
+	background: #4AA0B1;
 }
 
 .slide.statement strong {
