@@ -1363,7 +1363,7 @@ aria-checked="false"
 
 <section class="slide statement"><div>
 <div>
-	<h4>tabs / accordions</h4>
+	<h4>tabs</h4>
 </div>
 </div></section>
 
@@ -1389,18 +1389,46 @@ aria-checked="false"
 
 <!-- -->
 
+<section class="slide statement"><div>
+	<div>
+		<h4>accordions</h4>
+	</div>
+	</div></section>
+
+<!-- -->
+
 <section class="slide code listing"><div>
+<p>old (ARIA 1.0) guidance treated accordions as a form of vertical tab interface</p>
 <pre><code>
+&lt;!-- outdated accordions --&gt;
 &lt;div <mark>role="tablist"</mark> ...&gt;
-  &lt;div <mark>role="tab"</mark> <mark>aria-controls="panel1"</mark> ...&gt;Tab 1&lt;/div&gt;
+  &lt;div <mark>role="tab"</mark> <mark>aria-controls="panel1"</mark> ...&gt;Accordion 1&lt;/div&gt;
   &lt;div <mark>role="tabpanel"</mark> id="panel1"&gt;...&lt;/div&gt;
-  &lt;div <mark>role="tab"</mark> <mark>aria-controls="panel2"</mark> ...&gt;Tab 2&lt;/div&gt;
+  &lt;div <mark>role="tab"</mark> <mark>aria-controls="panel2"</mark> ...&gt;Accordion 2&lt;/div&gt;
   &lt;div <mark>role="tabpanel"</mark> id="panel2"&gt;...&lt;/div&gt;
-  &lt;div <mark>role="tab"</mark> <mark>aria-controls="panel3"</mark> ...&gt;Tab 2&lt;/div&gt;
+  &lt;div <mark>role="tab"</mark> <mark>aria-controls="panel3"</mark> ...&gt;Accordion 3&lt;/div&gt;
   &lt;div <mark>role="tabpanel"</mark> id="panel3"&gt;...&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-<p>example: <a target=_blank href="http://hanshillen.github.io/jqtest/#goto_accordion">Hans Hillen - Accessible jQuery-ui Components: Accordion</a></p>
-<p>sometimes better to keep it simple (series of expand/collapse controls): <a target=_blank href="http://whatsock.com/tsg/">whatsock - AccDC Technical Style Guide</a> / <a target=_blank href="https://github.com/accdc/tsg">AccDC Technical Style Guide (GitHub)</a></p>
+<p>however, this is "incorrect" / not best practice.<br><code>role="tabpanel"</code> elements are nested inside <code>role="tablist"</code> which goes against the ARIA definitions themselves...</p>
+</div></section>
+
+<!-- -->
+
+<section class="slide code listing"><div>
+<p>much simpler and more sustainable: accordions as a series of basic expand/collapse disclosure widgets</p>
+<pre><code>
+&lt;button <mark>aria-expanded="true"</mark>
+        <mark>aria-controls="panel1"</mark>&gt;Accordion 1&lt;/button&gt;
+&lt;div id="panel1"&gt;...&lt;/div&gt;
+
+&lt;button <mark>aria-expanded="false"</mark>
+        <mark>aria-controls="panel2"</mark>&gt;Accordion 2&lt;/button&gt;
+&lt;div id="panel2"&gt;...&lt;/div&gt;
+
+&lt;button <mark>aria-expanded="false"</mark>
+        <mark>aria-controls="panel3"</mark>&gt;Accordion 3&lt;/button&gt;
+&lt;div id="panel3"&gt;...&lt;/div&gt;
+</code></pre>
 </div></section>
 
 <!-- -->
