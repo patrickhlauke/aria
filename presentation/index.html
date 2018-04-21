@@ -503,6 +503,19 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <!-- -->
 
+<section class="slide code listing"><div>
+	<p>you <strong>can</strong> use a <code>&lt;span&gt;</code> to behave as, and be exposed just like, a link...</p>
+	<pre><code>
+	&lt;span tabindex="0" <mark>role="link"</mark>
+		  onclick="document.location='...'"
+		  <mark>onkeyup="..."</mark>&gt;link&lt;/span&gt;
+	</code></pre>
+	<p>...but <strong>why would you?</strong></p>
+	<p>unless there's a very good reason, just use <code>&lt;a href="..."&gt;...&lt;/a&gt;</code></p>
+	</div></section>
+
+<!-- -->
+
 <section class="slide statement"><div>
 <div>
 	<p>2. <strong>don't change</strong> native semantics</p>
@@ -1055,37 +1068,6 @@ aria-checked="false"
 <li>add handling of <kbd>SPACE</kbd> and cursor keys</li>
 <li>add <code>aria-checked</code> and dynamically change its value</li>
 <li><em>should</em> be contained inside <code>role="radiogroup"</code> (cfr. <code>&lt;fieldset&gt;</code>)</li>
-</ul>
-</div></section>
-
-<!-- -->
-
-<section class="slide statement"><div>
-<div>
-	<h4>link</h4>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-<pre><code>
-&lt;span tabindex="0"
-      onclick="document.location='...'"&gt;link&lt;/span&gt;
-</code></pre>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-<pre><code>
-&lt;span tabindex="0" <mark>role="link"</mark>
-      onclick="document.location='...'"&gt;link&lt;/span&gt;
-</code></pre>
-<ul>
-<li>add <code>role="link"</code></li>
-<li>make sure it's focusable</li>
-<li>ensure correct <kbd>ENTER</kbd> keyboard handling</li>
 </ul>
 </div></section>
 
