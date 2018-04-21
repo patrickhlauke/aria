@@ -1658,18 +1658,19 @@ aria-checked="false"
 
 <section class="slide listing"><div>
 	<h3>document vs application mode</h3>
-	<p>assistive technologies/screenreaders generally operate in two modes: document mode and application mode (terminology varies)</p>
+	<p>assistive technologies/screenreaders (on Windows) generally operate in two modes:</p>
 	<ul>
-	<li>in document mode ("reading mode"), user can navigate freely through the page/content with keyboard shortcuts provided by AT</li>
-	<li>in application mode ("forms mode"), keystrokes are mostly passed directly to page, which needs to handle all interactions</li>
+	<li>in <strong>document mode</strong> ("reading mode", "virtual cursor mode") user can navigate through the page with keyboard shortcuts provided by AT</li>
+	<li>in <strong>application mode</strong> ("forms mode"), keystrokes are mostly passed directly to page, which needs to handle all interactions</li>
 	</ul>
+	<p>AT may switch to application mode - and back - automatically (e.g. when entering a form, focusing on a particular type of form control, entering a specific ARIA widget with specific keyboard controls).</p>
 	<p><a target=_blank href="https://www.ssbbartgroup.com/blog/2013/04/08/how-windows-screen-readers-work-on-the-web/">SSB Bart Group - How Windows Screen Readers Work on the Web</a></p>
 </div></section>
 
 <!-- -->
 
 <section class="slide cover impact"><div>
-	<div><p><code>role="application"</code><br>forces application mode</p></div>
+	<div><p><code>role="application"</code><br>forces application/forms mode</p></div>
 	<img src="pictures/background-danger-415-volts.jpg" class="cover" alt="">
 </div></section>
 
