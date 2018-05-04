@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Toggle button - ARIA demos</title>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="style.css">
+<style>
+    .toggled { outline: 5px #e00 solid; }
+</style>
+<script>
+window.addEventListener('load',function() {
+	var b = document.getElementById("b");
+	b.addEventListener('click',function () {
+        this.classList.toggle("toggled"); /* IE10+ support only - otherwise, use more verbose method to setting/unsetting class */
+    });
+})
+</script>
+</head>
+<body>
+<!-- using an actual <button> element - ARIA can be used to enhance even native HTML elements -->
+<button id="b">Toggle</button>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Form enhancements - ARIA examples</title>
+<meta charset=utf-8>
+<script>
+window.addEventListener('load',function() {
+	document.getElementById("form1").addEventListener("submit", function(e) {
+		if (document.getElementById("input1").value === "") {
+			document.getElementById("input1").classList.add("invalid");
+			document.getElementById("input1").focus();
+		} else {
+			document.getElementById("input1").classList.remove("invalid");
+			alert('Submitted...');
+		}
+		e.preventDefault();
+	})
+
+	document.getElementById("form2").addEventListener("submit", function(e) {
+		if (document.getElementById("input2").value === "") {
+			document.getElementById("input2").setAttribute("aria-invalid","true");
+			document.getElementById("input2").focus();
+		} else {
+			document.getElementById("input2").removeAttribute("aria-invalid");
+			alert('Submitted...');
+		}
+		e.preventDefault();
+	})
+
+});
+</script>
+<link rel="stylesheet" href="style.css">
+<style>
+label { font-weight: bold; }
+label, input { display: block;}
+input.invalid,
+input[aria-invalid="true"] { outline: 2px #f00 solid; }
+#input1_extra, #input2_extra { font-size: 0.75em; }
+</style>
+</head>
+<body>
+<form id="form1">
+<label for="input1">Form field 1 *</label>
+<input id="input1" type="text">
+<p id="input1_extra">Additional instructions to fill in the field</p>
+<input type="submit" value="submit">
+</form>
+<hr>
+<form id="form2">
+<label for="input2">Form field 2 *</label>
+<input id="input2" type="text" aria-required="true" aria-describedby="input2_extra">
+<p id="input2_extra">Additional instructions to fill in the field</p>
+<input type="submit" value="submit">
+</form>
+</body>
+</html>

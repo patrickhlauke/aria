@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Modal - ARIA demos</title>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="style.css">
+<style>
+    #modalDialog { display: none; }
+    #modalDialog.show { display: block; background: #eee; position: absolute; width: 20em; top: 2em; margin: 0 auto; z-index: 2; }
+</style>
+<script src="inert.js"></script> <!-- https://github.com/WICG/inert -->
+<script>
+/* Very naive basic scripting, for demonstration purposes only.
+    Assumes only a single modal trigger and dialog exist, with defined ids.
+    For production, you'll want something a bit more robust/modular. */
+
+function openModal() {
+    document.querySelector("main").setAttribute("inert", ""); /* add the boolean inert attribute - empty value interpreted as "true" by default */
+    document.getElementById("modalDialog").classList.add("show");
+    document.getElementById("modalClose").focus(); /* set focus to the close button - the only focusable item in the dialog */
+}
+
+function closeModal() {
+    document.querySelector("main").removeAttribute("inert"); /* unhide the underlying page */
+    document.getElementById("modalDialog").classList.remove("show");
+    document.getElementById("modalTrigger").focus(); /* set focus back to the trigger */
+}
+
+window.addEventListener('load',function() {
+    var b = document.getElementById("modalTrigger");
+    b.addEventListener('click', function () {
+        openModal();
+    });
+    var c = document.getElementById("modalClose");
+    c.addEventListener('click', function () {
+        closeModal();
+    });
+
+    /* thanks to inert attribute, we don't have to worry about focus handling */
+
+})
+</script>
+</head>
+<body>
+<!-- we separate the main part of the page from the actual modal container,
+     so the container is not a child of the "regular" page -->
+<main>
+<h1>Modal dialog</h1>
+<p>The button will launch a modal dialog.</p>
+<button id="modalTrigger">Launch...</button>
+</main>
+<div id="modalDialog" role="dialog" aria-labelledby="modalDialogHeader" aria-describedby="modalDialogDescription">
+    <h1 id="modalDialogHeader">Example dialog</h1>
+    <div id="modalDialogDescription">
+        <p>This is a modal dialog example.</p>
+        <p>In this case, the dialog mainly conveys text.</p>
+    </div>
+    <button id="modalClose">Close</button>
+</div>
+</body>
+</html>

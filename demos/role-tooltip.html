@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>role="status" - ARIA examples</title>
+<title>role="tooltip" - ARIA examples</title>
 <meta charset=utf-8>
-<script src="jquery-1.11.2.min.js"></script>
 <script>
 function showTooltip(e) {
-	if ($(this).attr("data-title")) return;
-	$(this).attr("data-title",$(this).attr("title"));
-	$(this).attr("title","");
-	$(this).attr("aria-describedby","tooltip");
-	var x = e.originalEvent.pageX, y = e.originalEvent.pageY;
+	if (this.hasAttribute("data-title")) return;
+	this.setAttribute("data-title",this.getAttribute("title"));
+	this.removeAttribute("title");
+	this.setAttribute("aria-describedby","tooltip");
+	var x = e.pageX, y = e.pageY;
 	
 	if ((x == 0) && (y == 0)) {
-		x = $(this).offset().left + 10;
-		y = $(this).offset().top + 10;
-		console.log(x + ' ' + y)
+		var bodyRect = document.body.getBoundingClientRect(),
+    		elemRect = this.getBoundingClientRect(),
+			x  = elemRect.left - bodyRect.left,
+			y  = elemRect.top - bodyRect.top;
 	}
-	$("#tooltip").css("top", (y+"px")).css("left", (x+"px")).addClass("visible").text($(this).attr("data-title"));
+	document.getElementById("tooltip").style.left = (x + 10) + "px";
+	document.getElementById("tooltip").style.top = (y +10 ) + "px";
+	document.getElementById("tooltip").innerHTML = this.getAttribute("data-title");
+	document.getElementById("tooltip").classList.add("visible");
 }
 
 function hideTooltip() {
-	$("#tooltip").removeClass("visible");
-	$(this).removeAttr("aria-describedby");
-	$(this).attr("title",$(this).attr("data-title"));
-	$(this).removeAttr("data-title");
+	document.getElementById("tooltip").classList.remove("visible");
+	this.removeAttribute("aria-describedby");
+	this.setAttribute("title",this.getAttribute("data-title"));
+	this.removeAttribute("data-title");
 }
 
-$(function() {
-	$(".tooltip").on("mouseover focus", showTooltip);
-	$(".tooltip").on("mouseout blur", hideTooltip);
-});
+window.addEventListener('load',function() {
+	var tips = document.querySelectorAll(".tooltip");
+	for (var i=0; i<tips.length; i++) {
+		tips[i].addEventListener("mouseover", showTooltip);
+		tips[i].addEventListener("focus", showTooltip);
+		tips[i].addEventListener("mouseout", hideTooltip);
+		tips[i].addEventListener("blur", hideTooltip);
+	}
+})
 </script>
 <link rel="stylesheet" href="style.css">
 <style>
@@ -41,6 +49,6 @@ $(function() {
 <body>
 <p><a href="#" title="some additional information">Test link with title attribute</a></p>
 <p><a href="#" class="tooltip" title="some additional information">Test link with title and JS tooltip</a></p>
-<p id="tooltip" role="tooltip"></p>
+<div id="tooltip" role="tooltip"></div>
 </body>
 </html>

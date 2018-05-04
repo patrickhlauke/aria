@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Radio buttons - ARIA examples</title>
+<meta charset=utf-8>
+<link rel="stylesheet" href="style.css">
+<style>
+input[type="radio"],
+.radio {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 1px #000 solid;
+    background: #ddd;
+}
+input[type="radio"]:checked,
+.radio.checked {
+	background:#5f5;
+}
+</style>
+<link rel="stylesheet" href="style.css">
+<script>
+window.addEventListener('load',function() {
+	var checkboxes = document.querySelectorAll(".checkbox");
+    for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].addEventListener('click',function () {
+            this.classList.toggle("checked"); /* IE10+ support only - otherwise, use more verbose method to setting/unsetting class */
+            /* note that dataset boolean attributes are still *strings*, so can't use boolean logic */
+            /* IE11+ support - otherwise, use classic getAttribute/setAttribute */
+            if (this.dataset.checked === "true") {
+                this.dataset.checked = "false";
+            } else {
+                this.dataset.checked = "true";
+            }
+        });
+        checkboxes[i].addEventListener('keyup',function (e) {
+            if (e.keyCode == 32) {
+                this.click();
+                e.preventDefault(); }
+        });
+    }
+})
+</script>
+</head>
+<body>
+<fieldset>
+    <legend>Native radio buttons</legend>
+    <input type="radio" id="radio1"> <label for="radio1">Yes</label>
+    <input type="radio" id="radio2"> <label for="radio2">No</label>
+    <input type="radio" id="radio3"> <label for="radio3">Maybe</label>
+</fieldset>
+<div>
+    <div class="legend">Faked radio buttons</div>
+    <span class="radio" id="fakeradio1" tabindex="0" data-checked="false"></span> <span>Yes</span>
+    <span class="radio" id="fakeradio2" tabindex="0" data-checked="false"></span> <span>No</span>
+    <span class="radio" id="fakeradio3" tabindex="0" data-checked="false"></span> <span>Maybe</span>
+</div>
+</body>
+</html>

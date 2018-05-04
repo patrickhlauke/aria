@@ -72,7 +72,7 @@
 <div>
 	<img src="pictures/faked-button.png" alt="">
 	<pre><code>&lt;div onclick="..."&gt;Test&lt;/div&gt;</code></pre>
-	<p><small><a target=_blank href="../demos/faked-button/index.html">faked button</a></small></p>
+	<p><small><a target=_blank href="../demos/button/index.html">faked button</a></small></p>
 </div>
 </div></section>
 
@@ -83,7 +83,7 @@
 	<img src="pictures/faked-button.png" alt="">
 	<pre><code>&lt;div <mark>tabindex="0"</mark>
 onclick="..."&gt;Test&lt;/div&gt;</code></pre>
-<p><small><a target=_blank href="../demos/faked-button/index-keyboard-focus.html">faked button with focus</a></small></p>
+<p><small><a target=_blank href="../demos/button/index-keyboard-focus.html">faked button with focus</a></small></p>
 </div>
 </div></section>
 
@@ -95,7 +95,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 	<pre><code>&lt;div tabindex="0"
 <mark>onkeyup="..."</mark>
 onclick="..."&gt;Test&lt;/div&gt;</code></pre>
-<p><small><a target=_blank href="../demos/faked-button/index-keyboard-focus-handler.html">faked button with focus and keyboard handling</a></small></p>
+<p><small><a target=_blank href="../demos/button/index-keyboard-focus-handler.html">faked button with focus and keyboard handling</a></small></p>
 </div>
 </div></section>
 
@@ -121,7 +121,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <div>
 	<img src="pictures/faked-button.png" alt="">
 	<p>compare <code>&lt;div&gt;</code> to a real <code>&lt;button&gt;</code></p>
-	<p><small><a target=_blank href="../demos/faked-button/index-keyboard-focus-handler.html">faked button</a> versus <a target=_blank href="../demos/faked-button/index-real-button.html">real <code>&lt;button&gt;</code></a></small></p>
+	<p><small><a target=_blank href="../demos/button/index-keyboard-focus-handler.html">faked button</a> versus <a target=_blank href="../demos/button/index-real-button.html">real <code>&lt;button&gt;</code></a></small></p>
 </div>
 </div></section>
 
@@ -261,7 +261,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <div>
 	<img src="pictures/faked-button.png" alt="">
 	<p>compare <code>&lt;div&gt;</code> to a real <code>&lt;button&gt;</code></p>
-	<p><small><a target=_blank href="../demos/faked-button/index-keyboard-focus-handler.html">faked button</a> versus <a target=_blank href="../demos/faked-button/index-real-button.html">real <code>&lt;button&gt;</code></a></small></p>
+	<p><small><a target=_blank href="../demos/button/index-keyboard-focus-handler.html">faked button</a> versus <a target=_blank href="../demos/button/index-real-button.html">real <code>&lt;button&gt;</code></a></small></p>
 </div>
 </div></section>
 
@@ -355,7 +355,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 	<pre><code>&lt;div tabindex="0"
 <mark>role="button"</mark> onkeyup="..."
 onclick="..."&gt;Test&lt;/div&gt;</code></pre>
-	<p><small><a target=_blank href="../demos/faked-button/index-keyboard-focus-handler-role.html">faked button with appropriate role</a></small></p>
+	<p><small><a target=_blank href="../demos/button/index-keyboard-focus-handler-role.html">faked button with appropriate role</a></small></p>
 </div>
 </div></section>
 
@@ -901,7 +901,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <pre><code>
 &lt;span tabindex="0" class="..."&gt;Button?&lt;/span&gt;
 </code></pre>
-<p>example: <a target=_blank href="../demos/role-button.html">button</a></p>
+<p>example: <a target=_blank href="../demos/button/">button</a></p>
 </div></section>
 
 <!-- -->
@@ -970,7 +970,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 &lt;span tabindex="0" class="... checked"&gt;Option&lt;/span&gt;
 </code></pre>
-<p>example: <a target=_blank href="../demos/role-checkbox.html">checkbox</a></p>
+<p>example: <a target=_blank href="../demos/checkbox/">checkbox</a></p>
 </div></section>
 
 <!-- -->
@@ -1021,7 +1021,7 @@ aria-checked="false"
 &lt;span tabindex="0" class="... selected"&gt;No&lt;/span&gt;
 &lt;span tabindex="0" class="..."&gt;Maybe&lt;/span&gt;
 </code></pre>
-<p>example: <a target=_blank href="../demos/role-radio.html">radio button</a></p>
+<p>example: <a target=_blank href="../demos/radio/">radio button</a></p>
 </div></section>
 
 <!-- -->
@@ -1127,54 +1127,6 @@ aria-checked="false"
 
 <section class="slide statement"><div>
 <div>
-	<h4>slider</h4>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-<pre><code>&lt;!-- taken from jQueryUI --&gt;
-
-&lt;div ... class="ui-slider ..."&gt;
-    &lt;span class="ui-slider-handle ..."
-          tabindex="0" style="left: 7%;"&gt;&lt;/span&gt;
-&lt;/div&gt;
-</code></pre>
-<p>example: <a target=_blank href="http://jqueryui.com/slider/">standard jQueryUI slider</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-<pre><code>
-&lt;div ... class="ui-slider ..." <mark>role="slider"</mark>
-     <mark>aria-valuemin="0"</mark> <mark>aria-valuemax="100"</mark>
-     <mark>aria-valuenow="40"</mark> <mark>aria-valuetext="40%"</mark>&gt;
-    &lt;span class="ui-slider-handle ..."
-          tabindex="0" style="left: 40%;"&gt;&lt;/span&gt;
-&lt;/div&gt;
-</code></pre>
-<ul>
-<li>add <code>role="slider"</code></li>
-<li>add <code>aria-valuemin</code>, <code>aria-valuemax</code>, <code>aria-valuenow</code></li>
-<li>optional <code>aria-valuetext</code></li>
-<li>ensure it handles cursor keys correctly</li>
-<li>should have a name/label, e.g. <code>aria-label</code></li>
-</ul>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/sites/hanshillen-jqtest-slider.png" alt="">
-	<p><a target=_blank href="http://hanshillen.github.io/jqtest/#goto_slider">Hans Hillen's Accessible jQuery-ui Components Demonstration</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide statement"><div>
-<div>
 	<h4>dialog</h4>
 </div>
 </div></section>
@@ -1183,19 +1135,12 @@ aria-checked="false"
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;div <mark>role="dialog"</mark> tabindex="0" <mark>aria-labelledby="dialog-header"</mark>&gt;
+&lt;div <mark>role="dialog"</mark> ... <mark>aria-labelledby="dialog-header"</mark>&gt;
   &lt;div id="dialog-header"&gt;My custom dialog&lt;/div&gt;
   ...
 &lt;/div&gt;
 </code></pre>
-<p>example: <a target=_blank href="../demos/role-dialog.html">jQueryUI dialog (enhanced)</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/sites/karlgroves-jquery-a11ydialog.png" alt="">
-	<p><a target=_blank href="https://github.com/karlgroves/a11yDialog">Karl Groves - a11yDialog</a></p>
+<p>example: <a target=_blank href="../demos/modal/">modal dialog</a></p>
 </div></section>
 
 <!-- -->
@@ -1595,7 +1540,7 @@ aria-checked="false"
 	<h3>making AT aware of content changes</h3>
 	<p>best way to notify users of assistive technologies of new content (a new element added to the page, made visible, a change in text) is to move <code>focus()</code> programmatically to it.</p>
 	<p>but this is not always possible, as it would interrupt the user's current actions...</p>
-	<p>example: <a target=_blank href="../demos/faked-button/index-keyboard-focus-handler-role-notify-focus.html">faked button with notification via <code>focus()</code></a></p>
+	<p>example: <a target=_blank href="../demos/liveregion-button/index-movefocus.html">faked button with notification via <code>focus()</code></a></p>
 </div></section>
 
 <!-- -->
@@ -1609,13 +1554,6 @@ aria-checked="false"
 	<li><code>aria-relevant</code></li>
 	</ul>
 	<p>some <code>role</code>s have implicit live region - e.g. <code>role="alert"</code></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/sites/karlgroves-jquery-live-regions.png" alt="">
-	<p><a target=_blank href="https://github.com/karlgroves/jquery-live-regions">Karl Groves - jQuery Live Regions</a></p>
 </div></section>
 
 <!-- -->
@@ -1719,14 +1657,7 @@ aria-checked="false"
 
 <section class="slide"><div>
 	<img src="pictures/extending-relationships-form-field.png" alt="Form field with a label and additional explanatory text below">
-	<p>example: <a target=_blank href="../demos/enhancements-form.html">form enhancement using <code>aria-describedby</code> (plus <code>aria-required</code> and <code>aria-invalid</code>)</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/extending-relationships-form-grid.png" alt="A grid of text entry fields with row and column headers">
-	<p>example: <a target=_blank href="../demos/enhancements-table-grid.html">form enhancement using <code>aria-labelledby</code></a></p>
+	<p>example: <a target=_blank href="../demos/forms/index.html">form enhancement using <code>aria-describedby</code> (plus <code>aria-required</code> and <code>aria-invalid</code>)</a></p>
 </div></section>
 
 <!-- -->
