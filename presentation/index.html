@@ -510,6 +510,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 		  onclick="document.location='...'"
 		  <mark>onkeyup="..."</mark>&gt;link&lt;/span&gt;
 	</code></pre>
+	<p>example: <a target=_blank href="../demos/structure/role-link.html">link</a></p>
 	<p>...but <strong>why would you?</strong></p>
 	<p>unless there's a very good reason, just use <code>&lt;a href="..."&gt;...&lt;/a&gt;</code></p>
 	</div></section>
@@ -730,11 +731,11 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;p class="heading1"&gt;Heading 1&lt;/p&gt;
+&lt;p class="h1"&gt;Heading 1&lt;/p&gt;
 ...
-&lt;p class="heading2"&gt;Heading 2&lt;/p&gt;
+&lt;p class="h2"&gt;Heading 2&lt;/p&gt;
 ...
-&lt;p class="heading3"&gt;Heading 3&lt;/p&gt;
+&lt;p class="h3"&gt;Heading 3&lt;/p&gt;
 ...
 </code></pre>
 </div></section>
@@ -743,14 +744,14 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;p class="heading1" <mark>role="heading"</mark> <mark>aria-level="1"</mark>&gt;Heading 1&lt;/p&gt;
+&lt;p class="1" <mark>role="heading"</mark> <mark>aria-level="1"</mark>&gt;Heading 1&lt;/p&gt;
 ...
-&lt;p class="heading2" <mark>role="heading"</mark> <mark>aria-level="2"</mark>&gt;Heading 2&lt;/p&gt;
+&lt;p class="h2" <mark>role="heading"</mark> <mark>aria-level="2"</mark>&gt;Heading 2&lt;/p&gt;
 ...
-&lt;p class="heading3" <mark>role="heading"</mark> <mark>aria-level="3"</mark>&gt;Heading 3&lt;/p&gt;
+&lt;p class="h3" <mark>role="heading"</mark> <mark>aria-level="3"</mark>&gt;Heading 3&lt;/p&gt;
 ...
 </code></pre>
-<p>example: <a target=_blank href="../demos/role-heading.html">headings</a></p>
+<p>example: <a target=_blank href="../demos/structure/role-heading.html">headings</a></p>
 <ul>
 <li>add <code>role="heading"</code></li>
 <li>if more than one hierarchical level, and can't be inferred from structure, add explicit <code>aria-level</code></li>
@@ -790,10 +791,34 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
     ...
 &lt;/div&gt;
 </code></pre>
-<p>example: <a target=_blank href="../demos/role-list.html">list/listitem</a></p>
+<p>example: <a target=_blank href="../demos/structure/role-list.html">list/listitem</a></p>
 <ul>
 <li>add <code>role="list"</code> and <code>role="listitem"</code></li>
 </ul>
+</div></section>
+
+<!-- -->
+
+
+<section class="slide statement"><div>
+<div>
+	<h4>removing semantics</h4>
+</div>
+</div></section>
+
+<!-- -->
+
+<section class="slide code listing"><div>
+	<p>if your page/app uses inappropriate markup, ARIA can be used to remove semantic meaning. useful for remediation if markup cannot be changed.</p>
+	<pre><code>
+&lt;table <mark>role="presentation"</mark>&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Layout column 1&lt;/td&gt;
+		&lt;td&gt;Layout column 2&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+	<p>example: <a target=_blank href="../demos/structure/remediation-layout-table.html">layout table remediation</a></p>
+	<p>ARIA 1.1 introduced <code>role="none"</code> as an alias for <code>role="presentation"</code> – they are equivalent (and older browsers/AT likely better off still using <code>role="presentation"</code>)</p>
 </div></section>
 
 <!-- -->
@@ -902,6 +927,40 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <!-- -->
 
+<section class="slide code listing"><div>
+<p>assuming there's a <code>click</code> handler:</p>
+<pre><code class="js">
+foo.addEventListener('keyup', function(e) {
+  // Space key
+  if (e.keyCode === 32) {
+	// stop default behavior (usually, scrolling)
+	e.preventDefault();
+	// trigger the existing click behavior
+	this.click();
+  }
+});
+</code></pre>
+</div></section>
+
+<!-- -->
+
+<section class="slide code listing"><div>
+<p>you could even do it "in one go" for all your faked buttons, assuming they have the correct <code>role="button"</code>, with <code>querySelectorAll</code> and attribute selectors:</p>
+<pre><code class="js">
+var buttons = document.querySelectorAll("[role='button']");
+for (var i=0; i&lt;buttons.length; i++) {
+  buttons[i].addEventListener('keyup', function(e) {
+    if (e.keyCode === 32) {
+      e.preventDefault();
+      this.click();
+    }
+  });
+};
+</code></pre>
+</div></section>
+
+<!-- -->
+
 <section class="slide statement"><div>
 <div>
 	<h4>toggle button</h4>
@@ -934,13 +993,18 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <section class="slide code listing"><div>
 <pre><code>
 &lt;button class="..." <mark>aria-pressed="false"</mark>&gt;Toggle&lt;/button&gt;
-
 &lt;button class="... <mark>toggled</mark>" <mark>aria-pressed="true"</mark>&gt;Toggle&lt;/button&gt;
 </code></pre>
-<ul>
-<li>add <code>aria-pressed</code> and dynamically change its value</li>
-</ul>
+<pre><code>foo.getAttribute("aria-pressed");
+foo.setAttribute("aria-pressed", "true");
+foo.setAttribute("aria-pressed", "false");
+</code></pre>
+<p>add <code>aria-pressed</code> and dynamically change its value</p>
 <p>example: <a target=_blank href="../demos/toggle/index-aria.html">toggle with <code>aria-pressed</code></a></p>
+<ul>
+<li>these are <em>HTML attributes</em> and must be read/written using <code>getAttribute()</code> / <code>setAttribute()</code></li>
+<li>and even boolean attributes take <em>string</em> values</li>
+</ul>
 </div></section>
 
 <!-- -->
@@ -1077,7 +1141,7 @@ aria-checked="false"
 &lt;span <mark>role="tooltip"</mark> id="tooltip"&gt;
       this is the tooltip text&lt;/span&gt;
 </code></pre>
-<p>example: <a target=_blank href="../demos/role-tooltip.html">tooltip</a></p>
+<p>example: <a target=_blank href="../demos/tooltip/">tooltip</a></p>
 <ul>
 <li>add <code>role="tooltip"</code> (but seems to have no effect in AT)</li>
 <li>add <code>aria-describedby</code> pointing to <code>id</code> of tooltip</li>
@@ -1099,7 +1163,7 @@ aria-checked="false"
 &lt;span <mark>role="status"</mark>&gt;
       some form of status bar message...&lt;/span&gt;
 </code></pre>
-<p>example: <a target=_blank href="../demos/role-status.html">status bar</a></p>
+<p>example: <a target=_blank href="../demos/liveregion-implicit/role-status.html">status bar</a></p>
 <ul>
 <li>add <code>role="status"</code> (varying support?)</li>
 <li>an example of a <em>live region</em> (more on this later)</li>
@@ -1121,7 +1185,7 @@ aria-checked="false"
 &lt;span <mark>role="alert"</mark>&gt;
       an alert message (no user interaction)&lt;/span&gt;
 </code></pre>
-<p>example: <a target=_blank href="../demos/role-alert.html">alert</a></p>
+<p>example: <a target=_blank href="../demos/liveregion-implicit/role-alert.html">alert</a></p>
 <ul>
 <li>add <code>role="alert"</code> (varying support?)</li>
 <li>an example of a <em>live region</em> (more on this later)</li>
@@ -1545,28 +1609,6 @@ aria-checked="false"
 <section class="slide"><div>
 	<img src="pictures/extending-relationships-form-field.png" alt="Form field with a label and additional explanatory text below">
 	<p>example: <a target=_blank href="../demos/forms/index.html">form enhancement using <code>aria-describedby</code> (plus <code>aria-required</code> and <code>aria-invalid</code>)</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide impact"><div>
-<div>
-	<h2>ARIA for remediation</h2>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-	<p>if your page/app uses inappropriate markup, ARIA can be used to patch some of the issues (if it can't be fixed properly)...</p>
-	<pre><code>
-&lt;table <mark>role="presentation"</mark>&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Layout column 1&lt;/td&gt;
-        &lt;td&gt;Layout column 2&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;</code></pre>
-	<p>example: <a target=_blank href="../demos/remediation-layout-table.html">layout table remediation</a></p>
 </div></section>
 
 <!-- -->
