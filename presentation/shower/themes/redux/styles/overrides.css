@@ -239,3 +239,6 @@ pre code.html { text-align:left; }
 	text-align: left;
 	font-size: 0.75em;
 }
+
+/* override for highlight.js */
+code.hljs { overflow-x: visible !important; }
