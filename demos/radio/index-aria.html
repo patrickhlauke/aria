@@ -5,36 +5,39 @@
 <meta charset=utf-8>
 <link rel="stylesheet" href="style.css">
 <style>
-/* can use attribute selectors rather than classes */
-input[type="checkbox"],
-[role="checkbox"] {
+input[type="radio"],
+[role="radio"] span {
     display: inline-block;
     width: 1em;
     height: 1em;
     border: 1px #000 solid;
     background: #ddd;
 }
-input[type="checkbox"]:checked,
-[role="checkbox"][aria-checked="true"] {
+input[type="radio"]:checked,
+[role="radio"][aria-checked="true"] span {
 	background:#5f5;
 }
 </style>
 <link rel="stylesheet" href="style.css">
 <script>
 window.addEventListener('load',function() {
-    /* attribute selectors also usable in querySelector/querySelectorAll */
-	var checkboxes = document.querySelectorAll('[role="checkbox"]');
-    for (var i = 0; i < checkboxes.length; i++) {
-        checkboxes[i].addEventListener('click',function () {
-            /* note that aria boolean attributes are still *strings*, so can't use boolean logic */
+	var radios = document.querySelectorAll('[role="radio"]');
+    for (var i = 0; i < radios.length; i++) {
+        radios[i].addEventListener('click',function () {
+            /* note that dataset boolean attributes are still *strings*, so can't use boolean logic */
             /* IE11+ support - otherwise, use classic getAttribute/setAttribute */
-            if (this.getAttribute('aria-checked') === "true") {
-                this.setAttribute('aria-checked',"false");
-            } else {
-                this.setAttribute('aria-checked', "true");
+
+            /* if the radio button isn't already checked */
+            if (this.getAttribute("aria-checked") === "false") {
+                /* loop through all radio buttons and make sure they're not checked */
+                for (var j = 0; j < radios.length; j++) {
+                    radios[j].setAttribute("aria-checked","false");
+                }
+                /* then, make the selected radio button checked */
+                this.setAttribute("aria-checked","true");
             }
         });
-        checkboxes[i].addEventListener('keyup',function (e) {
+        radios[i].addEventListener('keyup',function (e) {
             if (e.keyCode == 32) {
                 this.click();
                 e.preventDefault(); }
@@ -44,7 +47,17 @@ window.addEventListener('load',function() {
 </script>
 </head>
 <body>
-<p><input type="checkbox" id="checkbox1"> <label for="checkbox1">Native checkbox</label></p>
-<p><span role="checkbox" id="checkbox2" tabindex="0" aria-checked="false" aria-labelledby="checkbox2-label"></span> <span id="checkbox2-label">faked checkbox</span></p>
+<fieldset>
+    <legend>Native radio buttons</legend>
+    <label><input type="radio" name="nativeradio"> Yes</label>
+    <label><input type="radio" name="nativeradio"> No</label>
+    <label><input type="radio" name="nativeradio"> Maybe</label>
+</fieldset>
+<div role="radiogroup" aria-labelledby="fakelegend">
+    <div class="legend" id="fakelegend">Faked radio buttons</div>
+    <span role="radio" tabindex="0" aria-checked="false"><span></span> Yes</span>
+    <span role="radio" tabindex="0" aria-checked="false"><span></span> No</span>
+    <span role="radio" tabindex="0" aria-checked="false"><span></span> Maybe</span>
+</div>
 </body>
 </html>
