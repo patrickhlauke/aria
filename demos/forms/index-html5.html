@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Form enhancements - ARIA examples</title>
+<meta charset=utf-8>
+<link rel="stylesheet" href="../style.css">
+<style>
+label { font-weight: bold; }
+label, input { display: block;}
+input.invalid,
+input[aria-invalid="true"] { outline: 2px #f00 solid; }
+#input1_extra, #input2_extra { font-size: 0.75em; }
+</style>
+</head>
+<body>
+<p>While HTML5 lets us set the <code>required</code> attribute directly, this triggers browser-based validation.</code></p>
+<form id="form1">
+<label for="input1">Form field 1 *</label>
+<input id="input1" type="text" required>
+<input type="submit" value="submit">
+</form>
+<hr>
+<p>This <em>can</em> be circumvented by adding the <code>novalidate</code> attribute on the form (and then do your own custom validation/error notifications, but using the browser's built-in validation?)</p>
+<form id="form2" novalidate>
+<label for="input1">Form field 1 *</label>
+<input id="input1" type="text" required>
+<input type="submit" value="submit">
+</form>
+</body>
+</html>

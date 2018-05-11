@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Faked button with ARIA role, keyboard focus and keyup handler, and focus() - ARIA demos</title>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../style.css">
+<script>
+window.addEventListener('load',function() {
+	var b = document.getElementById("b");
+	b.addEventListener('click',function () {
+		var o = document.getElementById("output");
+		o.innerHTML += "Button clicked.<br>";
+		/* naive way of notifying AT user of new content...set focus to it! */
+		o.focus();
+	});
+	b.addEventListener('keyup',function (e) { if ((e.keyCode == 32) || (e.keyCode == 13)) { this.click(); e.preventDefault(); } }); /* using keyup rather than keypress, as nominally only keys that generate visible characters fire keypress (and Firefox seems fickle when it comes to SPACE on a <div>) */
+})
+</script>
+</head>
+<body>
+<div id="b" role="button" tabindex="0">Test</div>
+<p>Just a <code>&lt;div&gt;</code> with <code>role="button"</code>, <code>tabindex="0"</code> and JavaScript <code>click</code> and <code>keyup</code> handlers.</p>
+<p>Also includes naive attempt at notifying AT users of new content by setting <code>focus()</code> on the output.</p>
+<div id="output" tabindex="-1"></div>
+</body>
+</html>

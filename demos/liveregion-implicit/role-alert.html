@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>role="alert" - ARIA examples</title>
+<meta charset=utf-8>
+<script>
+function showAlert() {
+	var d = this.getAttribute("href");
+	document.getElementById("alert").innerHTML = "Warning: activating this link will take you out of this site and to "+d;
+	document.getElementById("alert").classList.add("visible");
+}
+
+function hideAlert() {
+	document.getElementById("alert").classList.remove("visible");
+}
+
+window.addEventListener('load',function() {
+	var links = document.querySelectorAll("a");
+	for (var i=0; i<links.length; i++) {
+		links[i].addEventListener("mouseover", showAlert);
+		links[i].addEventListener("focus", showAlert);
+		links[i].addEventListener("mouseout", hideAlert);
+		links[i].addEventListener("blur", hideAlert);
+	}
+})
+</script>
+<link rel="stylesheet" href="../style.css">
+<style>
+#alert { display: none; border: 1px #000 solid; background: #d00; color: #fff; font-weight: bold; padding: 0.5em; }
+#alert.visible { display: block; }
+</style>
+</head>
+<body>
+<p><a href="http://www.example.com">Test link 1</a>, <a href="http://www.example.org">test link 2</a></p>
+<div id="alert" role="alert"></div>
+</body>
+</html>

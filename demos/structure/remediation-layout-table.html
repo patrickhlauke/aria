@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Layout table remediation - ARIA examples</title>
+<meta charset=utf-8>
+<link rel="stylesheet" href="../style.css">
+<style>
+table, tr, td { border: 1px red solid; border-collapse: collapse;}
+td { padding: 1em; }
+</style>
+</head>
+<body>
+<h2>Layout table</h2>
+<table>
+	<tr>
+		<td>Basic example of a layout table.</td>
+		<td>Visually it may look fine, but in assistive technologies it's announced as, well, a table, with all the extra information (rows, columns, etc).</td>
+	</tr>
+</table>
+
+<hr>
+
+<h2>Layout table remediation</h2>
+
+<table role="presentation">
+	<tr>
+		<td>Basic example of a layout table.</td>
+		<td>This time, the "table-ness" has been suppressed by using <code>role="presentation"</code></td>
+	</tr>
+</table>
+
+<p>Some browsers, like Firefox, use heuristics to determine if a table is likely to be a layout, rather than data, table and expose the role accordingly.</p>
+
+</body>
+</html>

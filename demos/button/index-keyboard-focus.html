@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Faked button with keyboard focus - ARIA demos</title>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../style.css">
+<script>
+window.addEventListener('load',function() {
+	document.getElementById("b").addEventListener('click',function () { document.getElementById("output").innerHTML += "Button clicked.<br>"  });
+})
+</script>
+</head>
+<body>
+<div id="b" class="button" tabindex="0">Test</div>
+<p>Just a <code>&lt;div&gt;</code> with <code>tabindex="0"</code> and a JavaScript <code>click</code> handler.</p>
+<div id="output"></div>
+</body>
+</html>

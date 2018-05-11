@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Button with notification - ARIA demos</title>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../style.css">
+<style>
+	button[aria-disabled="true"] { background: #666; color: #ccc; }
+</style>
+<script>
+window.addEventListener('load',function() {
+	var b = document.getElementById("b");
+	b.addEventListener('click',function () {
+		if (this.getAttribute("aria-disabled") !== "true") {
+			this.setAttribute("aria-disabled", "true");
+			document.getElementById("output").setAttribute("aria-busy", "true");
+			document.getElementById("output").innerHTML = "Wait...";
+			/* faking some async behavior / long-running execution */
+			setTimeout(function() {
+				document.getElementById("output").removeAttribute("aria-busy");
+				document.getElementById("output").innerHTML = "Function executed. Here are the results...<br>";
+				document.getElementById("b").removeAttribute("aria-disabled");
+			}, 3000);
+		}
+	});
+})
+</script>
+</head>
+<body>
+<button id="b">Test</button>
+<p>Using an <code>aria-live</code> attribute, AT will notify the user if there's a change in content, without the need to move their focus. The user may have moved on to another <a href="#">focusable element</a>, to do something else, and that's fine. They'll get notified without changing their context.</p>
+<div id="output" aria-live="polite"></div>
+</body>
+</html>

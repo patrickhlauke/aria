@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Form enhancements - ARIA examples</title>
+<meta charset=utf-8>
+<script>
+window.addEventListener('load',function() {
+	document.getElementById("input2").addEventListener("keydown", function(e) {
+		if (e.keyCode != 9) {
+			/* if it's not a TAB (including SHIFT+TAB) that moves away from the form field... */
+			document.getElementById("input2").removeAttribute("aria-invalid");
+		}
+	});
+});
+</script>
+<link rel="stylesheet" href="../style.css">
+<style>
+label { font-weight: bold; }
+label, input { display: block;}
+input.invalid,
+input[aria-invalid="true"] { outline: 2px #f00 solid; }
+#input1_extra, #input2_extra { font-size: 0.75em; }
+</style>
+</head>
+<body>
+<form id="form1">
+<label for="input1">Form field 1 *</label>
+<input id="input1" type="text" aria-required="true" aria-invalid="true">
+<input type="submit" value="submit">
+</form>
+<hr>
+<p>If setting <code>aria-invalid="true"</code> on a static form (which is only validated server-side), it may be good to still dynamically remove the attribute if possible (for instance, in the case of empty required fields), so the user doesn't keep hearing the field being "invalid".</p>
+<form id="form2">
+<label for="input2">Form field 2 *</label>
+<input id="input2" type="text" aria-required="true" aria-invalid="true">
+<input type="submit" value="submit">
+</form>
+</body>
+</html>

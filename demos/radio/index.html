@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Radio buttons - ARIA examples</title>
+<meta charset=utf-8>
+<link rel="stylesheet" href="../style.css">
+<style>
+input[type="radio"],
+.radio span {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 1px #000 solid;
+    background: #ddd;
+}
+input[type="radio"]:checked,
+.radio.checked span {
+	background:#5f5;
+}
+</style>
+<link rel="stylesheet" href="../style.css">
+<script>
+window.addEventListener('load',function() {
+	var radios = document.querySelectorAll(".radio");
+    for (var i = 0; i < radios.length; i++) {
+        radios[i].addEventListener('click',function () {
+            /* note that dataset boolean attributes are still *strings*, so can't use boolean logic */
+            /* IE11+ support - otherwise, use classic getAttribute/setAttribute */
+
+            /* if the radio button isn't already checked */
+            if (this.dataset.checked === "false") {
+                /* loop through all radio buttons and make sure they're not checked */
+                for (var j = 0; j < radios.length; j++) {
+                    radios[j].dataset.checked = "false";
+                    radios[j].classList.remove("checked");
+                }
+                /* then, make the selected radio button checked */
+                this.dataset.checked = "true";
+                this.classList.add("checked");
+            }
+        });
+        radios[i].addEventListener('keyup',function (e) {
+            if (e.keyCode == 32) {
+                this.click();
+                e.preventDefault(); }
+        });
+    }
+})
+</script>
+</head>
+<body>
+<fieldset>
+    <legend>Native radio buttons</legend>
+    <label><input type="radio" name="nativeradio"> Yes</label>
+    <label><input type="radio" name="nativeradio"> No</label>
+    <label><input type="radio" name="nativeradio"> Maybe</label>
+</fieldset>
+<div>
+    <div class="legend">Faked radio buttons</div>
+    <span class="radio" tabindex="0" data-checked="false"><span></span> Yes</span>
+    <span class="radio" tabindex="0" data-checked="false"><span></span> No</span>
+    <span class="radio" tabindex="0" data-checked="false"><span></span> Maybe</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Checkbox - ARIA examples</title>
+<meta charset=utf-8>
+<link rel="stylesheet" href="../style.css">
+<style>
+input[type="checkbox"],
+.checkbox {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 1px #000 solid;
+    background: #ddd;
+}
+input[type="checkbox"]:checked,
+.checkbox.checked {
+	background:#5f5;
+}
+</style>
+<link rel="stylesheet" href="../style.css">
+<script>
+window.addEventListener('load',function() {
+	var checkboxes = document.querySelectorAll(".checkbox");
+    for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].addEventListener('click',function () {
+            this.classList.toggle("checked"); /* IE10+ support only - otherwise, use more verbose method to setting/unsetting class */
+            /* note that dataset boolean attributes are still *strings*, so can't use boolean logic */
+            /* IE11+ support - otherwise, use classic getAttribute/setAttribute */
+            if (this.dataset.checked === "true") {
+                this.dataset.checked = "false";
+            } else {
+                this.dataset.checked = "true";
+            }
+        });
+        checkboxes[i].addEventListener('keyup',function (e) {
+            if (e.keyCode == 32) {
+                this.click();
+                e.preventDefault(); }
+        });
+    }
+})
+</script>
+</head>
+<body>
+<p><input type="checkbox" id="checkbox1"> <label for="checkbox1">Native checkbox</label></p>
+<p><span class="checkbox" id="checkbox2" tabindex="0" data-checked="false"></span> faked checkbox</p>
+</body>
+</html>

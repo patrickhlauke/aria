@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Checkbox - ARIA examples</title>
+<meta charset=utf-8>
+<link rel="stylesheet" href="../style.css">
+<style>
+/* can use attribute selectors rather than classes */
+input[type="checkbox"],
+[role="checkbox"] {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 1px #000 solid;
+    background: #ddd;
+}
+input[type="checkbox"]:checked,
+[role="checkbox"][aria-checked="true"] {
+	background:#5f5;
+}
+</style>
+<link rel="stylesheet" href="../style.css">
+<script>
+window.addEventListener('load',function() {
+    /* attribute selectors also usable in querySelector/querySelectorAll */
+	var checkboxes = document.querySelectorAll('[role="checkbox"]');
+    for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].addEventListener('click',function () {
+            /* note that aria boolean attributes are still *strings*, so can't use boolean logic */
+            /* IE11+ support - otherwise, use classic getAttribute/setAttribute */
+            if (this.getAttribute('aria-checked') === "true") {
+                this.setAttribute('aria-checked',"false");
+            } else {
+                this.setAttribute('aria-checked', "true");
+            }
+        });
+        checkboxes[i].addEventListener('keyup',function (e) {
+            if (e.keyCode == 32) {
+                this.click();
+                e.preventDefault(); }
+        });
+    }
+})
+</script>
+</head>
+<body>
+<p><input type="checkbox" id="checkbox1"> <label for="checkbox1">Native checkbox</label></p>
+<p><span role="checkbox" id="checkbox2" tabindex="0" aria-checked="false" aria-labelledby="checkbox2-label"></span> <span id="checkbox2-label">faked checkbox</span></p>
+</body>
+</html>

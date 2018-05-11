@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Button with notification - ARIA demos</title>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../style.css">
+<script>
+window.addEventListener('load',function() {
+	var b = document.getElementById("b");
+	b.addEventListener('click',function () {
+		/* faking some async behavior / long-running execution */
+		setTimeout(function() {
+			var o = document.getElementById("output");
+			o.innerHTML += "Function executed. Here are the results...<br>";
+			o.focus(); /* after updating the element, let's move focus to it.... */
+		}, 3000);
+	});
+})
+</script>
+</head>
+<body>
+<button id="b">Test</button>
+<p>Here we simulate a long-running function. After the user activates the button, it takes a few seconds before the result is shown. The user may have moved on to another <a href="#">focusable element</a>, to do something else. Not ideal to then yank them back off to the notification/result.</p>
+<div id="output" tabindex="-1"></div>
+</body>
+</html>

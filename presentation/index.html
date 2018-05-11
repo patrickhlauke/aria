@@ -24,7 +24,7 @@
     	<h2>WAI-ARIA</strong></h2>
 		<p>An introduction to <strong>Accessible Rich Internet Applications</strong></p>
     </div>
-	<p class="info">Patrick H. Lauke / Version 1.0.29012015</p>
+	<p class="info">Patrick H. Lauke / Version 2.0.11052018</p>
 	<img src="pictures/background-cover.jpg" alt="" class="cover">
 </div></section>
 
@@ -49,7 +49,7 @@
 
 <section class="slide"><div>
 	<img src="pictures/sites/jqueryui.png" alt="">
-	<p><a target=_blank href="http://jqueryui.com">jQuery UI</a></p>
+	<p><a target=_blank href="https://jqueryui.com">jQuery UI</a></p>
 </div></section>
 
 <!-- -->
@@ -68,60 +68,51 @@
 
 <!-- -->
 
-<section class="slide statement code"><div>
+<section class="slide cover impact"><div>
+    <div><p>code examples here are simplified<br><small>(but will hopefully convey the right concepts)</small></p></div>
+    <img src="pictures/background-danger-415-volts.jpg" class="cover" alt="Warning sign with lightning bolt and text: Danger 415 volts">
+</div></section>
+
+<!-- -->
+
+<section class="slide code"><div>
 <div>
 	<img src="pictures/faked-button.png" alt="">
 	<pre><code>&lt;div onclick="..."&gt;Test&lt;/div&gt;</code></pre>
-	<p><small><a target=_blank href="../demos/faked-button/index.html">faked button</a></small></p>
+	<p><small><a target=_blank href="../demos/button/index.html">faked button</a></small></p>
+	<p>for a sighted mouse / touchscreen user this is a button...<br>but what about <strong>keyboard users?</strong></p>
 </div>
 </div></section>
 
 <!-- -->
 
-<section class="slide statement code"><div>
+<section class="slide code"><div>
 <div>
 	<img src="pictures/faked-button.png" alt="">
-	<pre><code>&lt;div <mark>tabindex="0"</mark>
-onclick="..."&gt;Test&lt;/div&gt;</code></pre>
-<p><small><a target=_blank href="../demos/faked-button/index-keyboard-focus.html">faked button with focus</a></small></p>
+	<pre><code>&lt;div <mark>tabindex="0"</mark> onclick="..."&gt;Test&lt;/div&gt;</code></pre>
+	<p><small><a target=_blank href="../demos/button/index-keyboard-focus.html">faked button with focus</a></small></p>
+	<p>now we can at least focus it...<strong>but can we activate it?</strong></p>
 </div>
 </div></section>
 
 <!-- -->
 
-<section class="slide statement code"><div>
+<section class="slide code"><div>
 <div>
 	<img src="pictures/faked-button.png" alt="">
-	<pre><code>&lt;div tabindex="0"
-<mark>onkeyup="..."</mark>
-onclick="..."&gt;Test&lt;/div&gt;</code></pre>
-<p><small><a target=_blank href="../demos/faked-button/index-keyboard-focus-handler.html">faked button with focus and keyboard handling</a></small></p>
+	<pre><code>&lt;div tabindex="0" <mark>onkeyup="..."</mark> onclick="..."&gt;Test&lt;/div&gt;</code></pre>
+	<p><small><a target=_blank href="../demos/button/index-keyboard-focus-handler.html">faked button with focus and keyboard handling</a></small></p>
+	<p>for a sighted mouse / touchscreen / keyboard user this is a button...<br>but what about <strong>assistive technology users?</strong></p>
 </div>
 </div></section>
 
 <!-- -->
 
-<section class="slide statement"><div>
-<div>
-	<p>for a sighted mouse/keyboard user<br> this is a button...</p>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide statement"><div>
-<div>
-	<p>...but what about a screenreader user?</p>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide statement code"><div>
+<section class="slide code"><div>
 <div>
 	<img src="pictures/faked-button.png" alt="">
 	<p>compare <code>&lt;div&gt;</code> to a real <code>&lt;button&gt;</code></p>
-	<p><small><a target=_blank href="../demos/faked-button/index-keyboard-focus-handler.html">faked button</a> versus <a target=_blank href="../demos/faked-button/index-real-button.html">real <code>&lt;button&gt;</code></a></small></p>
+	<p><small><a target=_blank href="../demos/button/index-keyboard-focus-handler.html">faked button</a> versus <a target=_blank href="../demos/button/index-real-button.html">real <code>&lt;button&gt;</code></a></small></p>
 </div>
 </div></section>
 
@@ -135,26 +126,20 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <!-- -->
 
-<section class="slide statement"><div>
-<div>
-	<p>more complex examples...</p>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/sites/jqueryui-slider.png" alt="">
-	<p><a target=_blank href="http://jqueryui.com/slider/">jQuery UI - Slider</a></p>
-	<p>What's the experience here for assistive technology users?</p>
-</div></section>
-
-<!-- -->
-
 <section class="slide listing"><div>
 	<h3>the problem</h3>
 	<p>generic/inappropriate HTML elements, with extra JavaScript/CSS on top...but they're still recognised and exposed as <code>&lt;span&gt;</code>, <code>&lt;div&gt;</code>, etc</p>
 </div></section>
+
+<!-- -->
+
+<section class="slide impact"><div>
+	<div>
+		<p>the interplay of browser and assistive technology</p>
+	</div>
+	</div></section>
+	
+	<!-- -->
 
 <!-- -->
 
@@ -168,7 +153,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide"><div>
 	<img src="pictures/sites/marcozehe-accessibility-apis.png" alt="">
-	<p><a target=_blank href="http://www.marcozehe.de/2013/09/07/why-accessibility-apis-matter/">Marco Zehe: Why accessibility APIs matter</a></p>
+	<p><a target=_blank href="https://www.marcozehe.de/2013/09/07/why-accessibility-apis-matter/">Marco Zehe: Why accessibility APIs matter</a></p>
 </div></section>
 
 <!-- -->
@@ -197,13 +182,6 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <!-- -->
 
-<section class="slide"><div>
-	<img src="pictures/sites/paciellogroup-basic-screen-reader-commands.png" alt="">
-	<p><a target=_blank href="http://www.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/">Léonie Watson - Basic screen reader commands for accessibility testing</a></p>
-</div></section>
-
-<!-- -->
-
 <section class="slide impact"><div>
 <div>
 	<h2><strong>inspection</strong> tools</h2>
@@ -222,8 +200,9 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <!-- -->
 
 <section class="slide"><div>
-	<img src="pictures/firefox-dom-inspector.png" alt="Firefox DOM inspector extension, showing the accessibility tree and accessibility properties - exposed by Firefox to the platform/OS accessibility API - of an element in a page">
-	<p><a target=_blank href="https://addons.mozilla.org/en-US/firefox/addon/dom-inspector-6622/">Firefox DOM Inspector</a></p>
+	<img src="pictures/firefox-accessibility-inspector.png" alt="Firefox Accessibility Inspector panel in Firefox Developer Tools, showing the accessibility tree and accessibility properties - exposed by Firefox to the platform/OS accessibility API - of an element in a page; right-click/context menu on an element also includes the 'Inspect Accessibility Properties' option">
+	<p>Firefox Accessibility Inspector (version 61+)</p>
+	<p><a target=_blank href="https://www.marcozehe.de/2018/04/11/introducing-the-accessibility-inspector-in-the-firefox-developer-tools/">Marco Zehe: Introducing the Accessibility Inspector...</a></p>
 </div></section>
 
 <!-- -->
@@ -237,7 +216,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide"><div>
 	<img src="pictures/aviewer.png" alt="aViewer window showing MSAA, ARIA, HTML and UIAutomation information of a focused element in Firefox">
-	<p><a target=_blank href="http://www.paciellogroup.com/resources/aviewer/">Accessibility Viewer (aViewer)</a></p>
+	<p><a target=_blank href="https://developer.paciellogroup.com/resources/aviewer/">Accessibility Viewer (aViewer)</a></p>
 </div></section>
 
 <!-- -->
@@ -256,11 +235,11 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <!-- -->
 
-<section class="slide statement code"><div>
+<section class="slide code"><div>
 <div>
 	<img src="pictures/faked-button.png" alt="">
 	<p>compare <code>&lt;div&gt;</code> to a real <code>&lt;button&gt;</code></p>
-	<p><small><a target=_blank href="../demos/faked-button/index-keyboard-focus-handler.html">faked button</a> versus <a target=_blank href="../demos/faked-button/index-real-button.html">real <code>&lt;button&gt;</code></a></small></p>
+	<p><small><a target=_blank href="../demos/button/index-keyboard-focus-handler.html">faked button</a> versus <a target=_blank href="../demos/button/index-real-button.html">real <code>&lt;button&gt;</code></a></small></p>
 </div>
 </div></section>
 
@@ -296,7 +275,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide"><div>
 	<img src="pictures/sites/w3c-aria.png" alt="">
-	<p><a target=_blank href="http://www.w3.org/TR/wai-aria/">W3C - Accessible Rich Internet Applications (WAI-ARIA) 1.0</a></p>
+	<p><a target=_blank href="https://www.w3.org/TR/wai-aria/">W3C - Accessible Rich Internet Applications (WAI-ARIA) 1.1</a></p>
 </div></section>
 
 <!-- -->
@@ -310,27 +289,52 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <!-- -->
 
 <section class="slide"><div>
-	<img src="pictures/diagram-aria.png" alt="Diagram: ARIA attributes: 'role' and 'aria-*'">
+	<img src="pictures/diagram-aria.png" alt="Diagram: ARIA defines 'role' and 'aria-*' attributes">
+	<p>at a high level, ARIA defines various <code>role</code> and <code>aria-*</code> attributes that can be added to your markup</p>
 </div></section>
 
 <!-- -->
 
 <section class="slide"><div>
-	<img src="pictures/diagram-aria-role-abstract.png" alt="Diagram: ARIA abstract roles: widget, document structure, landmark">
-	<p><a target=_blank href="http://www.w3.org/TR/wai-aria/roles">W3C - WAI-ARIA 1.0 - 5.3.1 The Roles Model</a></p>
+	<img src="pictures/aria-rdf-model.png" alt="Diagram: the complete (and complex) ARIA RDF model">
+	<p><a target=_blank href="https://www.w3.org/TR/wai-aria/#roles_categorization">W3C - WAI-ARIA 1.1 - 5.3 Categorization of Roles</a></p>
+	<p>the whole model is vast and complex...and thankfully you don't need to remember this</p>
+</div></section>
+
+<!-- -->
+<section class="slide listing"><div>
+	<h3>Roles are categorized as follows:</h3>
+	<ul>
+	<li><strong>Abstract Roles:</strong> never used in markup directly - they serve only for the categorization/definitions</li>
+	<li><strong>Widget Roles:</strong> interactive controls - simple or composite (made up of various components)</li>
+	<li><strong>Document Structure Roles:</strong> define what content/structures represent (e.g. headings, lists, groups)</li>
+	<li><strong>Landmark Roles:</strong> identify key parts of a document/page</li>
+	<li><strong>Live Region Roles:</strong> special areas of the page whose content is dynamically updated and should be announced by AT</li>
+	<li><strong>Window Roles:</strong> content that acts as a separate window (dialogs)</li>
+	</ul>
 </div></section>
 
 <!-- -->
 
 <section class="slide"><div>
-	<img src="pictures/diagram-aria-widget.png" alt="Diagram: ARIA widgets: simple and composite">
+	<img src="pictures/aria1.1-button-definition.png" alt="Screenshot: the complete definition for the 'button' role in ARIA 1.1, listing - among other things - its 'Supported States and Properties' and 'Inherited States and Properties'">
+	<p><small>each role has "states and properties" (e.g. <a target=_blank href="https://www.w3.org/TR/wai-aria/#button">ARIA 1.1 definition for <code>button</code></a>)</small><br><small>implicit/inherited or defined via <code>aria-*</code> attributes</small></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide statement"><div>
+	<div>
+	<p>this is all complex and confusing...</p>
+	</div>
 </div></section>
 
 <!-- -->
 
 <section class="slide"><div>
-	<img src="pictures/diagram-aria-attributes.png" alt="Diagram: ARIA attributes: widget ('aria-checked'), live region ('aria-live'), drag &amp; drop ('aria-dragged'), relationship ('aria-labelledby')">
-	<p><a target=_blank href="http://www.w3.org/TR/wai-aria/states_and_properties">W3C - WAI-ARIA 1.0 - 6. Supported States and Properties</a></p>
+	<img src="pictures/karlgroves-whatisthisthingandwhatdoesitdo.png" alt="Screenshot: video of the presentation by Karl Groves">
+	<p>as my former colleague Karl Groves succintly put it,<br>ARIA helps answer the questions:<br>
+	<a target=_blank href="https://www.youtube.com/watch?v=YLihNhn_MO4" title="YouTube: Karl Groves - What is this thing and what does it do?">what is this thing and what does it do?</a></p>
 </div></section>
 
 <!-- -->
@@ -338,23 +342,24 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <section class="slide listing"><div>
 <h3>what information does ARIA provide?</h3>
 <ul>
-<li><strong>role:</strong> what type of widget is this? (e.g. 'slider')</li>
-<li><strong>state:</strong> what is its situation?  (e.g. 'disabled')</li>
-<li><strong>identity:</strong> what does it represent? (e.g. 'volume control')</li>
+<li><strong>role:</strong> what type of "thing" is this? (e.g. 'button', 'main content')</li>
+<li><strong>state:</strong> what is its situation?  (e.g. 'disabled', 'checked', 'expanded')</li>
+<li><strong>name:</strong> what is its name/label?</li>
+<li><strong>relationship:</strong> is it tied to any other elements in the page somehow?</li>
 </ul>
 <p>this information is mapped by the browser to the operating system's accessibility API and exposed to assistive technologies.</p>
-<p>extra benefit: AT will (may) automatically announce widget-specific hints and prompts (e.g. JAWS "... button - to activate, press <kbd>SPACE</kbd> bar")</p>
+<p>extra benefit: once AT understands meaning/purpose, it can automatically announce specific hints and prompts<br>(e.g. JAWS "... button - to activate, press <kbd>SPACE</kbd> bar")</p>
 </div></section>
 
 <!-- -->
 
-<section class="slide statement code"><div>
+<section class="slide code"><div>
 <div>
 	<img src="pictures/faked-button.png" alt="">
 	<pre><code>&lt;div tabindex="0"
 <mark>role="button"</mark> onkeyup="..."
 onclick="..."&gt;Test&lt;/div&gt;</code></pre>
-	<p><small><a target=_blank href="../demos/faked-button/index-keyboard-focus-handler-role.html">faked button with appropriate role</a></small></p>
+	<p><small><a target=_blank href="../demos/button/index-keyboard-focus-handler-role.html">faked button with appropriate role</a></small></p>
 </div>
 </div></section>
 
@@ -393,11 +398,12 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide listing"><div>
 	<h3>what ARIA <strong>doesn't</strong> do...</h3>
-	<p>ARIA is <strong>not magic</strong>: it only changes how <strong>assistive technology</strong> interprets content.</p>
+	<p>ARIA is <strong>not magic</strong>: it only changes how <strong>assistive technology</strong> interprets content. specifically, <strong>ARIA does not</strong>:</p>
 	<ul>
 	<li>make an element focusable</li>
-	<li>provide keyboard events</li>
-	<li>add properties</li>
+	<li>provide appropriate keyboard bindings</li>
+	<li>change browser behavior</li>
+	<li>automatically maintain/update properties</li>
 	<li>change visible appearance</li>
 	</ul>
 	<p>all of this is still your responsibility...</p>
@@ -406,39 +412,10 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <!-- -->
 
 <section class="slide listing"><div>
-	<h3>ARIA support: browsers</h3>
+	<h3>ARIA support</h3>
 	<ul>
-	<li>Firefox 3+</li>
-	<li>Internet Explorer 8+</li>
-	<li>Safari 4+ (Mac)</li>
-	<li>Chrome 17+</li>
-	</ul>
-</div></section>
-
-<!-- -->
-
-<section class="slide listing"><div>
-	<h3>ARIA support: assistive technologies</h3>
-	<ul>
-	<li>JAWS 8+ (Win)</li>
-	<li>Windows Eyes 5.5+ (Win)</li>
-	<li>ZoomText</li>
-	<li>VoiceOver (OS X/iOS)</li>
-	<li>NVDA (Win)</li>
-	<li>ORCA (Linux)</li>
-	</ul>
-</div></section>
-
-<!-- -->
-
-<section class="slide listing"><div>
-	<h3>ARIA support: libraries</h3>
-	<ul>
-	<li>extJS</li>
-	<li>jQuery</li>
-	<li>Dojo</li>
-	<li>GWT</li>
-	<li>...</li>
+	<li>Browsers: Firefox 3+, Internet Explorer 8+, Safari 4+ (Mac), Chrome 17+, ...</li>
+	<li>Assistive technologies: JAWS 8+, Windows Eyes 5.5+, ZoomText, VoiceOver, TalkBack, NVDA, ORCA, ...</li>
 	</ul>
 </div></section>
 
@@ -446,31 +423,45 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide statement"><div>
 <div>
-	<p>"support" does not mean that everything works, though...</p>
+	<p><strong>"support"</strong> does not mean that everything works, though...</p>
 </div>
 </div></section>
 
 <!-- -->
 
-<section class="slide listing"><div>
-	<p>In principle ARIA works in all markup languages...but obviously that depends on user agent/AT support. We'll focus on ARIA and HTML</p>
-	<p>Sidenote: <a target=_blank href="http://www.paciellogroup.com/blog/2013/12/using-aria-enhance-svg-accessibility/">Using ARIA to enhance SVG accessibility</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide impact"><div>
+<section class="slide statement"><div>
 <div>
-	<h2>using <strong>WAI-ARIA</strong> in HTML</h2>
+	<p>in principle ARIA can be used in all markup languages<br><small>(depending on <strong>browser support</strong>)</small></p>
 </div>
 </div></section>
-
 
 <!-- -->
 
 <section class="slide"><div>
-	<img src="./pictures/sites/w3c-aria-in-html.png" alt="">
-	<p><a target=_blank href="http://www.w3.org/TR/aria-in-html/">W3C - Using WAI-ARIA in HTML</a></p>
+		<img src="pictures/sites/paciellogroup-aria-in-svg.png" alt="">
+		<p><a target=_blank href="https://developer.paciellogroup.com/blog/2013/12/using-aria-enhance-svg-accessibility/">Using ARIA to enhance SVG accessibility</a></p>
+	</div></section>
+
+<!-- -->
+
+<section class="slide statement"><div>
+<div>
+	<p>...but we'll just focus on<br><strong>ARIA in HTML</strong></small></p>
+</div>
+</div></section>
+
+<!-- -->
+
+<section class="slide"><div>
+	<img src="./pictures/sites/w3c-html-aria.png" alt="">
+	<p><a target=_blank href="https://www.w3.org/TR/html-aria/">W3C - ARIA in HTML</a></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide"><div>
+	<img src="./pictures/sites/w3c-using-aria.png" alt="">
+	<p><a target=_blank href="https://www.w3.org/TR/using-aria/">W3C - Using ARIA</a></p>
 </div></section>
 
 <!-- -->
@@ -498,8 +489,22 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <!-- -->
 
 <section class="slide listing"><div>
-	<blockquote><p>If you can use a native HTML element [<a target=_blank href="http://www.w3.org/TR/html5/">HTML5</a>] or attribute with the semantics and behaviour you require already built in, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible, then do so.</p></blockquote>
+	<blockquote><p>If you can use a native HTML element [<a target=_blank href="https://www.w3.org/TR/html/">HTML5</a>] or attribute with the semantics and behaviour you require already built in, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible, then do so.</p></blockquote>
 </div></section>
+
+<!-- -->
+
+<section class="slide code listing"><div>
+	<p>you <strong>can</strong> use a <code>&lt;span&gt;</code> to behave as, and be exposed just like, a link...</p>
+	<pre><code>
+	&lt;span tabindex="0" <mark>role="link"</mark>
+		  onclick="document.location='...'"
+		  <mark>onkeyup="..."</mark>&gt;link&lt;/span&gt;
+	</code></pre>
+	<p>example: <a target=_blank href="../demos/structure/role-link.html">link</a></p>
+	<p>...but <strong>why would you?</strong></p>
+	<p>unless there's a very good reason, just use <code>&lt;a href="..."&gt;...&lt;/a&gt;</code></p>
+	</div></section>
 
 <!-- -->
 
@@ -552,7 +557,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide listing"><div>
 	<p>All interactive widgets must be focusable and scripted to respond to standard key strokes or key stroke combinations where applicable. [...]</p>
-	<p>Refer to the <a target=_blank href="http://www.w3.org/WAI/PF/aria-practices/#keyboard">keyboard and structural navigation</a> and <a target=_blank href="http://www.w3.org/WAI/PF/aria-practices/#aria_ex">design patterns</a> sections of the <a target=_blank href="http://www.w3.org/WAI/PF/aria-practices/">WAI-ARIA 1.0 Authoring Practices</a></p>
+	<p>Refer to the <a target=_blank href="https://www.w3.org/TR/wai-aria-practices/#keyboard">keyboard and structural navigation</a> and <a target=_blank href="https://www.w3.org/TR/wai-aria-practices/#aria_ex">design patterns and widgets</a> sections of the <a target=_blank href="https://www.w3.org/TR/wai-aria-practices/">WAI-ARIA 1.1 Authoring Practices</a></p>
 </div></section>
 
 <!-- -->
@@ -595,7 +600,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 &lt;!-- don't do this... --&gt;
 
 &lt;span tabindex="0" role="button"&gt;
-    &lt;span class="glyphicon glyphicon-remove-sign"&gt;&lt;/span&gt;
+    &lt;span class="glyphicon glyphicon-remove"&gt;&lt;/span&gt;
 &lt;/span&gt;
 </code></pre>
 </div></section>
@@ -605,28 +610,50 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <section class="slide listing code"><div>
 	
 <pre><code class="html">
-&lt;span tabindex="0" role="button" <mark>aria-label="Delete"</mark>&gt;
-    &lt;span class="glyphicon glyphicon-remove-sign"&gt;&lt;/span&gt;
-&lt;/span&gt;
-
-&lt;span tabindex="0" role="button" <mark>title="Delete"</mark>&gt;
-    &lt;span class="glyphicon glyphicon-remove-sign"&gt;&lt;/span&gt;
-&lt;/span&gt;
-
 &lt;span tabindex="0" role="button"&gt;
-    &lt;span class="glyphicon glyphicon-remove-sign"&gt;
+    &lt;span class="glyphicon glyphicon-remove"&gt;
       <mark>&lt;span class="..."&gt;Delete&lt;/span&gt;</mark>
     &lt;/span&gt;
 &lt;/span&gt;
+
+&lt;span tabindex="0" role="button" <mark>title="Delete"</mark>&gt;
+    &lt;span class="glyphicon glyphicon-remove"&gt;&lt;/span&gt;
+&lt;/span&gt;
 </code></pre>
-	<p>refer to <a target=_blank href="http://www.w3.org/TR/wai-aria/roles#namecalculation">WAI-ARIA 1.0 - 5.2.7. Accessible Name Calculation</a></p>
+	<p>refer to <a target=_blank href="https://www.w3.org/TR/wai-aria/#namecalculation">WAI-ARIA 1.1 - 5.2.7. Accessible Name Calculation</a></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide listing code"><div>
+	
+<pre><code class="html">
+&lt;span tabindex="0" role="button" <mark>aria-label="Delete"</mark>&gt;
+    &lt;span class="glyphicon glyphicon-remove"&gt;&lt;/span&gt;
+&lt;/span&gt;
+
+
+&lt;span tabindex="0" role="button" <mark>aria-labelledby="..."</mark>&gt;
+    &lt;span class="glyphicon glyphicon-remove"&gt;&lt;/span&gt;
+&lt;/span&gt;
+...
+&lt;span id="<mark>...</mark>" class="..."&gt;Delete&lt;/span&gt;
+</code></pre>
+	<p>refer to <a target=_blank href="https://www.w3.org/TR/wai-aria/#namecalculation">WAI-ARIA 1.1 - 5.2.7. Accessible Name Calculation</a></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide"><div>
+	<img src="pictures/chrome-devtools-accessibility-panel-accessible-name.png" alt="Screenshot of Chrome Developer Tools' accessibility panel, showing details about which attributes - content, title, aria-label, aria-labelledby - contribute to the element's name">
+	<p>Chrome Developer Tools' accessibility panel can be helpful in debugging which attributes contribute to an element's name</p>
 </div></section>
 
 <!-- -->
 
 <section class="slide"><div>
 	<img src="pictures/sites/w3c-aria-authoring-practices.png" alt="">
-	<p>WAI-ARIA spec can be dry/technical - use for reference<br><a target=_blank href="http://www.w3.org/TR/wai-aria-practices/#relations_labeling">W3C - WAI-ARIA 1.0 Authoring Practices</a> more digestible.</p>
+	<p>WAI-ARIA spec can be dry/technical - use for reference<br><a target=_blank href="https://www.w3.org/TR/wai-aria-practices/">W3C - WAI-ARIA 1.1 Authoring Practices</a> more digestible.</p>
 </div></section>
 
 <!-- -->
@@ -649,7 +676,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide statement"><div>
 <div>
-	<p>HTML5 introduces new elements, element types, attributes that solve some of these situations</p>
+	<p>HTML5 introduced new elements, element types, attributes that solve some of these situations</p>
 </div>
 </div></section>
 
@@ -663,6 +690,13 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <!-- -->
 
 <section class="slide"><div>
+	<img src="pictures/sites/w3c-html-accessibility-api-mappings.png" alt="">
+	<p><a target=_blank href="https://www.w3.org/TR/html-aam-1.0/">W3C HTML Accessibility API Mappings 1.0</a></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide"><div>
 	<img src="pictures/sites/html5accessibility.png" alt="">
 	<p><a target=_blank href="http://html5accessibility.com/">HTML5 accessibility</a></p>
 </div></section>
@@ -670,22 +704,15 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <!-- -->
 
 <section class="slide"><div>
-	<img src="pictures/sites/stevefaulkner-html-mapping-tests.png" alt="">
-	<p><a target=_blank href="http://stevefaulkner.github.io/html-mapping-tests/">Implementation status for HTML5 element/attribute accessibility mappings</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
 	<img src="pictures/sites/w3c-html5-wai-aria.png" alt="">
-	<p>HTML5 now also includes <a target=_blank href="http://www.w3.org/TR/html5/dom.html#wai-aria" title="WAI-ARIA section in W3C HTML5 Specification">WAI-ARIA</a> ...</p>
+	<p>HTML5 now also includes <a target=_blank href="https://www.w3.org/TR/html/dom.html#wai-aria" title="WAI-ARIA section in W3C HTML5 Specification">WAI-ARIA</a> ...</p>
 </div></section>
 
 <!-- -->
 
 <section class="slide"><div>
 	<img src="pictures/w3c-validator-html5-aria.png" alt-"W3C Validator result, showing an error for an inappropriately used ARIA role">
-	<p>... meaning we can validate pages with (static) ARIA <a target=_blank href="http://validator.w3.org/">validator.w3.org</a></p>
+	<p>...and you can validate pages with (static) ARIA <a target=_blank href="https://validator.w3.org/">validator.w3.org</a></p>
 </div></section>
 
 <!-- -->
@@ -707,37 +734,16 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <!-- -->
 
-<section class="slide statement"><div>
-<div>
-	<h4>heading</h4>
-</div>
-</div></section>
-
-<!-- -->
-
 <section class="slide code listing"><div>
 <pre><code>
-&lt;p class="heading1"&gt;Heading 1&lt;/p&gt;
+&lt;p class="1" <mark>role="heading"</mark> <mark>aria-level="1"</mark>&gt;Heading 1&lt;/p&gt;
 ...
-&lt;p class="heading2"&gt;Heading 2&lt;/p&gt;
+&lt;p class="h2" <mark>role="heading"</mark> <mark>aria-level="2"</mark>&gt;Heading 2&lt;/p&gt;
 ...
-&lt;p class="heading3"&gt;Heading 3&lt;/p&gt;
-...
-</code></pre>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-<pre><code>
-&lt;p class="heading1" <mark>role="heading"</mark> <mark>aria-level="1"</mark>&gt;Heading 1&lt;/p&gt;
-...
-&lt;p class="heading2" <mark>role="heading"</mark> <mark>aria-level="2"</mark>&gt;Heading 2&lt;/p&gt;
-...
-&lt;p class="heading3" <mark>role="heading"</mark> <mark>aria-level="3"</mark>&gt;Heading 3&lt;/p&gt;
+&lt;p class="h3" <mark>role="heading"</mark> <mark>aria-level="3"</mark>&gt;Heading 3&lt;/p&gt;
 ...
 </code></pre>
-<p>example: <a target=_blank href="../demos/role-heading.html">headings</a></p>
+<p>example: <a target=_blank href="../demos/structure/role-heading.html">headings</a></p>
 <ul>
 <li>add <code>role="heading"</code></li>
 <li>if more than one hierarchical level, and can't be inferred from structure, add explicit <code>aria-level</code></li>
@@ -746,28 +752,6 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <!-- -->
 
-<section class="slide statement"><div>
-<div>
-	<h4>list</h4>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-<pre><code>
-&lt;div&gt;
-    &lt;div&gt;...&lt;/div&gt;
-    &lt;div&gt;...&lt;/div&gt;
-    &lt;div&gt;...&lt;/div&gt;
-    ...
-&lt;/div&gt;
-</code></pre>
-<p>generally more complex (big markup structures that boil down to essentially "a list of things...")</p>
-</div></section>
-
-<!-- -->
-
 <section class="slide code listing"><div>
 <pre><code>
 &lt;div <mark>role="list"</mark>&gt;
@@ -777,64 +761,35 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
     ...
 &lt;/div&gt;
 </code></pre>
-<p>example: <a target=_blank href="../demos/role-list.html">list/listitem</a></p>
+<p>example: <a target=_blank href="../demos/structure/role-list.html">list/listitem</a></p>
 <ul>
 <li>add <code>role="list"</code> and <code>role="listitem"</code></li>
+<li>generally more complex (big markup structures that boil down to essentially "a list of things...")</li>
 </ul>
 </div></section>
 
 <!-- -->
 
-<!-- <section class="slide code listing"><div>
-<pre><code>&lt;!-- nested lists... --&gt;
-&lt;div <mark>role="list"</mark>&gt;
-    &lt;div <mark>role="listitem"</mark>&gt;...&lt;/div&gt;
-    &lt;div <mark>role="group"</mark>&gt;
-        &lt;div <mark>role="listitem"</mark>&gt;...&lt;/div&gt;
-        &lt;div <mark>role="listitem"</mark>&gt;...&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div <mark>role="listitem"</mark>&gt;...&lt;/div&gt;
-    ...
-&lt;/div&gt;
-</code></pre>[TODO] check how this behaves! [SEEMS BROKEN?]
-</div></section> -->
-
-<!-- -->
-
-<!-- <section class="slide statement"><div>
+<section class="slide statement"><div>
 <div>
-	<h4>image</h4>
+	<h4>removing semantics</h4>
 </div>
-</div></section> -->
+</div></section>
 
 <!-- -->
 
-<!-- <section class="slide code listing"><div>
-<pre><code>&lt;!-- complex content (SVG, HTML, etc) acting as single image --&gt;
-...
-&lt;svg ... &gt;
-    ...
-&lt;/svg&gt;
-...
-</code></pre>
-</div></section> -->
-
-<!-- -->
-
-<!-- <section class="slide code listing"><div>
-<pre><code>&lt;!-- complex content (SVG, HTML, etc) acting as single image --&gt;
-...
-&lt;svg <mark>role="img"</mark> <mark>aria-label="..."</mark> ... &gt;
-    ...
-&lt;/svg&gt;
-...
-</code></pre>
-<p>example: SVG content</p>
-<ul>
-<li>add <code>role="img"</code></li>
-<li>provide alternative text (e.g. using <code>aria-label</code> or <code>aria-labelledby</code>)</li>
-</ul>
-</div></section> -->
+<section class="slide code listing"><div>
+	<p>if your page/app uses inappropriate markup, ARIA can be used to remove semantic meaning. useful for remediation if markup cannot be changed.</p>
+	<pre><code>
+&lt;table <mark>role="presentation"</mark>&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Layout column 1&lt;/td&gt;
+		&lt;td&gt;Layout column 2&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+	<p>example: <a target=_blank href="../demos/structure/remediation-layout-table.html">layout table remediation</a></p>
+	<p>ARIA 1.1 introduced <code>role="none"</code> as an alias for <code>role="presentation"</code> – they are equivalent (and older browsers/AT likely better off still using <code>role="presentation"</code>)</p>
+</div></section>
 
 <!-- -->
 
@@ -903,6 +858,13 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <!-- -->
 
+<section class="slide cover impact"><div>
+    <div><p>my JavaScript sucks...<br><small>(but will hopefully convey the right concepts)</small></p></div>
+    <img src="pictures/background-danger-415-volts.jpg" class="cover" alt="Warning sign with lightning bolt and text: Danger 415 volts">
+</div></section>
+
+<!-- -->
+
 <section class="slide statement"><div>
 <div>
 	<h4>button</h4>
@@ -913,22 +875,65 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;span tabindex="0" class="..."&gt;Button?&lt;/span&gt;
+&lt;span class="..."&gt;Button?&lt;/span&gt;
+
+&lt;div class="..."&gt;Button?&lt;/div&gt;
+
+&lt;a href="#" class="..."&gt;Button?&lt;/a&gt;
 </code></pre>
-<p>example: <a target=_blank href="../demos/role-button.html">button</a></p>
+<p>example: <a target=_blank href="../demos/button/">button</a></p>
+<p>while using a link is slightly less evil, as at least it receives keyboard focus by default, it's still not correct: links are meant for <strong>navigation</strong>, not in-page actions or form submissions</p>
 </div></section>
 
 <!-- -->
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;span tabindex="0" <mark>role="button"</mark> class="..."&gt;Button!&lt;/span&gt;
+&lt;span <mark>tabindex="0"</mark> class="..." <mark>role="button"</mark>&gt;Button!&lt;/span&gt;
+
+&lt;div <mark>tabindex="0"</mark> class="..." <mark>role="button"</mark>&gt;Button!&lt;/div&gt;
+
+&lt;a href="#" class="..." <mark>role="button"</mark>&gt;Button!&lt;/a&gt;
 </code></pre>
 <ul>
 <li>add <code>role="button"</code></li>
 <li>make sure it's focusable</li>
-<li>add handling of <kbd>SPACE</kbd></li>
+<li>add handling of <kbd>SPACE</kbd> (and in some cases <kbd>ENTER</kbd>)</li>
 </ul>
+</div></section>
+
+<!-- -->
+
+<section class="slide code listing"><div>
+<p>assuming there's a <code>click</code> handler:</p>
+<pre><code class="js">
+foo.addEventListener('keyup', function(e) {
+  // Space key
+  if (e.keyCode === 32) {
+	// stop default behavior (usually, scrolling)
+	e.preventDefault();
+	// trigger the existing click behavior
+	this.click();
+  }
+});
+</code></pre>
+</div></section>
+
+<!-- -->
+
+<section class="slide code listing"><div>
+<p>you could even do it "in one go" for all your faked buttons, assuming they have the correct <code>role="button"</code>, with <code>querySelectorAll</code> and attribute selectors:</p>
+<pre><code class="js">
+var buttons = document.querySelectorAll("[role='button']");
+for (var i=0; i&lt;buttons.length; i++) {
+  buttons[i].addEventListener('keyup', function(e) {
+    if (e.keyCode === 32) {
+      e.preventDefault();
+      this.click();
+    }
+  });
+};
+</code></pre>
 </div></section>
 
 <!-- -->
@@ -941,31 +946,74 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <!-- -->
 
-<section class="slide code listing"><div>
-<pre><code>
-&lt;span tabindex="0" class="..."&gt;Option&lt;/span&gt;
+<section class="slide listing"><div>
+	<ul>
+	<li>default HTML does not offer a simple on/off toggle</li>
+	<li><a target=_blank href="../demos/toggle/index-faked-checkbox.html">"CSS only" <code>&lt;input type="checkbox"&gt;</code> hacks</a> – but these may be confusing to AT users/not always appropriate</li>
+	<li>ARIA can be used to <strong>enhance</strong> native elements – start off with closest match, like an actual <code>&lt;button&gt;</code>, and extend from there</li>
+	</ul>
+</div></section>
 
-&lt;span tabindex="0" class="... pressed"&gt;Option&lt;/span&gt;
+<section class="slide code listing"><div>
+	<p>let's assume we implement this with JavaScript to purely add a CSS classname:</p>
+<pre><code>
+&lt;button class="..."&gt;Toggle&lt;/button&gt;
+
+&lt;button class="... <mark>toggled</mark>"&gt;Toggle&lt;/button&gt;
 </code></pre>
-<p>example: [TODO] <code>span</code> and fixed with ARIA</p>
+<p>example: <a target=_blank href="../demos/toggle/">toggle</a></p>
+<p><small>in real applications, you'll likely keep track of the state in some additional way – this is only for illustrative purposes</small></p>
 </div></section>
 
 <!-- -->
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;span tabindex="0" <mark>role="button"</mark>
-      <mark>aria-pressed="false"</mark> class="..."&gt;Option&lt;/span&gt;
+&lt;button class="..." <mark>aria-pressed="false"</mark>&gt;Toggle&lt;/button&gt;
+&lt;button class="... <mark>toggled</mark>" <mark>aria-pressed="true"</mark>&gt;Toggle&lt;/button&gt;
+</code></pre>
+<pre><code>foo.getAttribute("aria-pressed");
+foo.setAttribute("aria-pressed", "true");
+foo.setAttribute("aria-pressed", "false");
+</code></pre>
+<p>add <code>aria-pressed</code> and dynamically change its value</p>
+<p>example: <a target=_blank href="../demos/toggle/index-aria.html">toggle with <code>aria-pressed</code></a></p>
+<ul>
+<li>these are <em>HTML attributes</em> and must be read/written using <code>getAttribute()</code> / <code>setAttribute()</code></li>
+<li>and even boolean attributes take <em>string</em> values</li>
+</ul>
+</div></section>
 
-&lt;span tabindex="0" <mark>role="button"</mark>
-     <mark>aria-pressed="true"</mark> class="... pressed"&gt;Option&lt;/span&gt;
+<!-- -->
+
+<section class="slide code listing"><div>
+<pre><code>
+&lt;button class="... <mark><del>toggled</del></mark>" <mark>aria-pressed="true"</mark>&gt;Toggle&lt;/button&gt;
+</code></pre>
+<pre><code class="css">
+<del>button.toggled { ... }</del>
+button[aria-pressed="true"] { ... }
 </code></pre>
 <ul>
-<li>add <code>role="button"</code></li>
-<li>make sure it's focusable</li>
-<li>add handling of <kbd>SPACE</kbd></li>
-<li>add <code>aria-pressed</code> and dynamically change its value</li>
+<li>bonus: use CSS attribute selectors – no need for extra CSS class (this also helps debugging – easier to spot visually when ARIA roles/properties aren't correctly set)</li>
 </ul>
+<p>example: <a target=_blank href="../demos/toggle/index-aria-css.html">toggle with <code>aria-pressed</code> and simplified CSS</a></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide code listing"><div>
+<p>if your actual label text changes when toggling, <code>aria-pressed</code> is likely not necessary (could actually be more confusing for user)</p>
+<pre><code>
+&lt;button ...&gt;Mute&lt;/button&gt;</code></pre>
+<pre><code>if (...) {
+	this.innerHTML = "Mute";
+	...
+} else {
+	this.innerHTML = "Unmute";
+	...
+}</code></pre>
+<p>example: <a target=_blank href="../demos/toggle/index-aria-css-namechange.html">toggle with a changing name/label</a></p>
 </div></section>
 
 <!-- -->
@@ -984,13 +1032,13 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 &lt;span tabindex="0" class="... checked"&gt;Option&lt;/span&gt;
 </code></pre>
-<p>example: <a target=_blank href="../demos/role-checkbox.html">checkbox</a></p>
+<p>example: <a target=_blank href="../demos/checkbox/">checkbox</a></p>
 </div></section>
 
 <!-- -->
 
 <section class="slide code listing"><div>
-<pre><code>
+<pre><code class="html">
 &lt;span tabindex="0" <mark>role="checkbox"</mark>
       <mark>aria-checked="false"</mark> class="..."&gt;Option&lt;/span&gt;
 
@@ -1003,20 +1051,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <li>add handling of <kbd>SPACE</kbd></li>
 <li>add <code>aria-checked</code> and dynamically change its value</li>
 </ul>
-<p><small>similar to toggle button, but announced differently by AT</small></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-<pre><code>
-aria-checked="true"
-
-aria-checked="false"
-
-<strong>aria-checked="mixed"</strong> &lt;!-- "partially" checked --&gt;
-</code></pre>
-<p>example: <a target=_blank href="http://files.paciellogroup.com/blogmisc/ARIA/tristatecheck.html">tri-state checkbox</a></p>
+<p>example: <a target=_blank href="../demos/checkbox/index-aria.html">checkbox with <code>aria-checked</code></a></p>
 </div></section>
 
 <!-- -->
@@ -1035,34 +1070,148 @@ aria-checked="false"
 &lt;span tabindex="0" class="... selected"&gt;No&lt;/span&gt;
 &lt;span tabindex="0" class="..."&gt;Maybe&lt;/span&gt;
 </code></pre>
-<p>example: <a target=_blank href="../demos/role-radio.html">radio button</a></p>
+<p>example: <a target=_blank href="../demos/radio/">radio button</a></p>
 </div></section>
 
 <!-- -->
 
 <section class="slide code listing"><div>
-<pre><code>
-&lt;span tabindex="-1" <mark>role="radio"</mark>
+<pre><code class="html">
+&lt;span tabindex="0" <mark>role="radio"</mark>
       <mark>aria-checked="false"</mark> class="..."&gt;Yes&lt;/span&gt;
 &lt;span tabindex="0" <mark>role="radio"</mark>
       <mark>aria-checked="true"</mark> class="... selected"&gt;No&lt;/span&gt;
-&lt;span tabindex="-1" <mark>role="radio"</mark>
+&lt;span tabindex="0" <mark>role="radio"</mark>
       <mark>aria-checked="false"</mark> class="..."&gt;Maybe&lt;/span&gt;
 </code></pre>
 <ul>
 <li>add <code>role="radio"</code></li>
-<li>only single tab-stop (as with native radio buttons)</li>
 <li>add handling of <kbd>SPACE</kbd> and cursor keys</li>
 <li>add <code>aria-checked</code> and dynamically change its value</li>
 <li><em>should</em> be contained inside <code>role="radiogroup"</code> (cfr. <code>&lt;fieldset&gt;</code>)</li>
 </ul>
+<p>however, keyboard/focus handling still doesn't match native radio buttons...</p>
+</div></section>
+
+<!-- -->
+
+<section class="slide impact"><div>
+<div>
+	<h2>managing focus</h2>
+</div>
+</div></section>
+
+<!-- -->
+
+<section class="slide listing"><div>
+	<h3>complex widgets and focus</h3>
+	<ul>
+	<li>some complex widgets (group of radio buttons, menus, listboxes, tab lists) only have a single "tab stop"</li>
+	<li>focus/interactions within the widget are handled programmatically</li>
+	<li><kbd>TAB</kbd>/<kbd>SHIFT</kbd>+<kbd>TAB</kbd> moves to the next widget, not to sub-components</li>
+	</ul>
+</div></section>
+
+<!-- -->
+
+<section class="slide listing"><div>
+	<h4>keyboard navigation within widgets</h4>
+	<ul>
+	<li>either: "roving" <code>tabindex</code> (only one element inside widget has <code>tabindex="0"</code>, all others <code>tabindex="-1"</code>)</li>
+	<li>or: focus remains on widget itself, denote active child element with <code>aria-activedescendant</code> (and manually scroll into view, provide highlight via CSS)</li>
+	</ul>
+	<p><a target=_blank href="https://www.w3.org/TR/wai-aria-practices/#kbd_general_within">W3C WAI-ARIA 1.1 Authoring Practices - 5.6 Keyboard Navigation Inside Components</a></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide code listing"><div>
+<pre><code class="html">
+&lt;span tabindex="-1" role="radio"
+      aria-checked="false" class="..."&gt;Yes&lt;/span&gt;
+&lt;span <mark>tabindex="0"</mark> role="radio"
+      <mark>aria-checked="true"</mark> class="... selected"&gt;No&lt;/span&gt;
+&lt;span tabindex="-1" role="radio"
+      aria-checked="false" class="..."&gt;Maybe&lt;/span&gt;
+</code></pre>
+<p>only one <code>radio</code> button inside the group has focus. changing the selection using <kbd>CURSOR</kbd> keys, dynamically changes <code>tabindex</code>, <code>aria-checked</code> and sets <code>focus()</code> on the newly selected <code>radio</code> button</p>
+<p>example: <a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/radio/radio-1/radio-1.html">ARIA Practices 1.1 - Radio Group Using Roving tabindex</a></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide listing"><div>
+	<p>not all complex widgets lend themselves to "roving" <code>tabindex</code> – e.g. <code>role="combobox"</code> needs <code>aria-activedescendant</code>, as actual focus must remain inside the textbox.</p>
+	<p>example: <a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/combobox/aria1.1pattern/listbox-combo.html">ARIA Practices 1.1 Combobox with Listbox Popup</a></p>
+	<p>this approach can be complex, and not always supported by assistive technologies (particularly on mobile).</p>
+</div></section>
+
+<!-- -->
+
+<section class="slide statement"><div>
+	<div>
+		<h4>disclosure widget</h4>
+	</div>
+</div></section>
+	
+<!-- -->
+
+<section class="slide code listing"><div>
+<pre><code>&lt;button ...&gt;More details&lt;/button&gt;
+&lt;div class="show" ...&gt; ... &lt;/div&gt;
+</code></pre>
+<p>example: <a target=_blank href="../demos/disclosure/">disclosure widget</a></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide code listing"><div>
+<pre><code>&lt;button ... <mark>aria-expanded="true"</mark>
+	        <mark>aria-controls="disclosure1"</mark>&gt;More details&lt;/button&gt;
+&lt;div class="show" ... id="disclosure1"&gt; ... &lt;/div&gt;
+</code></pre>
+<p>example: <a target=_blank href="../demos/disclosure/index-aria.html">disclosure widget with <code>aria-expanded</code> / <code>aria-controls</code></a></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide statement"><div>
+	<div>
+		<h4>accordion</h4>
+	</div>
+</div></section>
+
+<!-- -->
+
+<section class="slide listing"><div>
+	<ul>
+	<li>ARIA Practices 1.0 suggested using a tab panel pattern (we'll briefly look at this in a moment)</li>
+	<li>ARIA Practices 1.1 is more pragmatic: an accordion is seen simply as a series of disclosure widgets (see <a target=_blank href="https://www.w3.org/TR/wai-aria-practices/#accordion">ARIA Practices 1.1 - 3.1 Accordion</a>)</li>
+</div></section>
+
+<!-- -->
+
+<section class="slide code listing"><div>
+<pre><code>&lt;button ... <mark>aria-expanded="true"</mark>
+			<mark>aria-controls="accordion1"</mark>&gt;Item 1&lt;/button&gt;
+&lt;div class="show" ... id="accordion1"&gt; ... &lt;/div&gt;
+
+&lt;button ... <mark>aria-expanded="false"</mark>
+			<mark>aria-controls="accordion2"</mark>&gt;Item 2&lt;/button&gt;
+&lt;div class="show" ... id="accordion2"&gt; ... &lt;/div&gt;
+
+&lt;button ... <mark>aria-expanded="false"</mark>
+			<mark>aria-controls="accordion3"</mark>&gt;Item 3&lt;/button&gt;
+&lt;div class="show" ... id="accordion3"&gt; ... &lt;/div&gt;
+</code></pre>
+<p>example: <a target=_blank href="../demos/accordion/index-aria.html">accordion using disclosure widgets</a></p>
 </div></section>
 
 <!-- -->
 
 <section class="slide statement"><div>
 <div>
-	<h4>link</h4>
+	<h4>modal dialog</h4>
 </div>
 </div></section>
 
@@ -1070,66 +1219,150 @@ aria-checked="false"
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;span tabindex="0"
-      onclick="document.location='...'"&gt;link&lt;/span&gt;
+&lt;button&gt;Launch...&lt;/button&gt;
+...
+&lt;div ... &gt;
+	&lt;div&gt;My custom dialog&lt;/div&gt;
+	...
+&lt;/div&gt;
 </code></pre>
+<p>example: <a target=_blank href="../demos/modal/">modal dialog</a></p>
+<p>...but focus handling is not really correct...</p>
+</div></section>
+
+<!-- -->
+
+<section class="slide code listing"><div>
+<ul>
+	<li>when triggered, focus should move to the dialog</li>
+	<li>focus should be maintained inside the dialog</li>
+</ul>
+<p>example: <a target=_blank href="../demos/modal/index-focus.html">modal dialog with focus management</a></p>
+<p>...but for assistive tech users, it's still not clear what is happening...</p>
 </div></section>
 
 <!-- -->
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;span tabindex="0" <mark>role="link"</mark>
-      onclick="document.location='...'"&gt;link&lt;/span&gt;
+&lt;button&gt;Launch...&lt;/button&gt;
+...
+&lt;div <mark>role="dialog"</mark>
+	 <mark>aria-labelledby="dialog-header"</mark>
+	 <mark>aria-describedby="modalDialogDescription"</mark> ... &gt;
+  &lt;div id="modalDialogHeader"&gt;My custom dialog&lt;/div&gt;
+  &lt;div id="modalDialogDescription"&gt;
+    ... 
+  &lt;/div&gt;
+  ...
+&lt;/div&gt;
 </code></pre>
+<p>example: <a target=_blank href="../demos/modal/index-focus-aria.html">modal dialog with focus management and ARIA</a></p>
+<p>...almost perfect, but assistive tech users can still navigate out of the modal...</p>
+</div></section>
+
+<!-- -->
+
+<section class="slide code listing"><div>
+<pre><code>&lt;div id="wrapper">&gt;
+  &lt;button&gt;Launch...&lt;/button&gt;
+&lt;/div&gt;
+...
+&lt;div <mark>role="dialog"</mark> ...&lt;/div&gt;</code></pre>
+<pre><code class="js">function openModal() {
+ document.getElementById("wrapper").setAttribute("aria-hidden","true");
+ ...
+}
+function closeModal() {
+ document.getElementById("wrapper").removeAttribute("aria-hidden");
+ ...
+}</code></pre>
+<p>example: <a target=_blank href="../demos/modal/index-focus-aria-hidden.html">modal dialog with aria-hidden</a></p>
+<p>note: <code>aria-hidden</code> does <strong>not</strong> prevent regular keyboard focus!</p>
+</div></section>
+
+<!-- -->
+
+<section class="slide code listing"><div>
+<pre><code class="js">function openModal() {
+ document.getElementById("wrapper").setAttribute("inert","");
+ ...
+}
+function closeModal() {
+ document.getElementById("wrapper").removeAttribute("inert");
+ ...
+}</code></pre>
+<p>example: <a target=_blank href="../demos/modal/index-focus-aria-hidden-inert.html">modal dialog with inert</a></p>
+<p>note: <code>inert</code> <strong>does</strong> hide elements from accessibility tree <em>and</em> remove behavior such as keyboard focusability. however, not natively supported yet – use the <a target=_blank href="https://github.com/WICG/inert">inert polyfill</a></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide impact"><div>
+<div>
+	<h2>live regions</h2>
+</div>	
+</div></section>
+
+<!-- -->
+
+<section class="slide statement"><div>
+<div>
+	<h3>making assistive technology<br>aware of content changes</h3>
+</div>
+</div></section>
+
+<!-- -->
+
+<section class="slide code listing"><div>
+<pre><code class="html">&lt;div id="output"&gt;&lt;/div&gt;</code></pre>
+<pre><code class="js">var o = document.getElementById("output");
+o.innerHTML = "Surprise!"; // show the notification</code></pre>
+<p>example: <a target=_blank href="../demos/liveregion-button/index.html">notification as result of button press</a></p>
+<p>but how can AT users be made aware of the notification / content change?</p>
+</div></section>
+
+<!-- -->
+
+<section class="slide code listing"><div>
+<p>one way to notify users of assistive technologies of new content (a new element added to the page, made visible, a change in text) is to move <code>focus()</code> programmatically to it</p>
+<pre><code class="html">
+&lt;div id="output" <mark>tabindex="-1"</mark>&gt;&lt;/div&gt;</code></pre>
+<pre><code class="js">var o = document.getElementById("output");
+o.innerHTML = "Surprise!"; // show the notification
+o.focus(); // move focus to the notification
+</code></pre>
+<p>but this is not always possible, as it would interrupt the user's current actions...</p>
+<p>example: <a target=_blank href="../demos/liveregion-button/index-movefocus.html">notification via <code>focus()</code></a> and a more <a target=_blank href="../demos/liveregion-button/index-movefocus-problem.html">problematic example simulating a long-running function</a>.</p>
+</div></section>
+
+<!-- -->
+
+<section class="slide listing"><div>
+<h3>ARIA live regions</h3>
 <ul>
-<li>add <code>role="link"</code></li>
-<li>make sure it's focusable</li>
-<li>ensure correct <kbd>ENTER</kbd> keyboard handling</li>
+<li>announce a change on content without moving focus to it</li>
+<li><code>aria-live</code>: <code>off</code> (default), <code>polite</code>, <code>assertive</code></li>
 </ul>
 </div></section>
 
 <!-- -->
 
-<section class="slide statement"><div>
-<div>
-	<h4>tooltip</h4>
-</div>
-</div></section>
-
-<!-- -->
-
 <section class="slide code listing"><div>
-<pre><code>
-&lt;span tabindex="0" onmouseover="..." onfocus="..."&gt;...&lt;/span&gt;
-...
-&lt;span&gt;this is the tooltip text&lt;/span&gt;
+<pre><code class="html">&lt;div id="output" <mark>aria-live="polite"</mark>&gt;&lt;/div&gt;</code></pre>
+<pre><code class="js">var o = document.getElementById("output");
+o.innerHTML = "Surprise!"; // show the notification
 </code></pre>
+<p>example: <a target=_blank href="../demos/liveregion-button/index-liveregion.html">notification via <code>aria-live</code></a></p>
+<p>bonus points: set <code>aria-disabled="true"</code> on the control, and optionally <code>aria-busy="true"</code> on the notification / section of the page that is getting updated. see <a target=_blank href="../demos/liveregion-button/index-liveregion-busy-disabled.html">notification via <code>aria-live</code>, with <code>aria-busy</code> and <code>aria-disabled</code></a></p>
 </div></section>
 
 <!-- -->
 
-<section class="slide code listing"><div>
-<pre><code>
-&lt;span tabindex="0" onmouseover="..." onfocus="..."
-      <mark>aria-describedby="tooltip"</mark>&gt;...&lt;/span&gt;
-...
-&lt;span <mark>role="tooltip"</mark> id="tooltip"&gt;
-      this is the tooltip text&lt;/span&gt;
-</code></pre>
-<p>example: <a target=_blank href="../demos/role-tooltip.html">tooltip</a></p>
-<ul>
-<li>add <code>role="tooltip"</code> (but seems to have no effect in AT)</li>
-<li>add <code>aria-describedby</code> pointing to <code>id</code> of tooltip</li>
-</ul>
-</div></section>
-
-<!-- -->
-
-<section class="slide statement"><div>
-<div>
-	<h4>status bar</h4>
-</div>
+<section class="slide listing"><div>
+	<ul>
+	<li>some <code>role</code>s have implicit live region (e.g. <code>role="status"</code> and </code><code>role="alert"</code>), as do some markup elements (e.g. <code>&lt;output&gt;</code>)</li>
+	</ul>
 </div></section>
 
 <!-- -->
@@ -1137,155 +1370,63 @@ aria-checked="false"
 <section class="slide code listing"><div>
 <pre><code>
 &lt;span <mark>role="status"</mark>&gt;
-      some form of status bar message...&lt;/span&gt;
+	some form of status bar message...
+&lt;/span&gt;
 </code></pre>
-<p>example: <a target=_blank href="../demos/role-status.html">status bar</a></p>
-<ul>
-<li>add <code>role="status"</code> (varying support?)</li>
-<li>an example of a <em>live region</em> (more on this later)</li>
-</ul>
-</div></section>
-
-<!-- -->
-
-<section class="slide statement"><div>
-<div>
-	<h4>alert message</h4>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
+<p>example: <a target=_blank href="../demos/liveregion-implicit/role-status.html">status bar</a></p>
 <pre><code>
 &lt;span <mark>role="alert"</mark>&gt;
-      an alert message (no user interaction)&lt;/span&gt;
+	an alert message (no user interaction)
+&lt;/span&gt;
 </code></pre>
-<p>example: <a target=_blank href="../demos/role-alert.html">alert</a></p>
-<ul>
-<li>add <code>role="alert"</code> (varying support?)</li>
-<li>an example of a <em>live region</em> (more on this later)</li>
-</ul>
+<p>example: <a target=_blank href="../demos/liveregion-implicit/role-alert.html">alert</a></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide listing"><div>
+	<p>ARIA live regions need to be <strong>"primed"</strong> first – the browser and AT need to realize there's a live region, and start watching for changes.</p>
+	<ul>
+		<li>sending something with <code>role="alert"</code> as part of your static HTML document has no effect – AT won't announce this when the page is loading</li>
+		<li>creating a dynamic element with <code>aria-live="..."</code> or an implicit live region role and filling it with content right away will (depending on timing) usually not give browser/AT enough time to "see" the element and notice the change ... again resulting in no announcement</code></li>
+	</ul>
+</div></section>
+
+<!-- -->
+
+<section class="slide code listing"><div>
+<pre><code class="js">// create a new div element 
+var newDiv = document.createElement("div");
+
+// set aria-live property
+newDiv.setAttribute("aria-live", "polite");
+
+// and give it some content 
+var newContent = document.createTextNode("Surprise!"); 
+
+// add the text node to the newly created div
+newDiv.appendChild(newContent);
+
+// add the new div to the page
+document.body.appendChild(newDiv);
+
+// ... WON'T ACTUALLY WORK</code></pre>
+</div></section>
+
+<section class="slide listing"><div>
+	<p>by default, live regions only announce any new/changed content. however, this can be controlled:</p>
+	<ul>
+		<li><code>aria-atomic</code>: <code>true</code>/<code>false</code> ("treat the live region as one atomic unit and announce everything")</li>
+	</ul>
+	<p>example: <a target=_blank href="../demos/liveregion-timer/index.html">live region clock</a> and <a target=_blank href="../demos/liveregion-timer/index-atomic.html">live region clock with aria-atomic</a></p>
+	<p><small>(there's also <code>aria-relevant</code>, but it is badly supported/pointless - see <a target=_blank href="https://medium.com/dev-channel/why-authors-should-avoid-aria-relevant-5d3164fab1e3">Aaron Leventhal and Rob Dodson: Why authors should avoid aria-relevant</a>).</small></p>
 </div></section>
 
 <!-- -->
 
 <section class="slide statement"><div>
 <div>
-	<h4>progress bar</h4>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-<pre><code>
-&lt;div&gt;
-    &lt;span style="width:40%"&gt;&lt;/span&gt;
-&lt;/div&gt;
-</code></pre>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-<pre><code>
-&lt;div tabindex="0" <mark>role="progressbar"</mark> <mark>aria-label="..."</mark>
-     <mark>aria-valuemin="0"</mark> <mark>aria-valuemax="100"</mark>
-     <mark>aria-valuenow="40"</mark> <mark>aria-valuetext="40% complete"</mark>&gt;
-    &lt;span style="width:40%"&gt;&lt;/span&gt;
-&lt;/div&gt;
-</code></pre>
-<p>example: <a target=_blank href="../demos/role-progressbar.html">progress bar</a></p>
-<ul>
-<li>add <code>role="progressbar"</code> (varying support?)</li>
-<li>add <code>aria-valuemin</code>, <code>aria-valuemax</code>, <code>aria-valuenow</code></li>
-<li>optional <code>aria-valuetext</code></li>
-<li>make it keyboard-focusable</li>
-<li>should have a name/label, e.g. <code>aria-label</code></li>
-</ul>
-</div></section>
-
-<!-- -->
-
-<section class="slide statement"><div>
-<div>
-	<h4>slider</h4>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-<pre><code>&lt;!-- taken from jQueryUI --&gt;
-
-&lt;div ... class="ui-slider ..."&gt;
-    &lt;span class="ui-slider-handle ..."
-          tabindex="0" style="left: 7%;"&gt;&lt;/span&gt;
-&lt;/div&gt;
-</code></pre>
-<p>example: <a target=_blank href="http://jqueryui.com/slider/">standard jQueryUI slider</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-<pre><code>
-&lt;div ... class="ui-slider ..." <mark>role="slider"</mark>
-     <mark>aria-valuemin="0"</mark> <mark>aria-valuemax="100"</mark>
-     <mark>aria-valuenow="40"</mark> <mark>aria-valuetext="40%"</mark>&gt;
-    &lt;span class="ui-slider-handle ..."
-          tabindex="0" style="left: 40%;"&gt;&lt;/span&gt;
-&lt;/div&gt;
-</code></pre>
-<ul>
-<li>add <code>role="slider"</code></li>
-<li>add <code>aria-valuemin</code>, <code>aria-valuemax</code>, <code>aria-valuenow</code></li>
-<li>optional <code>aria-valuetext</code></li>
-<li>ensure it handles cursor keys correctly</li>
-<li>should have a name/label, e.g. <code>aria-label</code></li>
-</ul>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/sites/hanshillen-jqtest-slider.png" alt="">
-	<p><a target=_blank href="http://hanshillen.github.io/jqtest/#goto_slider">Hans Hillen's Accessible jQuery-ui Components Demonstration</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide statement"><div>
-<div>
-	<h4>dialog</h4>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-<pre><code>
-&lt;div <mark>role="dialog"</mark> tabindex="0" <mark>aria-labelledby="dialog-header"</mark>&gt;
-  &lt;div id="dialog-header"&gt;My custom dialog&lt;/div&gt;
-  ...
-&lt;/div&gt;
-</code></pre>
-<p>example: <a target=_blank href="../demos/role-dialog.html">jQueryUI dialog (enhanced)</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/sites/karlgroves-jquery-a11ydialog.png" alt="">
-	<p><a target=_blank href="https://github.com/karlgroves/a11yDialog">Karl Groves - a11yDialog</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide statement"><div>
-<div>
-	<h3>using ARIA for<br><strong>complex/composite widgets</strong></h3>
+	<h3>ARIA has many more <br><strong>complex/composite</strong> widgets and structures</h3>
 </div>
 </div></section>
 
@@ -1293,77 +1434,7 @@ aria-checked="false"
 
 <section class="slide statement"><div>
 <div>
-	<h4>menu</h4>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-<pre><code>
-&lt;div <mark>role="menu"</mark>&lt;/div>
-    &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
-    &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
-    &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
-    ...
-&lt;/div&gt;
-</code></pre>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-<pre><code>
-&lt;div <mark>role="menubar"</mark>&gt;
-  &lt;div <mark>role="menuitem"</mark> ...&gt; ...
-    &lt;div <mark>role="menu"</mark>&lt;/div>
-      &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
-      &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
-      &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
-      ...
-    &lt;/div&gt;
-  &lt;/div&gt;
-  ...
-&lt;/div&gt;
-</code></pre>
-<p>example: <a target=_blank href="http://oaa-accessibility.org/examplep/menubar1/">Open Ajax Alliance - Menubar</a></p>
-<p>most suitable for real "application-like" web-apps - arguably not appropriate for general "website navigation"</li>
-</ul>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/sites/w3c-wai-tutorials-app-menu.png" alt="">
-	<p><a target=_blank href="http://www.w3.org/WAI/tutorials/menus/application/">W3C - Web Accessibility Tutorials - Web Application Menus</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/sites/adobe-accessibility-megamenu.png" alt="">
-	<p><a target=_blank href="http://adobe-accessibility.github.io/Accessible-Mega-Menu/">Adobe - Accessible Mega Menu</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/sites/w3c-wai-tutorials-flyout-menu.png" alt="">
-		<p><a target=_blank href="http://www.w3.org/WAI/tutorials/menus/flyout/#improve-screen-reader-support-using-wai-aria">W3C - Web Accessibility Tutorials - Fly-out Menus</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/sites/heydonworks-practical-aria-examples-submenus.png" alt="">
-	<p><a target=_blank href="http://heydonworks.com/practical_aria_examples/#submenus">Heydon Pickering - Practical ARIA - Simple dropdowns</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide statement"><div>
-<div>
-	<h4>tabs / accordions</h4>
+	<h4>tabs</h4>
 </div>
 </div></section>
 
@@ -1382,484 +1453,127 @@ aria-checked="false"
 &lt;div <mark>role="tabpanel"</mark> id="panel2" <mark>aria-hidden="true"</mark>&gt;...&lt;/div&gt;
 &lt;div <mark>role="tabpanel"</mark> id="panel3" <mark>aria-hidden="true"</mark>&gt;...&lt;/div&gt;
 </code></pre>
-<p>example: <a target=_blank href="http://oaa-accessibility.org/examplep/tabpanel1/">Open Ajax Alliance: Tab Panel</a></p>
-<p>variations on this theme: <a target=_blank href="http://www.marcozehe.de/2013/02/02/advanced-aria-tip-1-tabs-in-web-apps/">Marco Zehe - Advanced ARIA tip #1: Tabs in web apps</a></p>
+<p>example: <a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">ARIA Practices 1.1 Tabs with Automatic Activation</a></p>
+<p>variations on this theme: <a target=_blank href="https://www.marcozehe.de/2013/02/02/advanced-aria-tip-1-tabs-in-web-apps/">Marco Zehe - Advanced ARIA tip #1: Tabs in web apps</a></p>
 <p><strong>not appropriate</strong> if you're just marking up a site navigation...</p>
 </div></section>
 
 <!-- -->
 
-<section class="slide code listing"><div>
-<pre><code>
-&lt;div <mark>role="tablist"</mark> ...&gt;
-  &lt;div <mark>role="tab"</mark> <mark>aria-controls="panel1"</mark> ...&gt;Tab 1&lt;/div&gt;
-  &lt;div <mark>role="tabpanel"</mark> id="panel1"&gt;...&lt;/div&gt;
-  &lt;div <mark>role="tab"</mark> <mark>aria-controls="panel2"</mark> ...&gt;Tab 2&lt;/div&gt;
-  &lt;div <mark>role="tabpanel"</mark> id="panel2"&gt;...&lt;/div&gt;
-  &lt;div <mark>role="tab"</mark> <mark>aria-controls="panel3"</mark> ...&gt;Tab 2&lt;/div&gt;
-  &lt;div <mark>role="tabpanel"</mark> id="panel3"&gt;...&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-<p>example: <a target=_blank href="http://hanshillen.github.io/jqtest/#goto_accordion">Hans Hillen - Accessible jQuery-ui Components: Accordion</a></p>
-<p>sometimes better to keep it simple (series of expand/collapse controls): <a target=_blank href="http://whatsock.com/tsg/">whatsock - AccDC Technical Style Guide</a> / <a target=_blank href="https://github.com/accdc/tsg">AccDC Technical Style Guide (GitHub)</a></p>
+<section class="slide impact"><div>
+<div>
+	<h2>some shortcomings / problems with ARIA</h2>
+</div>
+</div></section>
+
+<!-- -->
+
+<section class="slide listing"><div>
+	<p>as useful as ARIA is, it is <strong>far from perfect</strong>...</p>
+	<ul>
+		<li>some patterns rooted deeply in native (Windows) application paradigms – and as a result, quite limited/restrictive</li>
+		<li>straying from these patterns / using ARIA incorrectly can make things worse for users</li>
+		<li>certain roles/patterns define specific keyboard interactions – but work badly or not at all in touchscreen + AT scenarios</li>
+		<li>particularly for new roles/attributes (ARIA 1.1) and complex patterns, browser and AT support may be lacking</li>
+	</ul>
 </div></section>
 
 <!-- -->
 
 <section class="slide statement"><div>
 <div>
-	<h4>listbox</h4>
+	<h4>menu/menubar</h4>
 </div>
 </div></section>
 
 <!-- -->
 
 <section class="slide code listing"><div>
-<pre><code>
-&lt;div <mark>role="listbox"</mark> <mark>aria-activedescendant="opt2"</mark> tabindex="0"&gt;
-    &lt;div <mark>role="option"</mark> id="opt1"&gt;Option 1&lt;/div&gt;
-    &lt;div <mark>role="option"</mark> id="opt2" class="active"&gt;Option 2&lt;/div&gt;
-    &lt;div <mark>role="option"</mark> id="opt3"&gt;Option 3&lt;/div&gt;
+<pre><code class="html">
+&lt;div <mark>role="menubar"</mark>&gt;
+	&lt;div <mark>role="menuitem"</mark> ...&gt; ...
+	&lt;div <mark>role="menu"</mark>&lt;/div>
+		&lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
+		&lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
+		&lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
+		...
+	&lt;/div&gt;
+	&lt;/div&gt;
+	...
 &lt;/div&gt;
 </code></pre>
-<p>example: <a target=_blank href="http://cookiecrook.com/test/aria/multiselect/listbox.html">James Craig - multiselect listbox</a></p>
-<ul>
-<li>add <code>role="listbox"</code> on the container</li>
-<li>add <code>role="option"</code> on each option</li>
-<li>implement standard keyboard interaction (<a target=_blank href="http://www.w3.org/TR/wai-aria-practices/#Listbox" title="W3C WAI-ARIA 1.0 Authoring Practices - Design patterns - Listbox">complex for multiselect</a>)</li>
-<li>use <code>aria-activedescendant</code> to manage focus (more later)</li>
+<p>example: <a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/menubar/menubar-1/menubar-1.html">ARIA Practices 1.1 Navigation Menubar</a></p>
+<p>most suitable for real "application-like" web-apps - arguably not appropriate for general "website navigation"</li>
 </ul>
 </div></section>
 
 <!-- -->
 
-<section class="slide statement"><div>
-<div>
-	<h4>combobox</h4>
-</div>
+<section class="slide"><div>
+	<img src="pictures/aria-menu-spec.png" alt="Screenshot of the warning note on ARIA design patterns and touch device support in the 'Using ARIA' spec">
+	<p><a target=_blank href="https://www.w3.org/TR/wai-aria/#menu">ARIA 1.1 menu (role)</a></p>
+	<p><small>specific child elements only (<code>menuitem</code>, <code>menuitemcheckbox</code>, <code>menuitemradio</code>)</small></p>
 </div></section>
 
 <!-- -->
 
-<section class="slide code listing"><div>
-<pre><code>&lt;!-- similar to &lt;select&gt; --&gt;
-&lt;input type="text" <mark>role="combobox"</mark> <mark>aria-expanded="true"</mark>
-     <mark>aria-autocomplete="list"</mark> <mark>aria-owns="optlist"</mark>
-     <mark>aria-activedescendant="opt2"</mark>&gt;
-
-&lt;div <mark>role="listbox"</mark> id="optlist"&gt;
-    &lt;div <mark>role="option"</mark> id="opt1"&gt;Option 1&lt;/div&gt;
-    &lt;div <mark>role="option"</mark> id="opt2" class="active"&gt;Option 2&lt;/div&gt;
-    &lt;div <mark>role="option"</mark> id="opt3"&gt;Option 3&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-<p>example: <a target=_blank href="http://oaa-accessibility.org/examplep/combobox3/">Open Ajax Alliance: Combobox with <code>aria-autocomplete=list</code></a></p>
-<ul>
-<li>combination of focusable text input and listbox (like autocomplete/search suggestions)</li>
-</ul>
+<section class="slide"><div>
+	<img src="pictures/aria-in-html-touch.png" alt="Screenshot of the warning note on ARIA design patterns and touch device support in the 'Using ARIA' spec">
+	<p><a target=_blank href="https://www.w3.org/TR/using-aria/#aria-touch">Using ARIA - 2.15 ARIA Design Patterns and Touch Device Support</p>
 </div></section>
 
 <!-- -->
 
-<section class="slide statement"><div>
-<div>
-	<h4>tree</h4>
-</div>
+<section class="slide"><div>
+	<img src="pictures/problem-slider-android.png" alt="Montage of screenshots for slider on Android, showing the announcement to use volume keys to change value">
+	<p><a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/slider/slider-1.html">ARIA Practices 1.1 - Horizontal Slider</a> on Android / Chrome / TalkBack<br><small>(use volume keys...)</small></p>
 </div></section>
 
 <!-- -->
 
-<section class="slide code listing"><div>
-<pre><code>&lt;!-- list with selectable items, expand/collapse, nesting --&gt;
-&lt;div <mark>role="tree"</mark>&gt;
-  &lt;div <mark>role="treeitem"</mark>&gt;...&lt;/div&gt;
-  &lt;div <mark>role="treeitem"</mark>&gt;...&lt;/div&gt;
-  &lt;div <mark>role="treeitem"</mark>&gt;...
-    &lt;div <mark>role="group"</mark>&gt;
-      &lt;div <mark>role="treeitem"</mark>&gt;...&lt;/div&gt;
-      &lt;div <mark>role="treeitem"</mark>&gt;...&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  ...
-&lt;/div&gt;
-</code></pre>
-<p>example: <a target=_blank href="https://dl.dropboxusercontent.com/u/573324/Samples/aria/badtree/noAriaTree.html">Tree example (no ARIA used)</a> / <a target=_blank href="https://dl.dropboxusercontent.com/u/573324/Samples/aria/tree/index.html">Tree example (with ARIA)</a></p>
-<p>support very poor on mobile (as with many complex ARIA widgets)!</p>
+<section class="slide"><div>
+	<img src="pictures/problem-slider-ios.png" alt="Screenshot of the slider on iOS">
+	<p><a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/slider/slider-1.html">ARIA Practices 1.1 - Horizontal Slider</a> on iOS / Safari / VoiceOver<br><small>(swipe up or down...)</small></p>
 </div></section>
 
 <!-- -->
 
-<section class="slide statement"><div>
-<div>
-	<h4>grid</h4>
-</div>
+<section class="slide"><div>
+	<img src="pictures/problem-combobox-android.png" alt="Montage of screenshots for combobox on Android, showing no announcement of the combobox appearing">
+	<p><a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/combobox/aria1.1pattern/listbox-combo.html">ARIA Practices 1.1 - Combobox with Listbox Popup</a><br>on Android / Chrome / TalkBack</p>
 </div></section>
 
 <!-- -->
 
-<section class="slide code listing"><div>
-<pre><code>&lt;!-- interactive table/spreadsheet --&gt;
-&lt;div <mark>role="grid"</mark>&gt;
-  &lt;div <mark>role="row"</mark>&gt;
-    &lt;div <mark>role="columnheader"</mark>&gt;...&lt;/div&gt;
-    &lt;div <mark>role="columnheader"</mark>&gt;...&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div <mark>role="row"</mark>&gt;
-    &lt;div <mark>role="gridcell"</mark>&gt;...&lt;/div&gt;
-    &lt;div <mark>role="gridcell"</mark>&gt;...&lt;/div&gt;
-  &lt;/div&gt;
-  ...
-&lt;/div&gt;  
-</code></pre>
-<p>example: <a target=_blank href="http://oaa-accessibility.org/examplep/grid1/">Open Ajax Alliance: Grid example</a></p>
-<p>sometimes better to simplify: <a target=_blank href="https://www.paypal-engineering.com/2013/05/14/interactive-elements-within-a-grid-layout/">Dennis Lembree - Interactive elements within a grid layout</a></li>
+<section class="slide"><div>
+	<img src="pictures/problem-combobox-ios.png" alt="Screenshot of the combobox on iOS">
+	<p><a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/combobox/aria1.1pattern/listbox-combo.html">ARIA Practices 1.1 - Combobox with Listbox Popup</a><br>on iOS / Safari / VoiceOver</p>
 </div></section>
 
 <!-- -->
 
 <section class="slide impact"><div>
 <div>
-	<h2>managing focus and keyboard interactions</h2>
+	<h2>frameworks, web components, angular, etc?</h2>
 </div>
 </div></section>
 
 <!-- -->
 
 <section class="slide listing"><div>
-	<h3>the basics</h3>
-	<p>to be usable – all interactive controls must be:</p>
 	<ul>
-	<li>focusable</li>
-	<li>in the logical tab order</li>
-	<li>visible when they receive focus</li>
-	<li>have a clear indication of focus</li>
-	<li>operable with the keyboard</li>
-	<li>no focus trap</li>
-	<li>focus does not cause a change of context</li>
-	</ul>
-</div></section>
-
-<!-- -->
-
-<section class="slide listing"><div>
-	<h3>problem with custom controls</h3>
-	<ul>
-	<li><code>&lt;div&gt;</code>, <code>&lt;span&gt;</code> etc. are not standard controls with defined behaviors</li>
-	<li>not focusable with keyboard by default</li>
-	</ul>
-</div></section>
-
-<!-- -->
-
-<section class="slide listing"><div>
-	<h3>solution</h3>
-	<ul>
-	<li>ideally, use native focusable HTML controls (<code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, etc.)</li>
-	<li>or add <code>tabindex="0"</code>, appropriate <code>role</code>, and manually handle keyboard interactions</li>
-	</ul>
-</div></section>
-
-<!-- -->
-
-<section class="slide listing"><div>
-	<h3>complex widgets and focus</h3>
-	<ul>
-	<li>generally, complex widgets (group of radio buttons, menus, listboxes, tab lists) only have a single "tab stop"</li>
-	<li>interactions within the widget handled programmatically</li>
-	<li><kbd>TAB</kbd>/<kbd>SHIFT</kbd>+<kbd>TAB</kbd> moves to the next widget, not to sub-components</li>
-	</ul>
-</div></section>
-
-<!-- -->
-
-<section class="slide listing"><div>
-	<h4>keyboard navigation within widgets</h4>
-	<ul>
-	<li>either: "roving" <code>tabindex</code> (only one element inside widget has <code>tabindex="0"</code>, all others <code>tabindex="-1"</code>)</li>
-	<li>or: focus remains on widget itself, denote active child element with <code>aria-activedescendant</code> (and manually scroll into view, provide highlight via CSS)</li>
-	</ul>
-	<p>not all complex widgets lend themselves to "roving" <code>tabindex</code> - e.g. <code>role="combobox"</code> needs <code>aria-activedescendant</code>, as actual focus must remain inside the textbox.</p>
-	<p><a target=_blank href="http://www.w3.org/TR/wai-aria-practices/#kbd_general_within">W3C WAI-ARIA 1.0 Authoring Practices - 3.1.3. Keyboard Navigation within Widgets</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-	<pre><code>&lt;!-- roving tabindex example --&gt;
-&lt;div role="radiogroup"&gt;
-  &lt;div role="radio" <mark>aria-checked="true"</mark> <mark>tabindex="0"</mark> ...&gt; ...
-  &lt;div role="radio" aria-checked="false" tabindex="-1" ...&gt; ...
-  &lt;div role="radio" aria-checked="false" tabindex="-1" ...&gt; ...
-&lt;/div&gt;</code></pre>
-<p>only one <code>radio</code> button inside the group has focus</p>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-	<pre><code>&lt;!-- roving tabindex example --&gt;
-&lt;div role="radiogroup"&gt;
-  &lt;div role="radio" aria-checked="false" tabindex="-1" ...&gt; ...
-  &lt;div role="radio" <mark>aria-checked="true"</mark> <mark>tabindex="0"</mark> ...&gt; ...
-  &lt;div role="radio" aria-checked="false" tabindex="-1" ...&gt; ...
-&lt;/div&gt;</code></pre>
-<p>changing the selection dynamically changes <code>tabindex</code>, <code>aria-checked</code> and sets <code>focus()</code> on the newly selected <code>radio</code> button</p>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-	<pre><code>&lt;!-- activedescendant example --&gt;
-&lt;div role="radiogroup" <mark>tabindex="0"</mark> <mark>aria-activedescendant="rad1"</mark>&gt;
-  &lt;div role="radio" <mark>id="rad1"</mark> <mark>aria-checked="true"</mark> ...&gt; ...
-  &lt;div role="radio" id="rad2" aria-checked="false" ...&gt; ...
-  &lt;div role="radio" id="rad3" aria-checked="false" ...&gt; ...
-&lt;/div&gt;</code></pre>
-<p><code>radiogroup</code> itself takes focus - selected <code>radio</code> button only identified via <code>aria-activedescendant</code></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-	<pre><code>&lt;!-- activedescendant example --&gt;
-&lt;div role="radiogroup" <mark>tabindex="0"</mark> <mark>aria-activedescendant="rad2"</mark>&gt;
-  &lt;div role="radio" id="rad1" aria-checked="false" ...&gt; ...
-  &lt;div role="radio" <mark>id="rad2"</mark> <mark>aria-checked="true"</mark> ...&gt; ...
-  &lt;div role="radio" id="rad3" aria-checked="false" ...&gt; ...
-&lt;/div&gt;</code></pre>
-<p>changing the selection dynamically changes <code>aria-activedescendant</code> on the <code>radiogroup</code>, <code>aria-checked</code> on the <code>radio</code> button - but focus still remains only on the <code>radiogroup</code></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/sites/medialize-allyjs.png" alt="">
-	<p><a target=_blank href="https://github.com/medialize/ally.js">Medialize - ally.js</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide impact"><div>
-<div>
-	<h2>live regions</h2>
-</div>	
-</div></section>
-
-<!-- -->
-
-<section class="slide listing"><div>
-	<h3>making AT aware of content changes</h3>
-	<p>best way to notify users of assistive technologies of new content (a new element added to the page, made visible, a change in text) is to move <code>focus()</code> programmatically to it.</p>
-	<p>but this is not always possible, as it would interrupt the user's current actions...</p>
-	<p>example: <a target=_blank href="../demos/faked-button/index-keyboard-focus-handler-role-notify-focus.html">faked button with notification via <code>focus()</code></a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide listing"><div>
-	<h3>ARIA live regions</h3>
-	<ul>
-	<li>announce a change on content without moving focus to it
-	<li><code>aria-live</code>: <code>off</code>, <code>polite</code>, <code>assertive</code>
-	<li><code>aria-atomic</code></li>
-	<li><code>aria-relevant</code></li>
-	</ul>
-	<p>example: <a target=_blank href="../demos/faked-button/index-keyboard-focus-handler-role-notify-liveregion-atomic.html">faked button with notification using <code>aria-live</code> and <code>aria-atomic</code></a></p>
-	<p>some <code>role</code>s have implicit live region - e.g. <code>role="alert"</code></p>
-	<p>unfortunately, support is...flaky</p>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/sites/karlgroves-jquery-live-regions.png" alt="">
-	<p><a target=_blank href="https://github.com/karlgroves/jquery-live-regions">Karl Groves - jQuery Live Regions</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide impact"><div>
-<div>
-	<h2>drag &amp; drop</h2>
-</div>	
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/sites/devopera-gez-lemon-drag-drop.png" alt="">
-	<p><a target=_blank href="https://dev.opera.com/articles/accessible-drag-and-drop/">Dev.Opera - Gez Lemon - Accessible Drag and Drop Using WAI-ARIA</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide listing"><div>
-	<ul>
-	<li><code>aria-grabbed</code></li>
-	<li><code>aria-dropeffect</code></li>
-	</ul>
-	<p>example: <a target=_blank href="http://oaa-accessibility.org/examplep/draganddrop1/">Open Ajax Alliance - Drag and Drop</a> / <a target=_blank href="https://dev.opera.com/articles/accessible-drag-and-drop/example.html">Gez Lemon's Drag and Drop example</a></p>
-	<p>support is still bad (particularly on mobile) - consider refactoring or providing alternative instead</p>
-</div></section>
-
-<!-- -->
-
-<section class="slide impact"><div>
-<div>
-	<h2>what about <code>role="application"</code> ?</h2>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide listing"><div>
-	<h3>document vs application mode</h3>
-	<p>assistive technologies/screenreaders generally operate in two modes: document mode and application mode (terminology varies)</p>
-	<ul>
-	<li>in document mode ("reading mode"), user can navigate freely through the page/content with keyboard shortcuts provided by AT</li>
-	<li>in application mode ("forms mode"), keystrokes are mostly passed directly to page, which needs to handle all interactions</li>
-	</ul>
-	<p><a target=_blank href="https://www.ssbbartgroup.com/blog/2013/04/08/how-windows-screen-readers-work-on-the-web/">SSB Bart Group - How Windows Screen Readers Work on the Web</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide cover impact"><div>
-	<div><p><code>role="application"</code><br>forces application mode</p></div>
-	<img src="pictures/background-danger-415-volts.jpg" class="cover" alt="">
-</div></section>
-
-<!-- -->
-
-<section class="slide listing"><div>
-	<h3>the result</h3>
-	<ul>
-	<li>all keystrokes can now be handled via JavaScript</li>
-	<li>need to ensure any text/content is explicitly associated with focusable elements, use live regions, etc</li>
-	<li>any content areas should be given <code>role="document"</code> to re-enable user control</li>
+		<li>not everybody codes their complex applications from scratch using hand-made HTML/JavaScript/CSS</li>
+		<li>many ready-made libraries, scripts and frameworks offer at least basic ARIA support (by default, or as an "optional" setting or module)</li>
+		<li>particularly open source projects offer good opportunities to get involved – file issues, submit pull requests, improve documentation</li>
+		<li>lack of accessibility/ARIA support likely not down to malice, but a lack of knowledge or even understanding of the problem...</li>
 	</ul>
 </div></section>
 
 <!-- -->
 
 <section class="slide"><div>
-	<img src="pictures/gmail.png" alt="example of a complex web application: Google Mail">
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/gmail-application-document-roles.png" alt="Google Mail overlaid with a simple graphic, denoting the page as a whole as a candidate for role=application, while the content of an email itself would have role=document to enable reading mode">
-	<p><small>(Google Mail doesn't use <code>role="application"</code> ... for illustrative purposes only)</small></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide listing"><div>
-	<h3>you don't need <code>role="application"</code>...</h3>
-	<ul>
-	<li>for native HTML elements (<code>&lt;button&gt;</code>, <code>&lt;select&gt;</code> etc)</li>
-	<li>for common complex ARIA widgets (treeview, slider, dialog, etc)</li>
-	</ul>
-	<p>in both cases, assistive technologies recognise them and automatically switch to applicable mode / pass relevant keystrokes to the page</p>
-	<p>tl;dr: in most situations, you won't need <code>role="application"</code></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide statement"><div>
-<div>
-	<p>use <code>role="application"</code> with caution/sparingly<br><small>(generally not to entire page)</small></p>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide statement"><div>
-<div>
-	<p>use <code>role="document"</code> to then denote content areas</p>
-</div>
-</div></section>
-
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/sites/marcozehe-role-application.png" alt="">
-	<p><a target=_blank href="http://www.marcozehe.de/2012/02/06/if-you-use-the-wai-aria-role-application-please-do-so-wisely/">Marco Zehe - If you use the WAI-ARIA role “application”, please do so wisely!</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide impact"><div>
-<div>
-	<h2>ARIA to explicitly define relationships</h2>
-	<p><small>beyond what HTML offers natively</small></p>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/extending-relationships-form-field.png" alt="Form field with a label and additional explanatory text below">
-	<p>example: <a target=_blank href="../demos/enhancements-form.html">form enhancement using <code>aria-describedby</code> (plus <code>aria-required</code> and <code>aria-invalid</code>)</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/extending-relationships-form-grid.png" alt="A grid of text entry fields with row and column headers">
-	<p>example: <a target=_blank href="../demos/enhancements-table-grid.html">form enhancement using <code>aria-labelledby</code></a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide impact"><div>
-<div>
-	<h2>ARIA for remediation</h2>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-	<p>if your page/app uses inappropriate markup, ARIA can be used to patch some of the issues (if it can't be fixed properly)...</p>
-	<pre><code>
-&lt;table <mark>role="presentation"</mark>&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Layout column 1&lt;/td&gt;
-        &lt;td&gt;Layout column 2&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;</code></pre>
-	<p>example: <a target=_blank href="../demos/remediation-layout-table.html">layout table remediation</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide impact"><div>
-<div>
-	<h2>web components, angular, etc?</h2>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/sites/polymer-project-paper-elements-slider-aria.png" alt="Polymer's Paper Elements implementation of slider uses ARIA attributes">
-	<p><a target=_blank href="https://www.polymer-project.org/components/paper-elements/demo.html#paper-slider">Polymer - Paper Elements - Slider</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/sites/polymer-project-accessible-web-components.png" alt="">
-	<p><a target=_blank href="https://www.polymer-project.org/articles/accessible-web-components.html">Addy Osmani / Alice Boxhall - Accessible Web Components</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/sites/w3c-github-webcomponents-custom-tag-example.png" alt="">
-	<p><a target=_blank href="http://w3c.github.io/webcomponents/spec/custom/#custom-tag-example">W3C Editor's Draft - Custom Elements - 11.1 Custom Tag example</a></p>
+	<img src="pictures/sites/bootstrap-accessibility.png" alt="">
+	<p><a target=_blank href="http://getbootstrap.com/docs/4.1/getting-started/accessibility/">Bootstrap - Accessibility</a></p>
 </div></section>
 
 <!-- -->
@@ -1879,15 +1593,46 @@ aria-checked="false"
 
 <!-- -->
 
+<section class="slide cover impact"><div>
+	<div><p>ARIA is not a magic bullet</p></div>
+	<img src="pictures/kennedy-magic-bullet.jpg" class="cover" alt="Diagram: the remarkable path of the pristine bullet according to Warren Commission (showing entry and exit wounds on Kennedy and Connaly">
+</div></section>
+
+<!-- -->
+
+<section class="slide listing"><div>
+	<h3>what ARIA is/isn't ...</h3>
+	<ul>
+		<li>ARIA conveys "what is this thing and what does it do?" to assistive technologies</li>
+		<li>ARIA does not influence browser behavior itself – you need to manage keyboard handling, state, etc. yourself</li>
+		<li>ARIA is vast and complex, depends on browser/AT support, has shortcomings</li>
+	</ul>
+</div></section>
+
+<!-- -->
+
+<section class="slide listing"><div>
+	<h3>pragmatic approach to using ARIA</h3>
+	<ul>
+		<li>understand/break-up complex app into simple component elements</li>
+		<li>you don't always need ARIA – appropriate HTML usually best</li>
+		<li><a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria">No ARIA is better than Bad ARIA</a></li>
+		<li>consult <a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/">ARIA Practices</a> to see if they match an existing pattern</li>
+		<li>follow the <a target=_blank href="https://www.w3.org/TR/using-aria/">rules of ARIA</a></li>
+		<li>check main <a target=_blank href="https://www.w3.org/TR/wai-aria/">ARIA specification</a> for correct syntax, expected attributes, valid values</li>
+		<li>test in actual browser/AT</li>
+	</ul>
+</div></section>
+
+<!-- -->
+
 <section class="slide"><div>
 	<h2>get in touch</h2>
 	<p><a target=_blank href="https://twitter.com/patrick_h_lauke">@patrick_h_lauke</a><br>
-	<a target=_blank href="http://github.com/patrickhlauke/aria">github.com/patrickhlauke/aria</a><br>
-	<a target=_blank href="https://patrickhlauke.github.io/aria/presentation/">patrickhlauke.github.io/aria/presentation/</a><br>
-	<a target=_blank href="http://www.slideshare.net/redux">slideshare.net/redux</a><br>
-	<a target=_blank href="http://www.paciellogroup.com">paciellogroup.com</a><br>
-	<a target=_blank href="http://www.splintered.co.uk">splintered.co.uk</a><p>
-	<p><img src="pictures/cc-by-nc-sa.png" alt="Creative Commons: Attribution Non-Commercial Share-Alike"></p>
+	<a target=_blank href="https://github.com/patrickhlauke/aria">github.com/patrickhlauke/aria</a><br>
+	<a target=_blank href="https://www.paciellogroup.com">paciellogroup.com</a><br>
+	<a target=_blank href="https://www.splintered.co.uk">splintered.co.uk</a><p>
+	<p><img src="pictures/cc-by-nc-sa.svg" width="271" height="64" alt="Creative Commons: Attribution Non-Commercial Share-Alike"></p>
 </div></section>
 
 	<!--

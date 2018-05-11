@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>role="tooltip" - ARIA examples</title>
+<meta charset=utf-8>
+<script>
+function showTooltip(e) {
+	if (this.hasAttribute("data-title")) return;
+	this.setAttribute("data-title",this.getAttribute("title"));
+	this.removeAttribute("title");
+	this.setAttribute("aria-describedby","tooltip");
+	var x = e.pageX, y = e.pageY;
+	
+	if ((x == 0) && (y == 0)) {
+		var bodyRect = document.body.getBoundingClientRect(),
+    		elemRect = this.getBoundingClientRect(),
+			x  = elemRect.left - bodyRect.left,
+			y  = elemRect.top - bodyRect.top;
+	}
+	document.getElementById("tooltip").style.left = (x + 10) + "px";
+	document.getElementById("tooltip").style.top = (y +10 ) + "px";
+	document.getElementById("tooltip").innerHTML = this.getAttribute("data-title");
+	document.getElementById("tooltip").classList.add("visible");
+}
+
+function hideTooltip() {
+	document.getElementById("tooltip").classList.remove("visible");
+	this.removeAttribute("aria-describedby");
+	this.setAttribute("title",this.getAttribute("data-title"));
+	this.removeAttribute("data-title");
+}
+
+window.addEventListener('load',function() {
+	var tips = document.querySelectorAll(".tooltip");
+	for (var i=0; i<tips.length; i++) {
+		tips[i].addEventListener("mouseover", showTooltip);
+		tips[i].addEventListener("focus", showTooltip);
+		tips[i].addEventListener("mouseout", hideTooltip);
+		tips[i].addEventListener("blur", hideTooltip);
+	}
+})
+</script>
+<link rel="stylesheet" href="../style.css">
+<style>
+#tooltip { display: none; position: absolute; top: 1em; left: 1em; border: 1px #000 solid; background: #eee; padding: 0.5em; }
+#tooltip.visible { display: block; }
+</style>
+</head>
+<body>
+<p><a href="#" title="some additional information">Test link with title attribute</a></p>
+<p><a href="#" class="tooltip" title="some additional information">Test link with title and JS tooltip</a></p>
+<div id="tooltip" role="tooltip"></div>
+</body>
+</html>
