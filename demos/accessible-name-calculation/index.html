@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Accessible Name Calculation demo</title><meta charset=utf-8>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<span tabindex="0" role="button">
+<span class="glyphicon glyphicon-remove">
+<span class="sr-only">Delete</span>
+</span>
+</span>
+
+<span tabindex="0" role="button" title="Delete">
+<span class="glyphicon glyphicon-remove"></span>
+</span>
+
+<span tabindex="0" role="button" aria-label="Delete">
+<span class="glyphicon glyphicon-remove"></span>
+</span>
+
+
+<span tabindex="0" role="button" aria-labelledby="label-for-delete-button">
+<span class="glyphicon glyphicon-remove"></span>
+</span>
+
+<span id="label-for-delete-button" class="...">Delete</span>
+
+</body>
+</html>

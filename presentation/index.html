@@ -24,7 +24,7 @@
     	<h2>WAI-ARIA</strong></h2>
 		<p>An introduction to <strong>Accessible Rich Internet Applications</strong></p>
     </div>
-	<p class="info">Patrick H. Lauke / Version 2.0.06052018</p>
+	<p class="info">Patrick H. Lauke / Version 2.0.11052018</p>
 	<img src="pictures/background-cover.jpg" alt="" class="cover">
 </div></section>
 
@@ -600,7 +600,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 &lt;!-- don't do this... --&gt;
 
 &lt;span tabindex="0" role="button"&gt;
-    &lt;span class="glyphicon glyphicon-remove-sign"&gt;&lt;/span&gt;
+    &lt;span class="glyphicon glyphicon-remove"&gt;&lt;/span&gt;
 &lt;/span&gt;
 </code></pre>
 </div></section>
@@ -610,21 +610,43 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <section class="slide listing code"><div>
 	
 <pre><code class="html">
-&lt;span tabindex="0" role="button" <mark>aria-label="Delete"</mark>&gt;
-    &lt;span class="glyphicon glyphicon-remove-sign"&gt;&lt;/span&gt;
-&lt;/span&gt;
-
-&lt;span tabindex="0" role="button" <mark>title="Delete"</mark>&gt;
-    &lt;span class="glyphicon glyphicon-remove-sign"&gt;&lt;/span&gt;
-&lt;/span&gt;
-
 &lt;span tabindex="0" role="button"&gt;
-    &lt;span class="glyphicon glyphicon-remove-sign"&gt;
+    &lt;span class="glyphicon glyphicon-remove"&gt;
       <mark>&lt;span class="..."&gt;Delete&lt;/span&gt;</mark>
     &lt;/span&gt;
 &lt;/span&gt;
+
+&lt;span tabindex="0" role="button" <mark>title="Delete"</mark>&gt;
+    &lt;span class="glyphicon glyphicon-remove"&gt;&lt;/span&gt;
+&lt;/span&gt;
 </code></pre>
 	<p>refer to <a target=_blank href="https://www.w3.org/TR/wai-aria/#namecalculation">WAI-ARIA 1.1 - 5.2.7. Accessible Name Calculation</a></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide listing code"><div>
+	
+<pre><code class="html">
+&lt;span tabindex="0" role="button" <mark>aria-label="Delete"</mark>&gt;
+    &lt;span class="glyphicon glyphicon-remove"&gt;&lt;/span&gt;
+&lt;/span&gt;
+
+
+&lt;span tabindex="0" role="button" <mark>aria-labelledby="..."</mark>&gt;
+    &lt;span class="glyphicon glyphicon-remove"&gt;&lt;/span&gt;
+&lt;/span&gt;
+...
+&lt;span id="<mark>...</mark>" class="..."&gt;Delete&lt;/span&gt;
+</code></pre>
+	<p>refer to <a target=_blank href="https://www.w3.org/TR/wai-aria/#namecalculation">WAI-ARIA 1.1 - 5.2.7. Accessible Name Calculation</a></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide"><div>
+	<img src="pictures/chrome-devtools-accessibility-panel-accessible-name.png" alt="Screenshot of Chrome Developer Tools' accessibility panel, showing details about which attributes - content, title, aria-label, aria-labelledby - contribute to the element's name">
+	<p>Chrome Developer Tools' accessibility panel can be helpful in debugging which attributes contribute to an element's name</p>
 </div></section>
 
 <!-- -->
@@ -1460,21 +1482,8 @@ document.body.appendChild(newDiv);
 
 <section class="slide statement"><div>
 <div>
-	<h4>menu</h4>
+	<h4>menu/menubar</h4>
 </div>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-<pre><code class="html">
-&lt;div <mark>role="menu"</mark>&lt;/div>
-	&lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
-	&lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
-	&lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
-	...
-&lt;/div&gt;
-</code></pre>
 </div></section>
 
 <!-- -->
@@ -1501,8 +1510,16 @@ document.body.appendChild(newDiv);
 <!-- -->
 
 <section class="slide"><div>
-	<img src="pictures/sites/w3c-wai-tutorials-app-menu.png" alt="">
-	<p><a target=_blank href="https://www.w3.org/WAI/tutorials/menus/application/">W3C - Web Accessibility Tutorials - Web Application Menus</a></p>
+	<img src="pictures/aria-menu-spec.png" alt="Screenshot of the warning note on ARIA design patterns and touch device support in the 'Using ARIA' spec">
+	<p><a target=_blank href="https://www.w3.org/TR/wai-aria/#menu">ARIA 1.1 menu (role)</a></p>
+	<p><small>specific child elements only (<code>menuitem</code>, <code>menuitemcheckbox</code>, <code>menuitemradio</code>)</small></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide"><div>
+	<img src="pictures/aria-in-html-touch.png" alt="Screenshot of the warning note on ARIA design patterns and touch device support in the 'Using ARIA' spec">
+	<p><a target=_blank href="https://www.w3.org/TR/using-aria/#aria-touch">Using ARIA - 2.15 ARIA Design Patterns and Touch Device Support</p>
 </div></section>
 
 <!-- -->
@@ -1579,6 +1596,32 @@ document.body.appendChild(newDiv);
 <section class="slide cover impact"><div>
 	<div><p>ARIA is not a magic bullet</p></div>
 	<img src="pictures/kennedy-magic-bullet.jpg" class="cover" alt="Diagram: the remarkable path of the pristine bullet according to Warren Commission (showing entry and exit wounds on Kennedy and Connaly">
+</div></section>
+
+<!-- -->
+
+<section class="slide listing"><div>
+	<h3>what ARIA is/isn't ...</h3>
+	<ul>
+		<li>ARIA conveys "what is this thing and what does it do?" to assistive technologies</li>
+		<li>ARIA does not influence browser behavior itself – you need to manage keyboard handling, state, etc. yourself</li>
+		<li>ARIA is vast and complex, depends on browser/AT support, has shortcomings</li>
+	</ul>
+</div></section>
+
+<!-- -->
+
+<section class="slide listing"><div>
+	<h3>pragmatic approach to using ARIA</h3>
+	<ul>
+		<li>understand/break-up complex app into simple component elements</li>
+		<li>you don't always need ARIA – appropriate HTML usually best</li>
+		<li><a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria">No ARIA is better than Bad ARIA</a></li>
+		<li>consult <a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/">ARIA Practices</a> to see if they match an existing pattern</li>
+		<li>follow the <a target=_blank href="https://www.w3.org/TR/using-aria/">rules of ARIA</a></li>
+		<li>check main <a target=_blank href="https://www.w3.org/TR/wai-aria/">ARIA specification</a> for correct syntax, expected attributes, valid values</li>
+		<li>test in actual browser/AT</li>
+	</ul>
 </div></section>
 
 <!-- -->
