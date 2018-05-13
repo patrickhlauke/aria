@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../style.css">
 <style>
-    .toggled { outline: 5px #e00 solid; }
+    .toggled span::before { content: "\e013"; }
 </style>
 <script>
 window.addEventListener('load',function() {
@@ -19,6 +19,6 @@ window.addEventListener('load',function() {
 </head>
 <body>
 <!-- using an actual <button> element - ARIA can be used to enhance even native HTML elements -->
-<button id="b">Toggle</button>
+<button id="b"><span class="glyphicon" aria-hidden="true"></span> Toggle</button>
 </body>
 </html>

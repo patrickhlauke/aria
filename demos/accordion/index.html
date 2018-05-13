@@ -6,9 +6,15 @@
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../style.css">
 <style>
-    .accordionHeader { display: block; }
-    .accordionHeader.open { outline: 5px #e00 solid; }
-    .accordionPanel { display: none; }
+    .accordionHeader .glyphicon::before { content: "\e080"; }
+    .accordionHeader.open .glyphicon::before { content: "\e114"; }
+    .accordionPanel {
+        display: none;
+        background: #ddd;
+        padding: 1em;
+        border: #ccc 1px solid;
+        margin-bottom: 1em;
+    }
     .accordionPanel.open { display: block; }
 </style>
 <script>
@@ -26,15 +32,16 @@ window.addEventListener('load',function() {
 </script>
 </head>
 <body>
-<button class="accordionHeader" data-expand="accordionPanel1">Item 1</button>
+<p>Basic accordion, using <code>&lt;button&gt;</code> headers.</p>
+<button class="accordionHeader" data-expand="accordionPanel1"><span class="glyphicon" aria-hidden="true"></span> Item 1</button>
 <div class="accordionPanel" id="accordionPanel1">
     <p>This is the information contained in the first accordion panel.</p>
 </div>
-<button class="accordionHeader" data-expand="accordionPanel2">Item 2</button>
+<button class="accordionHeader" data-expand="accordionPanel2"><span class="glyphicon" aria-hidden="true"></span> Item 2</button>
 <div class="accordionPanel" id="accordionPanel2">
     <p>This is the information contained in the second accordion panel.</p>
 </div>
-<button class="accordionHeader" data-expand="accordionPanel3">Item 3</button>
+<button class="accordionHeader" data-expand="accordionPanel3"><span class="glyphicon" aria-hidden="true"></span> Item 3</button>
 <div class="accordionPanel" id="accordionPanel3">
     <p>This is the information contained in the third accordion panel.</p>
 </div>

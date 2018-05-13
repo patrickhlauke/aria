@@ -5,11 +5,16 @@
 <meta charset=utf-8>
 <link rel="stylesheet" href="../style.css">
 <style>
-table, tr, td { border: 1px red solid; border-collapse: collapse;}
+table, tr, td { border: 5px transparent solid; border-collapse: collapse; }
+table:hover,
+table:hover tr,
+table:hover td { border: 5px red solid; border-collapse: collapse;}
 td { padding: 1em; }
 </style>
 </head>
 <body>
+<h1>Layout table without and with <code>role="presentation"</code></h1>
+<p><small>Hover over the tables below to show the borders.</small></p>
 <h2>Layout table</h2>
 <table>
 	<tr>

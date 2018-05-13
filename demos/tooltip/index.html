@@ -52,8 +52,10 @@ window.addEventListener('load',function() {
 </style>
 </head>
 <body>
-<p><a href="#" title="some additional information">Test link with title attribute</a></p>
-<p><a href="#" class="tooltip" title="some additional information">Test link with title and JS tooltip</a></p>
+<h1><code>title</code> vs custom tooltip</h1>
+<p><a href="#" title="some additional information">Test link with <code>title</code> attribute</a></p>
+<p><a href="#" class="tooltip" title="some additional information">Test link with custom JavaScript tooltip</a></p>
+<p>Custom JavaScript to display the tooltip, and dynamically tie it to the link with <code>aria-describedby</code>.</p>
 <div id="tooltip" role="tooltip"></div>
 </body>
 </html>

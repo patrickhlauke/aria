@@ -6,8 +6,15 @@
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../style.css">
 <style>
-    [aria-expanded="true"] { outline: 5px #e00 solid; }
-    .disclosure { display: none; }
+    #b .glyphicon::before { content: "\e080"; }
+    #b[aria-expanded="true"] .glyphicon::before { content: "\e114"; }
+    .disclosure {
+        display: none;
+        background: #ddd;
+        padding: 1em;
+        border: #ccc 1px solid;
+        margin-bottom: 1em;
+    }
     .disclosure.show { display: block; }
 </style>
 <script>
@@ -27,7 +34,8 @@ window.addEventListener('load',function() {
 </script>
 </head>
 <body>
-<button id="b" aria-controls="detailsPanel" aria-expanded="false">More details</button>
+<p>Disclosure button with <code>aria-expanded</code> and <code>aria-controls</code>.</p>
+<button id="b" aria-controls="detailsPanel" aria-expanded="false"><span class="glyphicon" aria-hidden="true"></span> More details</button>
 <div class="disclosure" id="detailsPanel">
 <p>This is all the additional information that is initially hidden, but then shown when the above button is clicked. Clicking it a second time hides it again.</p>
 </div>

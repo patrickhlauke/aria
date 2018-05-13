@@ -5,12 +5,13 @@
 <meta charset=utf-8>
 <link rel="stylesheet" href="../style.css">
 <style>
-a, .link { text-decoration: underline; color: blue;}
+a, .link, [role="link"] { text-decoration: underline; color: blue; cursor: pointer; }
 </style>
 </head>
 <body>
-<p><a href="http://www.example.com">Test 1</a></p>
-<p><span class="link" tabindex="0" onclick="document.location='http://www.example.com'">Test 2</span></p>
-<p><span class="link" role="link" tabindex="0" onclick="document.location='http://www.example.com'">Test 3</code></span></p>
+<h1>Native vs faked links</h1>
+<p><a href="http://www.example.com">regular link</a></p>
+<p><span class="link" tabindex="0" onclick="document.location='http://www.example.com'">focusable <code>&lt;span&gt;</code></span></p>
+<p><span role="link" tabindex="0" onclick="document.location='http://www.example.com'">focusable <code>&lt;span&gt;</code> and appropriate <code>role="link"</code></span></p>
 </body>
 </html>

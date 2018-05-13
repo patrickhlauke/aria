@@ -6,7 +6,7 @@
 <script>
 function showAlert() {
 	var d = this.getAttribute("href");
-	document.getElementById("alert").innerHTML = "Warning: activating this link will take you out of this site and to "+d;
+	document.getElementById("alert").innerHTML = "Warning: activating this link will take you to "+d;
 	document.getElementById("alert").classList.add("visible");
 }
 
@@ -26,12 +26,13 @@ window.addEventListener('load',function() {
 </script>
 <link rel="stylesheet" href="../style.css">
 <style>
-#alert { display: none; border: 1px #000 solid; background: #d00; color: #fff; font-weight: bold; padding: 0.5em; }
-#alert.visible { display: block; }
+[role="alert"] { display: none; border: 1px #000 solid; background: #d00; color: #fff; font-weight: bold; padding: 0.5em; }
+[role="alert"].visible { display: block; }
 </style>
 </head>
 <body>
-<p><a href="http://www.example.com">Test link 1</a>, <a href="http://www.example.org">test link 2</a></p>
+<h1>Link with <code>role="alert"</code> custom tooltip</h1>
+<p>Functionally similar to a generic <a href="../tooltip/">custom tooltip</a>, but thanks to <code>role="alert"</code> (an implicit live region role) we don't need to worry about it being announced: <a href="https://www.example.com">Test link 1</a>. Generally, <code>role="alert"</code> announcements are also prefixed as an alert when announced by assistive technologies.</p>
 <div id="alert" role="alert"></div>
 </body>
 </html>

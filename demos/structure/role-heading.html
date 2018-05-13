@@ -5,9 +5,9 @@
 <meta charset=utf-8>
 <link rel="stylesheet" href="../style.css">
 <style>
-h1, .heading1 { font-size: 3em; font-weight: normal; }
-h2, .heading2 { font-size: 2em; font-weight: normal; }
-h3, .heading3 { font-size: 1.5em; font-weight: normal; }
+h1, .heading1, [role="heading"][aria-level="1"] { font-size: 3em; font-weight: normal; }
+h2, .heading2, [role="heading"][aria-level="2"] { font-size: 2em; font-weight: normal; }
+h3, .heading3, [role="heading"][aria-level="3"] { font-size: 1.5em; font-weight: normal; }
 </style>
 </head>
 <body>
@@ -19,8 +19,8 @@ h3, .heading3 { font-size: 1.5em; font-weight: normal; }
 <p class="heading2"><code>&lt;p&gt;</code> with <code>class="heading2"</code></p>
 <p class="heading3"><code>&lt;p&gt;</code> with <code>class="heading3"</code></p>
 <hr>
-<p class="heading1" role="heading" aria-level="1"><code>&lt;p&gt;</code> with <code>role="heading"</code> and <code>aria-level="1"</code></p>
-<p class="heading2" role="heading" aria-level="2"><code>&lt;p&gt;</code> with <code>role="heading"</code> and <code>aria-level="2"</code></code></p>
-<p class="heading3" role="heading" aria-level="3"><code>&lt;p&gt;</code> with <code>role="heading"</code> and <code>aria-level="3"</code></code></p>
+<p role="heading" aria-level="1"><code>&lt;p&gt;</code> with <code>role="heading"</code> and <code>aria-level="1"</code></p>
+<p role="heading" aria-level="2"><code>&lt;p&gt;</code> with <code>role="heading"</code> and <code>aria-level="2"</code></code></p>
+<p role="heading" aria-level="3"><code>&lt;p&gt;</code> with <code>role="heading"</code> and <code>aria-level="3"</code></code></p>
 </body>
 </html>

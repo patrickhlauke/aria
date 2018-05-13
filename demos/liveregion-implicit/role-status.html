@@ -26,12 +26,13 @@ window.addEventListener('load',function() {
 </script>
 <link rel="stylesheet" href="../style.css">
 <style>
-#statusbar { display: none; border: 1px #000 solid; background: #eee; padding: 0.5em; }
-#statusbar.visible { display: block; }
+[role="status"] { display: none; border: 1px #000 solid; background: #eee; padding: 0.5em; }
+[role="status"].visible { display: block; }
 </style>
 </head>
 <body>
-<p><a href="http://www.example.com">Test link 1</a>, <a href="http://www.example.org">test link 2</a></p>
+<h1>Link with <code>role="status"</code> custom tooltip</h1>
+<p>Functionally similar to a generic <a href="../tooltip/">custom tooltip</a>, but thanks to <code>role="status"</code> (an implicit live region role) we don't need to worry about it being announced: <a href="https://www.example.com">Test link 1</a>.</p>
 <div id="statusbar" role="status"></div>
 </body>
 </html>

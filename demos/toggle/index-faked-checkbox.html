@@ -39,13 +39,16 @@
         -ms-user-select: none;      /* IE 10+ */
         user-select: none; 
     }
-    .toggle:checked ~ label { background-color: #0AF; }
+    .toggle:checked ~ label span::before { content: "\e013"; }
     .toggle:focus ~ label,
-    .toggle ~ label:hover { outline: 5px #e00 solid; }
+    .toggle ~ label:hover {
+        outline: 4px #014466 solid;
+	    outline-offset: 2px;
+    }
 </style>
 </head>
 <body>
 <p>A "clever" hack - from people who love "CSS only" solutions - to use a styled checkbox. However, the way AT announce these may be confusing to actual users.</p>
-<input type="checkbox" class="toggle" id="toggle1"><label for="toggle1">Toggle</label>
+<input type="checkbox" class="toggle" id="toggle1"><label for="toggle1"><span class="glyphicon" aria-hidden="true"></span> Toggle</label>
 </body>
 </html>

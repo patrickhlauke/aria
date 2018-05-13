@@ -6,6 +6,11 @@
 <link rel="stylesheet" href="../style.css">
 <style>
 /* can use attribute selectors rather than classes */
+input[type="checkbox"]:focus,
+[role="checkbox"]:focus {
+	outline: 4px #014466 solid;
+	outline-offset: 2px; 
+}
 input[type="checkbox"],
 [role="checkbox"] {
     display: inline-block;
@@ -13,10 +18,11 @@ input[type="checkbox"],
     height: 1em;
     border: 1px #000 solid;
     background: #ddd;
+
 }
 input[type="checkbox"]:checked,
 [role="checkbox"][aria-checked="true"] {
-	background:#5f5;
+    background:#444;
 }
 </style>
 <link rel="stylesheet" href="../style.css">
@@ -44,7 +50,8 @@ window.addEventListener('load',function() {
 </script>
 </head>
 <body>
+<h1>Native vs faked checkbox with ARIA</h1>
 <p><input type="checkbox" id="checkbox1"> <label for="checkbox1">Native checkbox</label></p>
-<p><span role="checkbox" id="checkbox2" tabindex="0" aria-checked="false" aria-labelledby="checkbox2-label"></span> <span id="checkbox2-label">faked checkbox</span></p>
+<p><span role="checkbox" id="checkbox2" tabindex="0" aria-checked="false" aria-labelledby="checkbox2-label"></span> <span id="checkbox2-label"> faked checkbox using <code>&lt;span&gt;</code> and <code>role="checkbox"</code> / <code>aria-checked</code></code></span></p>
 </body>
 </html>

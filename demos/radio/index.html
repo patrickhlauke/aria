@@ -5,6 +5,12 @@
 <meta charset=utf-8>
 <link rel="stylesheet" href="../style.css">
 <style>
+input[type="radio"]:focus,
+.radio:focus span {
+	outline: 4px #014466 solid;
+	outline-offset: 2px; 
+}
+.radio:focus { outline: none; }
 input[type="radio"],
 .radio span {
     display: inline-block;
@@ -12,11 +18,14 @@ input[type="radio"],
     height: 1em;
     border: 1px #000 solid;
     background: #ddd;
+
 }
 input[type="radio"]:checked,
 .radio.checked span {
-	background:#5f5;
+    background:#444;
 }
+.fieldset { margin-top: 1em; border: 1px #ccc solid; padding: 1em; }
+.fieldset .legend { margin-bottom: 1em; }
 </style>
 <link rel="stylesheet" href="../style.css">
 <script>
@@ -49,14 +58,15 @@ window.addEventListener('load',function() {
 </script>
 </head>
 <body>
+<h1>Native vs faked radio buttons</h1>
 <fieldset>
-    <legend>Native radio buttons</legend>
+    <legend>Native fieldset / radio buttons</legend>
     <label><input type="radio" name="nativeradio"> Yes</label>
     <label><input type="radio" name="nativeradio"> No</label>
     <label><input type="radio" name="nativeradio"> Maybe</label>
 </fieldset>
-<div>
-    <div class="legend">Faked radio buttons</div>
+<div class="fieldset">
+    <div class="legend">Faked fieldset / radio buttons</div>
     <span class="radio" tabindex="0" data-checked="false"><span></span> Yes</span>
     <span class="radio" tabindex="0" data-checked="false"><span></span> No</span>
     <span class="radio" tabindex="0" data-checked="false"><span></span> Maybe</span>

@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="../style.css">
 <style>
     #modalDialog { display: none; }
-    #modalDialog.show { display: block; background: #eee; position: absolute; width: 20em; top: 2em; margin: 0 auto; z-index: 2; }
+    #modalDialog.show { display: block; padding: 1em; border: 1px #444 solid; background: #eee; position: absolute; width:100%; max-width: 28em; top: 2.5em; margin: 0 auto; z-index: 2; }
 </style>
 <script>
 /* Very naive basic scripting, for demonstration purposes only.
@@ -54,6 +54,7 @@ window.addEventListener('load',function() {
 <main>
 <h1>Modal dialog</h1>
 <p>The button will launch a modal dialog.</p>
+<p>Uses <code>aria-hidden="true"</code> on the underlying page when the modal is open, to avoid assistive technology users from straying out of the modal (e.g. using heading navigation).</p>
 <button id="modalTrigger">Launch...</button>
 </main>
 <div id="modalDialog" role="dialog" aria-labelledby="modalDialogHeader" aria-describedby="modalDialogDescription">

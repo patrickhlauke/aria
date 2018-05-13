@@ -5,11 +5,17 @@
 <meta charset=utf-8>
 <link rel="stylesheet" href="../style.css">
 <style>
-.list div { }
+.list,
+[role="list"] {
+	padding: 0 0 0 1.5em;
+}
+
+.list div::before,
+[role="list"] [role="listitem"]::before { content:"\2022"; margin-right: 0.5em; }
 </style>
 </head>
 <body>
-
+<h1>Native vs faked unordered lists</h1>
 <h2>Native list</h2>
 <ul>
 	<li>first item</li>
@@ -29,7 +35,7 @@
 <hr>
 
 <h2>Faked list with ARIA</h2>
-<div class="list" role="list">
+<div role="list">
 	<div role="listitem">first item</div>
 	<div role="listitem">second item</div>
 	<div role="listitem">third item</div>

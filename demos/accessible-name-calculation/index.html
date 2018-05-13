@@ -4,28 +4,43 @@
 <title>Accessible Name Calculation demo</title><meta charset=utf-8>
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../style.css">
+<style>
+/* override some of the generic demo styles */
+[role="button"] {
+    width: auto;
+    text-overflow: initial;
+}
+
+#label-for-delete-button { font-size: 2em; font-weight: bold; }
+</style>
 </head>
 <body>
+<h1>Accessible name calculation</h1>
+<p>Various examples/alternatives of how to provide a <em>name</em> to a control (in this case, a <code>&lt;span&gt;</code> with <code>role="button"</code>.</p>
+
+<h2>Content (with visually hidden text)</h2>
 <span tabindex="0" role="button">
 <span class="glyphicon glyphicon-remove">
 <span class="sr-only">Delete</span>
 </span>
 </span>
 
+<h2><code>title</code> attribute</h2>
 <span tabindex="0" role="button" title="Delete">
 <span class="glyphicon glyphicon-remove"></span>
 </span>
 
+<h2><code>aria-label</code> attribute</h2>
 <span tabindex="0" role="button" aria-label="Delete">
 <span class="glyphicon glyphicon-remove"></span>
 </span>
 
-
+<h2><code>aria-labelledby</code> attribute</h2>
 <span tabindex="0" role="button" aria-labelledby="label-for-delete-button">
 <span class="glyphicon glyphicon-remove"></span>
 </span>
 
-<span id="label-for-delete-button" class="...">Delete</span>
+<span id="label-for-delete-button">Delete</span>
 
 </body>
 </html>

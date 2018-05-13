@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../style.css">
 <style>
-    .toggled { outline: 5px #e00 solid; }
+    .toggled span::before { content: "\e013"; }
 </style>
 <script>
 window.addEventListener('load',function() {
@@ -24,6 +24,7 @@ window.addEventListener('load',function() {
 </script>
 </head>
 <body>
-<button id="b" aria-pressed="false">Toggle</button>
+<button id="b" aria-pressed="false"><span class="glyphicon" aria-hidden="true"></span> Toggle</button>
+<p>Basic toggle using <code>aria-pressed</code>.</p>
 </body>
 </html>

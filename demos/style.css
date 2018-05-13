@@ -96,21 +96,36 @@ button::-moz-focus-inner,
 	font-family: 'Glyphicons Halflings';
 	src: url('./glyphicons/glyphicons-halflings-regular.eot');
 	src: url('./glyphicons/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('./glyphicons/glyphicons-halflings-regular.woff2') format('woff2'), url('./glyphicons/glyphicons-halflings-regular.woff') format('woff'), url('./glyphicons/glyphicons-halflings-regular.ttf') format('truetype'), url('./glyphicons/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-  }
-  
-  .glyphicon {
-	  position: relative;
-	  top: 1px;
-	  display: inline-block;
-	  font-family: 'Glyphicons Halflings';
-	  font-style: normal;
-	  font-weight: 400;
-	  line-height: 1;
-	  -webkit-font-smoothing: antialiased;
-	  -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .glyphicon-remove:before {
-	  content: "\e014";
-  }
+}
 
+.glyphicon {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon-remove:before {
+	content: "\e014";
+}
+
+.glyphicon-chevron-right:before {
+	content: "\e080";
+}
+
+.glyphicon-chevron-down:before {
+    content: "\e114";
+}
+
+.glyphicon-menu-hamburger:before {
+    content: "\e236";
+}
+
+.glyphicon-ok:before {
+    content: "\e013";
+}

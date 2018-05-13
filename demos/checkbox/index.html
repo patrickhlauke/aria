@@ -5,6 +5,11 @@
 <meta charset=utf-8>
 <link rel="stylesheet" href="../style.css">
 <style>
+input[type="checkbox"]:focus,
+.checkbox:focus {
+	outline: 4px #014466 solid;
+	outline-offset: 2px; 
+}
 input[type="checkbox"],
 .checkbox {
     display: inline-block;
@@ -12,10 +17,11 @@ input[type="checkbox"],
     height: 1em;
     border: 1px #000 solid;
     background: #ddd;
+
 }
 input[type="checkbox"]:checked,
 .checkbox.checked {
-	background:#5f5;
+    background:#444;
 }
 </style>
 <link rel="stylesheet" href="../style.css">
@@ -43,7 +49,8 @@ window.addEventListener('load',function() {
 </script>
 </head>
 <body>
-<p><input type="checkbox" id="checkbox1"> <label for="checkbox1">Native checkbox</label></p>
-<p><span class="checkbox" id="checkbox2" tabindex="0" data-checked="false"></span> faked checkbox</p>
+<h1>Native vs faked checkbox</h1>
+<p><input type="checkbox" id="checkbox1"> <label for="checkbox1">native checkbox</label></p>
+<p><span class="checkbox" id="checkbox2" tabindex="0" data-checked="false"></span> faked checkbox using <code>&lt;span&gt;</code></p>
 </body>
 </html>
