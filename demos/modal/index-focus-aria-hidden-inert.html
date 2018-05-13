@@ -24,7 +24,8 @@ function openModal() {
 function closeModal() {
     document.querySelector("main").removeAttribute("inert"); /* unhide the underlying page */
     document.getElementById("modalDialog").classList.remove("show");
-    document.getElementById("modalTrigger").focus(); /* set focus back to the trigger */
+    /* using a timeout here because the inert polyfill introduces a slight delay here between removing the inert attribute and the trigger becoming focusable again ... using promises etc would make this unnecessary of course */
+    setTimeout(function () { document.getElementById("modalTrigger").focus(); /* set focus back to the trigger */ }, 250);
 }
 
 window.addEventListener('load',function() {
