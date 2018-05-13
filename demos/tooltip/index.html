@@ -5,29 +5,34 @@
 <meta charset=utf-8>
 <script>
 function showTooltip(e) {
-	if (this.hasAttribute("data-title")) return;
-	this.setAttribute("data-title",this.getAttribute("title"));
-	this.removeAttribute("title");
-	this.setAttribute("aria-describedby","tooltip");
-	var x = e.pageX, y = e.pageY;
-	
-	if ((x == 0) && (y == 0)) {
-		var bodyRect = document.body.getBoundingClientRect(),
-    		elemRect = this.getBoundingClientRect(),
-			x  = elemRect.left - bodyRect.left,
-			y  = elemRect.top - bodyRect.top;
+	if (!this.hasAttribute("data-title")) {
+		this.setAttribute("data-title",this.getAttribute("title"));
+		this.removeAttribute("title");
+		this.setAttribute("aria-describedby","tooltip");
+		var x = e.clientX, y = e.clientY;
+		
+		if (!x || !y) {
+			var bodyRect = document.body.getBoundingClientRect(),
+				elemRect = this.getBoundingClientRect(),
+				x  = elemRect.left + elemRect.width/2,
+				y  = elemRect.top - bodyRect.top + 12;
+				console.dir(bodyRect)
+				console.dir(elemRect)
+		}
+		document.getElementById("tooltip").style.left = (x + 10) + "px";
+		document.getElementById("tooltip").style.top = (y +10 ) + "px";
+		document.getElementById("tooltip").innerHTML = this.getAttribute("data-title");
+		document.getElementById("tooltip").classList.add("visible");
 	}
-	document.getElementById("tooltip").style.left = (x + 10) + "px";
-	document.getElementById("tooltip").style.top = (y +10 ) + "px";
-	document.getElementById("tooltip").innerHTML = this.getAttribute("data-title");
-	document.getElementById("tooltip").classList.add("visible");
 }
 
 function hideTooltip() {
-	document.getElementById("tooltip").classList.remove("visible");
-	this.removeAttribute("aria-describedby");
-	this.setAttribute("title",this.getAttribute("data-title"));
-	this.removeAttribute("data-title");
+	if (this.hasAttribute("data-title")) {
+		document.getElementById("tooltip").classList.remove("visible");
+		this.removeAttribute("aria-describedby");
+		this.setAttribute("title",this.getAttribute("data-title"));
+		this.removeAttribute("data-title");
+	}
 }
 
 window.addEventListener('load',function() {
