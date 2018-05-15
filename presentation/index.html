@@ -1301,6 +1301,26 @@ function closeModal() {
 
 <!-- -->
 
+<section class="slide code listing"><div>
+<pre><code>
+&lt;button&gt;Launch...&lt;/button&gt;
+...
+&lt;div role="dialog" <mark>aria-modal="true"</mark>
+	 aria-labelledby="dialog-header"
+	 aria-describedby="modalDialogDescription" ... &gt;
+  &lt;div id="modalDialogHeader"&gt;My custom dialog&lt;/div&gt;
+  &lt;div id="modalDialogDescription"&gt;
+    ... 
+  &lt;/div&gt;
+  ...
+&lt;/div&gt;
+</code></pre>
+<p>example: <a target=_blank href="../demos/modal/index-focus-aria-modal.html">modal dialog with <code>aria-modal</code></a> (new in ARIA 1.1)</p>
+<p>...but you still need to do the focus management yourself...</p>
+</div></section>
+
+<!-- -->
+
 <section class="slide impact"><div>
 <div>
 	<h2>live regions</h2>
