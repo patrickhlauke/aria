@@ -34,7 +34,7 @@ window.addEventListener('load',function() {
 </script>
 </head>
 <body>
-<p>Disclosure button with <code>aria-expanded</code> and <code>aria-controls</code>.</p>
+<p>Disclosure button with <code>aria-expanded</code> and <code>aria-controls</code> - the latter should allow users to jump directly to the controlled element (but announcement may not work in all browser/assistive technology combinations).</p>
 <button id="b" aria-controls="detailsPanel" aria-expanded="false"><span class="glyphicon" aria-hidden="true"></span> More details</button>
 <div class="disclosure" id="detailsPanel">
 <p>This is all the additional information that is initially hidden, but then shown when the above button is clicked. Clicking it a second time hides it again.</p>

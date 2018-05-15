@@ -27,5 +27,6 @@ window.addEventListener('load',function() {
 <!-- using an actual <button> element - ARIA can be used to enhance even native HTML elements -->
 <button id="b"><span class="glyphicon" aria-hidden="true"></span> <span class="label">Mute</span></button>
 <p>If you're changing the actual name/content of the toggle, you likely <em>don't</em> want to use <code>aria-pressed</code>, as it would result in weird/confusing announcements by assistive technologies.</p>
+<p>Note that in some browser/assistive technology combinations, the dynamic change of label/name may not be announced...</p>
 </body>
 </html>
