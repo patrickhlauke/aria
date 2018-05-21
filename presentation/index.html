@@ -1098,59 +1098,6 @@ button[aria-pressed="true"] { ... }
 
 <!-- -->
 
-<section class="slide impact"><div>
-<div>
-	<h2>managing focus</h2>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide listing"><div>
-	<h3>complex widgets and focus</h3>
-	<ul>
-	<li>some complex widgets (group of radio buttons, menus, listboxes, tab lists) only have a single "tab stop"</li>
-	<li>focus/interactions within the widget are handled programmatically</li>
-	<li><kbd>TAB</kbd>/<kbd>SHIFT</kbd>+<kbd>TAB</kbd> moves to the next widget, not to sub-components</li>
-	</ul>
-</div></section>
-
-<!-- -->
-
-<section class="slide listing"><div>
-	<h4>keyboard navigation within widgets</h4>
-	<ul>
-	<li>either: "roving" <code>tabindex</code> (only one element inside widget has <code>tabindex="0"</code>, all others <code>tabindex="-1"</code>)</li>
-	<li>or: focus remains on widget itself, denote active child element with <code>aria-activedescendant</code> (and manually scroll into view, provide highlight via CSS)</li>
-	</ul>
-	<p><a target=_blank href="https://www.w3.org/TR/wai-aria-practices/#kbd_general_within">W3C WAI-ARIA 1.1 Authoring Practices - 5.6 Keyboard Navigation Inside Components</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-<pre><code class="html">
-&lt;span tabindex="-1" role="radio"
-      aria-checked="false" class="..."&gt;Yes&lt;/span&gt;
-&lt;span <mark>tabindex="0"</mark> role="radio"
-      <mark>aria-checked="true"</mark> class="... selected"&gt;No&lt;/span&gt;
-&lt;span tabindex="-1" role="radio"
-      aria-checked="false" class="..."&gt;Maybe&lt;/span&gt;
-</code></pre>
-<p>only one <code>radio</code> button inside the group has focus. changing the selection using <kbd>CURSOR</kbd> keys, dynamically changes <code>tabindex</code>, <code>aria-checked</code> and sets <code>focus()</code> on the newly selected <code>radio</code> button</p>
-<p>example: <a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/radio/radio-1/radio-1.html">ARIA Practices 1.1 - Radio Group Using Roving tabindex</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide listing"><div>
-	<p>not all complex widgets lend themselves to "roving" <code>tabindex</code> – e.g. <code>role="combobox"</code> needs <code>aria-activedescendant</code>, as actual focus must remain inside the textbox.</p>
-	<p>example: <a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/combobox/aria1.1pattern/listbox-combo.html">ARIA Practices 1.1 Combobox with Listbox Popup</a></p>
-	<p>this approach can be complex, and not always supported by assistive technologies (particularly on mobile).</p>
-</div></section>
-
-<!-- -->
-
 <section class="slide statement"><div>
 	<div>
 		<h4>disclosure widget</h4>
@@ -1318,6 +1265,59 @@ function closeModal() {
 </code></pre>
 <p>example: <a target=_blank href="../demos/modal/index-focus-aria-modal.html">modal dialog with <code>aria-modal</code></a> (new in ARIA 1.1)</p>
 <p>...but you still need to do the focus management yourself...</p>
+</div></section>
+
+<!-- -->
+
+<section class="slide impact"><div>
+<div>
+	<h2>managing focus</h2>
+</div>
+</div></section>
+
+<!-- -->
+
+<section class="slide listing"><div>
+	<h3>complex widgets and focus</h3>
+	<ul>
+	<li>some complex widgets (group of radio buttons, menus, listboxes, tab lists) only have a single "tab stop"</li>
+	<li>focus/interactions within the widget are handled programmatically</li>
+	<li><kbd>TAB</kbd>/<kbd>SHIFT</kbd>+<kbd>TAB</kbd> moves to the next widget, not to sub-components</li>
+	</ul>
+</div></section>
+
+<!-- -->
+
+<section class="slide listing"><div>
+	<h4>keyboard navigation within widgets</h4>
+	<ul>
+	<li>either: "roving" <code>tabindex</code> (only one element inside widget has <code>tabindex="0"</code>, all others <code>tabindex="-1"</code>)</li>
+	<li>or: focus remains on widget itself, denote active child element with <code>aria-activedescendant</code> (and manually scroll into view, provide highlight via CSS)</li>
+	</ul>
+	<p><a target=_blank href="https://www.w3.org/TR/wai-aria-practices/#kbd_general_within">W3C WAI-ARIA 1.1 Authoring Practices - 5.6 Keyboard Navigation Inside Components</a></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide code listing"><div>
+<pre><code class="html">
+&lt;span tabindex="-1" role="radio"
+      aria-checked="false" class="..."&gt;Yes&lt;/span&gt;
+&lt;span <mark>tabindex="0"</mark> role="radio"
+      <mark>aria-checked="true"</mark> class="... selected"&gt;No&lt;/span&gt;
+&lt;span tabindex="-1" role="radio"
+      aria-checked="false" class="..."&gt;Maybe&lt;/span&gt;
+</code></pre>
+<p>only one <code>radio</code> button inside the group has focus. changing the selection using <kbd>CURSOR</kbd> keys, dynamically changes <code>tabindex</code>, <code>aria-checked</code> and sets <code>focus()</code> on the newly selected <code>radio</code> button</p>
+<p>example: <a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/radio/radio-1/radio-1.html">ARIA Practices 1.1 - Radio Group Using Roving tabindex</a></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide listing"><div>
+	<p>not all complex widgets lend themselves to "roving" <code>tabindex</code> – e.g. <code>role="combobox"</code> needs <code>aria-activedescendant</code>, as actual focus must remain inside the textbox.</p>
+	<p>example: <a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/combobox/aria1.1pattern/listbox-combo.html">ARIA Practices 1.1 Combobox with Listbox Popup</a></p>
+	<p>this approach can be complex, and not always supported by assistive technologies (particularly on mobile).</p>
 </div></section>
 
 <!-- -->
