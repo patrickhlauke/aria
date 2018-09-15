@@ -24,7 +24,7 @@
     	<h2>WAI-ARIA</h2>
 		<p>An introduction to <strong>Accessible Rich Internet Applications</strong></p>
     </div>
-	<p class="info">Patrick H. Lauke / The Paciello Group / AccessU / 15 May 2018</p>
+	<p class="info">Patrick H. Lauke / The Paciello Group</p>
 	<img src="pictures/background-cover.jpg" alt="" class="cover">
 </div></section>
 
@@ -55,15 +55,15 @@
 <!-- -->
 
 <section class="slide"><div>
-	<img src="pictures/sites/polymer-project.png" alt="">
-	<p><a target=_blank href="https://www.polymer-project.org/">Polymer Project</a></p>
+	<img src="pictures/sites/webcomponents.png" alt="">
+	<p><a target=_blank href="https://www.webcomponents.org/">webcomponents.org</a></p>
 </div></section>
 
 <!-- -->
 
 <section class="slide listing"><div>
 	<h3>the problem</h3>
-	<p>when building interactive controls, some (too many) web developers go "all out" on the JavaScript/CSS, but <strong>ignore/sidestep regular HTML controls completely</strong></p>
+	<p>when building interactive controls, some (too many) web developers go "all out" on the JavaScript/CSS, but <strong>ignore/sidestep regular HTML controls completely</strong> (where native HTML equivalents are available) and <strong>ignore how these controls are exposed to assistive technologies</strong></p>
 </div></section>
 
 <!-- -->
@@ -152,6 +152,13 @@
 <!-- -->
 
 <section class="slide"><div>
+	<img src="pictures/chrome-accessibility.png" alt="Screenshot of Chrome's chrome://accessibility internal page, showing the native accessibility tree of a web page">
+	<p>separate from the DOM, browsers have an "accessibility tree"<br><small>(see <code>chrome://accessibility</code> for an example)</small></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide"><div>
 	<img src="pictures/sites/marcozehe-accessibility-apis.png" alt="">
 	<p><a target=_blank href="https://www.marcozehe.de/2013/09/07/why-accessibility-apis-matter/">Marco Zehe: Why accessibility APIs matter</a></p>
 </div></section>
@@ -200,22 +207,29 @@
 <!-- -->
 
 <section class="slide"><div>
-	<img src="pictures/firefox-accessibility-inspector.png" alt="Firefox Accessibility Inspector panel in Firefox Developer Tools, showing the accessibility tree and accessibility properties - exposed by Firefox to the platform/OS accessibility API - of an element in a page; right-click/context menu on an element also includes the 'Inspect Accessibility Properties' option">
-	<p><a target=_blank href="https://www.marcozehe.de/2018/04/11/introducing-the-accessibility-inspector-in-the-firefox-developer-tools/">Firefox Accessibility Inspector</a> (version 61+)</p>
+	<img src="pictures/firefox-accessibility-inspector.png" alt="Firefox Accessibility Inspector panel in Firefox Developer Tools, showing the accessibility tree and accessibility properties - exposed by Firefox to the platform/OS accessibility API - of an element in a page">
+	<p><a target=_blank href="https://developer.mozilla.org/en-US/docs/Tools/Accessibility_inspector">Firefox Accessibility Inspector</a> (version 61+)</p>
 	<p>(enable <code>devtools.accessibility.enabled</code> in <code>about:config</code>)</p>
 </div></section>
 
 <!-- -->
 
 <section class="slide"><div>
-	<img src="pictures/chrome-accessibility.png" alt="chrome://accessibility page, showing all extensions and open tabs, with the option to display the raw accessibility tree for each">
-	<p><a target=_blank href="chrome://accessibility">chrome://accessibility</a> view of the raw accessibility tree</p>
+	<img src="pictures/chrome-devtools-accessibility-panel.png" alt="Chrome DevTools' accessibility panel, showing the accessibility tree and accessibility properties - exposed by Chrome to the platform/OS accessibility API - of an element in a page">
+	<p><a target=_blank href="https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#pane">Chrome DevTools Accessibility panel</a></p>
 </div></section>
 
 <!-- -->
 
 <section class="slide"><div>
-	<img src="pictures/aviewer.png" alt="aViewer window showing MSAA, ARIA, HTML and UIAutomation information of a focused element in Firefox">
+	<img src="pictures/edge-devtools-accessibility-panel.png" alt="Edge DevTools' accessibility panel, showing the accessibility tree and accessibility properties - exposed by Edge to the platform/OS accessibility API - of an element in a page">
+	<p><a target=_blank href="https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide/elements/accessibility">Edge DevTools accessible properties</a></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide"><div>
+	<img src="pictures/aviewer.png" alt="aViewer window showing MSAA, ARIA, HTML and UIAutomation information of a focused element in Chrome">
 	<p><a target=_blank href="https://developer.paciellogroup.com/resources/aviewer/">Accessibility Viewer (aViewer)</a></p>
 </div></section>
 
@@ -223,14 +237,14 @@
 
 <section class="slide"><div>
 	<img src="pictures/safari-web-inspector-accessibility-panel.png" alt="Safari's Web Inspector, showing a separate 'Accessibility' section under its 'Node' inspection sidebar, listing basic information such as the current node's computed role">
-	<p><a target=_blank href="https://www.webkit.org/blog/3302/aria_and_accessibility_inspector/">James Craig - Using ARIA 1.0 and the WebKit Accessibility Node Inspector</a></p>
+	<p><a target=_blank href="https://webkit.org/blog/3302/aria-and-accessibility-inspector/">James Craig - Using ARIA 1.0 and the WebKit Accessibility Node Inspector</a></p>
 </div></section>
 
 <!-- -->
 
 <section class="slide"><div>
 	<img src="pictures/axinspector.png" alt="Xcode's Accessibility Inspector, showing accessibility tree/attributes for a selected element in Chrome">
-	<p><a target=_blank href="https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTesting/OSXAXTestingApps.html">Xcode Accessibility Inspector</a><br><small>(but for Chrome, remember to turn on accessibility mode in chrome://accessibility)</small> </p>
+	<p>Xcode Accessibility Inspector<br><small>(but for Chrome, remember to turn on accessibility mode in chrome://accessibility)</small> </p>
 </div></section>
 
 <!-- -->
@@ -259,7 +273,7 @@
 
 <section class="slide statement"><div>
 <div>
-	<p>if you use custom (not standard HTML) widgets,<br>use ARIA to ensure correct info is exposed</p>
+	<p>if you use custom (not standard HTML) widgets,<br>use <strong>ARIA</strong> to ensure correct info is exposed</p>
 </div>
 </div></section>
 
@@ -412,19 +426,19 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <!-- -->
 
 <section class="slide listing"><div>
-	<h3>ARIA support</h3>
+	<h4><strong>no ARIA</strong> is better than <strong>bad ARIA</strong></h4>
 	<ul>
-	<li>Browsers: Firefox 3+, Internet Explorer 8+, Safari 4+ (Mac), Chrome 17+, ...</li>
-	<li>Assistive technologies: JAWS 8+, Windows Eyes 5.5+, ZoomText, VoiceOver, TalkBack, NVDA, ORCA, ...</li>
+	<li>ARIA roles/attributes are a "promise" to users / assistive technologies (e.g. "this component is actually a button...") – you must ensure that it then behaves correctly</li>
+	<li>if you're not sure how to represent a particular complex widget or control, don't just throw ARIA roles and attributes at your markup – you're more likely to make things worse / more confusing / non-functional for assistive technology users</li>
 	</ul>
+	<p><small><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria">W3C - WAI-ARIA 1.1 Authoring Practices</a></small></p>
 </div></section>
 
 <!-- -->
 
-<section class="slide statement"><div>
-<div>
-	<p><strong>"support"</strong> does not mean that everything works, though...</p>
-</div>
+<section class="slide"><div>
+	<img src="pictures/sites/w3c-aria-authoring-practices.png" alt="">
+	<p>WAI-ARIA spec can be dry/technical - use for reference<br><a target=_blank href="https://www.w3.org/TR/wai-aria-practices/">W3C - WAI-ARIA 1.1 Authoring Practices</a> more digestible.</p>
 </div></section>
 
 <!-- -->
@@ -438,9 +452,9 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <!-- -->
 
 <section class="slide"><div>
-		<img src="pictures/sites/paciellogroup-aria-in-svg.png" alt="">
-		<p><a target=_blank href="https://developer.paciellogroup.com/blog/2013/12/using-aria-enhance-svg-accessibility/">Using ARIA to enhance SVG accessibility</a></p>
-	</div></section>
+	<img src="pictures/sites/paciellogroup-aria-in-svg.png" alt="">
+	<p><a target=_blank href="https://developer.paciellogroup.com/blog/2013/12/using-aria-enhance-svg-accessibility/">Using ARIA to enhance SVG accessibility</a></p>
+</div></section>
 
 <!-- -->
 
@@ -520,9 +534,11 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <section class="slide code listing"><div>
 	<p>don't do this:</p>
 	<pre><code class="html">&lt;h1 role="button"&gt;heading button&lt;/h1&gt;</code></pre>
-	<p>do this instead:</p>
-	<pre><code class="html">&lt;h1&gt;&lt;span role="button"&gt;heading button&lt;/span&gt;&lt;/h1&gt;</code></pre>
 	<p>otherwise the heading is no longer a heading<br>(e.g. AT users can't navigate to it quickly)</p>
+	<p>you can do this instead:</p>
+	<pre><code class="html">&lt;h1&gt;&lt;span role="button"&gt;heading button&lt;/span&gt;&lt;/h1&gt;</code></pre>
+	<p>or, in accordance with the first rule or ARIA:</p>
+	<pre><code class="html">&lt;h1&gt;&lt;button&gt;heading button&lt;/button&gt;&lt;/h1&gt;</code></pre>
 </div></section>
 
 <!-- -->
@@ -651,13 +667,6 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <!-- -->
 
-<section class="slide"><div>
-	<img src="pictures/sites/w3c-aria-authoring-practices.png" alt="">
-	<p>WAI-ARIA spec can be dry/technical - use for reference<br><a target=_blank href="https://www.w3.org/TR/wai-aria-practices/">W3C - WAI-ARIA 1.1 Authoring Practices</a> more digestible.</p>
-</div></section>
-
-<!-- -->
-
 <section class="slide impact"><div>
 <div>
 	<h2>ARIA and <strong>HTML5</strong></h2>
@@ -683,8 +692,8 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <!-- -->
 
 <section class="slide"><div>
-	<img src="pictures/html5-slider.png" alt="Using aViewer we see that native HTML5 input with type='range' is exposed correctly as a 'slider'">
-	<p>example: <a target=_blank href="../demos/html5-slider.html">HTML5 slider</a></p>
+	<img src="pictures/html5-slider.png" alt="Using Chrome DevTools' accessibility panel we see that a native HTML5 input with type='range' is exposed correctly as a 'slider'">
+	<p>example: <a target=_blank href="../demos/slider/">HTML5 range input</a></p>
 </div></section>
 
 <!-- -->
@@ -705,7 +714,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide"><div>
 	<img src="pictures/sites/w3c-html5-wai-aria.png" alt="">
-	<p>HTML5 now also includes <a target=_blank href="https://www.w3.org/TR/html/dom.html#wai-aria" title="WAI-ARIA section in W3C HTML5 Specification">WAI-ARIA</a> ...</p>
+	<p>of course you can (and for many complex widgets, must) still use<br><a target=_blank href="https://www.w3.org/TR/html/dom.html#wai-aria" title="WAI-ARIA section in W3C HTML5 Specification">WAI-ARIA in HTML5</a></p>
 </div></section>
 
 <!-- -->
@@ -1414,6 +1423,7 @@ o.innerHTML = "Surprise!"; // show the notification
 		<li>sending something with <code>role="alert"</code> as part of your static HTML document has no effect – AT won't announce this when the page is loading</li>
 		<li>creating a dynamic element with <code>aria-live="..."</code> or an implicit live region role and filling it with content right away will (depending on timing) usually not give browser/AT enough time to "see" the element and notice the change ... again resulting in no announcement</li>
 	</ul>
+	<p><small><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">Mzoilla Developer Network: ARIA Live Regions</a></small></p>
 </div></section>
 
 <!-- -->
@@ -1577,7 +1587,7 @@ document.body.appendChild(newDiv);
 
 <section class="slide impact"><div>
 <div>
-	<h2>frameworks, web components, angular, etc?</h2>
+	<h2>frameworks, web components, angular, react, etc?</h2>
 </div>
 </div></section>
 
@@ -1604,6 +1614,13 @@ document.body.appendChild(newDiv);
 <section class="slide"><div>
 	<img src="pictures/sites/docs-angularjs-accessibility.png" alt="">
 	<p><a target=_blank href="https://docs.angularjs.org/guide/accessibility">AngularJS Developer Guide - Accessibility with ngAria</a></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide"><div>
+	<img src="pictures/sites/react-accessibility.png" alt="">
+	<p><a target=_blank href="https://reactjs.org/docs/accessibility.html">React - Accessibility</a></p>
 </div></section>
 
 <!-- -->
