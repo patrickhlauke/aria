@@ -426,19 +426,19 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <!-- -->
 
 <section class="slide listing"><div>
-	<h3>ARIA support</h3>
+	<h4><strong>no ARIA</strong> is better than <strong>bad ARIA</strong></h4>
 	<ul>
-	<li>Browsers: Firefox 3+, Internet Explorer 8+, Safari 4+ (Mac), Chrome 17+, ...</li>
-	<li>Assistive technologies: JAWS 8+, Windows Eyes 5.5+, ZoomText, VoiceOver, TalkBack, NVDA, ORCA, ...</li>
+	<li>ARIA roles/attributes are a "promise" to users / assistive technologies (e.g. "this component is actually a button...") – you must ensure that it then behaves correctly</li>
+	<li>if you're not sure how to represent a particular complex widget or control, don't just throw ARIA roles and attributes at your markup – you're more likely to make things worse / more confusing / non-functional for assistive technology users</li>
 	</ul>
+	<p><small><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria">W3C - WAI-ARIA 1.1 Authoring Practices</a></small></p>
 </div></section>
 
 <!-- -->
 
-<section class="slide statement"><div>
-<div>
-	<p><strong>"support"</strong> does not mean that everything works, though...</p>
-</div>
+<section class="slide"><div>
+	<img src="pictures/sites/w3c-aria-authoring-practices.png" alt="">
+	<p>WAI-ARIA spec can be dry/technical - use for reference<br><a target=_blank href="https://www.w3.org/TR/wai-aria-practices/">W3C - WAI-ARIA 1.1 Authoring Practices</a> more digestible.</p>
 </div></section>
 
 <!-- -->
@@ -452,9 +452,9 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <!-- -->
 
 <section class="slide"><div>
-		<img src="pictures/sites/paciellogroup-aria-in-svg.png" alt="">
-		<p><a target=_blank href="https://developer.paciellogroup.com/blog/2013/12/using-aria-enhance-svg-accessibility/">Using ARIA to enhance SVG accessibility</a></p>
-	</div></section>
+	<img src="pictures/sites/paciellogroup-aria-in-svg.png" alt="">
+	<p><a target=_blank href="https://developer.paciellogroup.com/blog/2013/12/using-aria-enhance-svg-accessibility/">Using ARIA to enhance SVG accessibility</a></p>
+</div></section>
 
 <!-- -->
 
@@ -667,13 +667,6 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <!-- -->
 
-<section class="slide"><div>
-	<img src="pictures/sites/w3c-aria-authoring-practices.png" alt="">
-	<p>WAI-ARIA spec can be dry/technical - use for reference<br><a target=_blank href="https://www.w3.org/TR/wai-aria-practices/">W3C - WAI-ARIA 1.1 Authoring Practices</a> more digestible.</p>
-</div></section>
-
-<!-- -->
-
 <section class="slide impact"><div>
 <div>
 	<h2>ARIA and <strong>HTML5</strong></h2>
@@ -721,7 +714,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide"><div>
 	<img src="pictures/sites/w3c-html5-wai-aria.png" alt="">
-	<p>HTML5 now also includes <a target=_blank href="https://www.w3.org/TR/html/dom.html#wai-aria" title="WAI-ARIA section in W3C HTML5 Specification">WAI-ARIA</a> ...</p>
+	<p>of course you can (and for many complex widgets, must) still use<br><a target=_blank href="https://www.w3.org/TR/html/dom.html#wai-aria" title="WAI-ARIA section in W3C HTML5 Specification">WAI-ARIA in HTML5</a></p>
 </div></section>
 
 <!-- -->
@@ -1430,6 +1423,7 @@ o.innerHTML = "Surprise!"; // show the notification
 		<li>sending something with <code>role="alert"</code> as part of your static HTML document has no effect – AT won't announce this when the page is loading</li>
 		<li>creating a dynamic element with <code>aria-live="..."</code> or an implicit live region role and filling it with content right away will (depending on timing) usually not give browser/AT enough time to "see" the element and notice the change ... again resulting in no announcement</li>
 	</ul>
+	<p><small><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">Mzoilla Developer Network: ARIA Live Regions</a></small></p>
 </div></section>
 
 <!-- -->
