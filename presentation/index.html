@@ -520,9 +520,11 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <section class="slide code listing"><div>
 	<p>don't do this:</p>
 	<pre><code class="html">&lt;h1 role="button"&gt;heading button&lt;/h1&gt;</code></pre>
-	<p>do this instead:</p>
-	<pre><code class="html">&lt;h1&gt;&lt;span role="button"&gt;heading button&lt;/span&gt;&lt;/h1&gt;</code></pre>
 	<p>otherwise the heading is no longer a heading<br>(e.g. AT users can't navigate to it quickly)</p>
+	<p>you can do this instead:</p>
+	<pre><code class="html">&lt;h1&gt;&lt;span role="button"&gt;heading button&lt;/span&gt;&lt;/h1&gt;</code></pre>
+	<p>or, in accordance with the first rule or ARIA:</p>
+	<pre><code class="html">&lt;h1&gt;&lt;button&gt;heading button&lt;/button&gt;&lt;/h1&gt;</code></pre>
 </div></section>
 
 <!-- -->
