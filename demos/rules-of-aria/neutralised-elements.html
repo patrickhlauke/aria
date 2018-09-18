@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>neutralised elements - rules of aria - don't change semantics</title>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../style.css">
+<style>
+/* override some of the generic demo styles */
+button, [role="button"], .button {
+    width: auto;
+    text-overflow: initial;
+}
+</style>
+</head>
+<body>
+<h1>Don't "neutralise" focusable elements</h1>
+<p><code>role="presentation"</code> removes the native role, <code>aria-hidden="true"</code> completely hides the element (user focuses on "nothing").</p>
+
+<button role="presentation">Test</button>
+
+<pre><code>&lt;button role="presentation"&gt;Test&lt;/button&gt;</code></pre>
+
+<hr>
+
+<button aria-hidden="true">Test</button>
+
+<pre><code>&lt;button aria-hidden="true"&gt;Test&lt;/button&gt;</code></pre>
+
+<hr>
+
+<div aria-hidden="true">
+    <button>Test</button>
+</div>
+
+<pre><code>&lt;div aria-hidden="true"&gt;
+  &lt;button&gt;Test&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+</body>
+</html>

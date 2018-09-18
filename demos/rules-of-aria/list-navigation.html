@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>list navigation - rules of aria - don't change semantics</title>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../style.css">
+<style>
+</style>
+</head>
+<body>
+<h1>Don't change native semantics</h1>
+<p><code>role</code> attributes completely override native element semantics.</p>
+
+<ul role="navigation">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Products</a></li>
+    <li><a href="#">About</a></li>
+</ul>
+
+<pre><code>&lt;ul role="navigation"&gt; ... &lt;/ul&gt;</code></pre>
+
+<hr>
+
+<div role="navigation">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+</div>
+
+<pre><code>&lt;div role="navigation"&gt; &lt;ul&gt; ... &lt;/ul&gt; &lt;/div&gt;</code></pre>
+
+</body>
+</html>

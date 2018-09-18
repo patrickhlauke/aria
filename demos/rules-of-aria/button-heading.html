@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>heading button - rules of aria - don't change semantics</title>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../style.css">
+<style>
+/* override some of the generic demo styles */
+button, [role="button"], .button {
+    width: auto;
+    text-overflow: initial;
+}
+</style>
+</head>
+<body>
+<h1>Don't change native semantics</h1>
+<p><code>role</code> attributes completely override native element semantics.</p>
+
+<h1 role="button">Test 1</h1>
+
+<pre><code>&lt;h1 role="button"&gt;Test 1&lt;/h1&gt;</code></pre>
+
+<hr>
+
+<h1><span role="button">Test 2</span></h1>
+
+<pre><code>&lt;h1&gt;&lt;span role="button"&gt;Test 2&lt;/span&gt;&lt;/h1&gt;</code></pre>
+
+<hr>
+
+<h1><button>Test 3</button></h1>
+
+<pre><code>&lt;h1&gt;&lt;button&gt;Test 3&lt;/button&gt;&lt;/h1&gt;</code></pre>
+
+</body>
+</html>
