@@ -1515,7 +1515,7 @@ document.body.appendChild(newDiv);
   &lt;div <mark>role="tab"</mark> <mark>aria-controls="panel3"</mark> ...&gt;Tab 2&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div <mark>role="tabpanel"</mark> id="panel1" <mark>aria-hidden="false"</mark>&gt;...&lt;/div&gt;
+&lt;div <mark>role="tabpanel"</mark> id="panel1"&gt;...&lt;/div&gt;
 &lt;div <mark>role="tabpanel"</mark> id="panel2" <mark>aria-hidden="true"</mark>&gt;...&lt;/div&gt;
 &lt;div <mark>role="tabpanel"</mark> id="panel3" <mark>aria-hidden="true"</mark>&gt;...&lt;/div&gt;
 </code></pre>
@@ -1557,13 +1557,12 @@ document.body.appendChild(newDiv);
 <section class="slide code listing"><div>
 <pre><code class="html">
 &lt;div <mark>role="menubar"</mark>&gt;
-  &lt;div <mark>role="menuitem"</mark> ...&gt; ...
-    &lt;div <mark>role="menu"</mark>&lt;/div&gt;
-      &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
-      &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
-      &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
-      ...
-    &lt;/div&gt;
+  &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
+  &lt;div <mark>role="menu"</mark>&gt;
+    &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
+    &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
+    &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
+    ...
   &lt;/div&gt;
   ...
 &lt;/div&gt;
