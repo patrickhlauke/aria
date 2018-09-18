@@ -529,16 +529,16 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <!-- -->
 
 <section class="slide code listing"><div>
-	<p>you <strong>can</strong> use a <code>&lt;span&gt;</code> to behave as, and be exposed just like, a link...</p>
-	<pre><code>
-	&lt;span tabindex="0" <mark>role="link"</mark>
-		  onclick="document.location='...'"
-		  <mark>onkeyup="..."</mark>&gt;link&lt;/span&gt;
-	</code></pre>
-	<p>example: <a target=_blank href="../demos/structure/role-link.html">link</a></p>
-	<p>...but <strong>why would you?</strong></p>
-	<p>unless there's a very good reason, just use <code>&lt;a href="..."&gt;...&lt;/a&gt;</code></p>
-	</div></section>
+<p>you <strong>can</strong> use a <code>&lt;span&gt;</code> to behave as, and be exposed just like, a link...</p>
+<pre><code>
+&lt;span tabindex="0" <mark>role="link"</mark>
+      onclick="document.location='...'"
+      <mark>onkeyup="..."</mark>&gt;link&lt;/span&gt;
+</code></pre>
+<p>example: <a target=_blank href="../demos/structure/role-link.html">link</a></p>
+<p>...but <strong>why would you?</strong></p>
+<p>unless there's a very good reason, just use <code>&lt;a href="..."&gt;...&lt;/a&gt;</code></p>
+</div></section>
 
 <!-- -->
 
@@ -571,9 +571,9 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
     ...
 &lt;/ul&gt;
 </code></pre>
-	<p>do this instead:</p>
-	<pre><code class="html">&lt;div role="navigation"&gt;
-	&lt;ul&gt;
+<p>do this instead:</p>
+<pre><code class="html">&lt;div role="navigation"&gt;
+    &lt;ul&gt;
         &lt;li&gt;&lt;a href="..."&gt;...&lt;/a&gt;&lt;/li&gt;
         ...
     &lt;/ul&gt;
@@ -664,7 +664,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <pre><code class="html">
 &lt;span tabindex="0" role="button"&gt;
     &lt;span class="glyphicon glyphicon-remove"&gt;
-      <mark>&lt;span class="..."&gt;Delete&lt;/span&gt;</mark>
+        <mark>&lt;span class="..."&gt;Delete&lt;/span&gt;</mark>
     &lt;/span&gt;
 &lt;/span&gt;
 
@@ -825,10 +825,10 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 	<p>if your page/app uses inappropriate markup, ARIA can be used to remove semantic meaning. useful for remediation if markup cannot be changed.</p>
 	<pre><code>
 &lt;table <mark>role="presentation"</mark>&gt;
-	&lt;tr&gt;
-		&lt;td&gt;Layout column 1&lt;/td&gt;
-		&lt;td&gt;Layout column 2&lt;/td&gt;
-	&lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Layout column 1&lt;/td&gt;
+        &lt;td&gt;Layout column 2&lt;/td&gt;
+    &lt;/tr&gt;
 &lt;/table&gt;</code></pre>
 	<p>example: <a target=_blank href="../demos/structure/remediation-layout-table.html">layout table remediation</a></p>
 	<p>ARIA 1.1 introduced <code>role="none"</code> as an alias for <code>role="presentation"</code> – they are equivalent (and older browsers/AT likely better off still using <code>role="presentation"</code>)</p>
@@ -956,10 +956,10 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 foo.addEventListener('keyup', function(e) {
   // Space key
   if (e.keyCode === 32) {
-	// stop default behavior (usually, scrolling)
-	e.preventDefault();
-	// trigger the existing click behavior
-	this.click();
+    // stop default behavior (usually, scrolling)
+    e.preventDefault();
+    // trigger the existing click behavior
+    this.click();
   }
 });
 </code></pre>
@@ -1034,10 +1034,8 @@ foo.setAttribute("aria-pressed", "false");
 
 <section class="slide code listing"><div>
 <pre><code>
-&lt;button class="... <mark><del>toggled</del></mark>" <mark>aria-pressed="true"</mark>&gt;Toggle&lt;/button&gt;
-</code></pre>
-<pre><code class="css">
-<del>button.toggled { ... }</del>
+&lt;button class="... <mark><del>toggled</del></mark>" <mark>aria-pressed="true"</mark>&gt;Toggle&lt;/button&gt;</code></pre>
+<pre><code class="css"><del>button.toggled { ... }</del>
 button[aria-pressed="true"] { ... }
 </code></pre>
 <ul>
@@ -1053,11 +1051,11 @@ button[aria-pressed="true"] { ... }
 <pre><code>
 &lt;button ...&gt;Mute&lt;/button&gt;</code></pre>
 <pre><code>if (...) {
-	this.innerHTML = "Mute";
-	...
+    this.innerHTML = "Mute";
+    ...
 } else {
-	this.innerHTML = "Unmute";
-	...
+    this.innerHTML = "Unmute";
+    ...
 }</code></pre>
 <p>example: <a target=_blank href="../demos/toggle/index-aria-css-namechange.html">toggle with a changing name/label</a></p>
 </div></section>
@@ -1089,7 +1087,7 @@ button[aria-pressed="true"] { ... }
       <mark>aria-checked="false"</mark> class="..."&gt;Option&lt;/span&gt;
 
 &lt;span tabindex="0" <mark>role="checkbox"</mark>
-     <mark>aria-checked="true"</mark> class="... checked"&gt;Option&lt;/span&gt;
+      <mark>aria-checked="true"</mark> class="... checked"&gt;Option&lt;/span&gt;
 </code></pre>
 <ul>
 <li>add <code>role="checkbox"</code></li>
@@ -1160,7 +1158,7 @@ button[aria-pressed="true"] { ... }
 
 <section class="slide code listing"><div>
 <pre><code>&lt;button ... <mark>aria-expanded="true"</mark>
-	        <mark>aria-controls="disclosure1"</mark>&gt;More details&lt;/button&gt;
+    <mark>aria-controls="disclosure1"</mark>&gt;More details&lt;/button&gt;
 &lt;div class="show" ... id="disclosure1"&gt; ... &lt;/div&gt;
 </code></pre>
 <p>example: <a target=_blank href="../demos/disclosure/index-aria.html">disclosure widget with <code>aria-expanded</code> / <code>aria-controls</code></a></p>
@@ -1187,15 +1185,15 @@ button[aria-pressed="true"] { ... }
 
 <section class="slide code listing"><div>
 <pre><code>&lt;button ... <mark>aria-expanded="true"</mark>
-			<mark>aria-controls="accordion1"</mark>&gt;Item 1&lt;/button&gt;
+    <mark>aria-controls="accordion1"</mark>&gt;Item 1&lt;/button&gt;
 &lt;div class="show" ... id="accordion1"&gt; ... &lt;/div&gt;
 
 &lt;button ... <mark>aria-expanded="false"</mark>
-			<mark>aria-controls="accordion2"</mark>&gt;Item 2&lt;/button&gt;
+    <mark>aria-controls="accordion2"</mark>&gt;Item 2&lt;/button&gt;
 &lt;div class="show" ... id="accordion2"&gt; ... &lt;/div&gt;
 
 &lt;button ... <mark>aria-expanded="false"</mark>
-			<mark>aria-controls="accordion3"</mark>&gt;Item 3&lt;/button&gt;
+    <mark>aria-controls="accordion3"</mark>&gt;Item 3&lt;/button&gt;
 &lt;div class="show" ... id="accordion3"&gt; ... &lt;/div&gt;
 </code></pre>
 <p>example: <a target=_blank href="../demos/accordion/index-aria.html">accordion using disclosure widgets</a></p>
@@ -1216,8 +1214,8 @@ button[aria-pressed="true"] { ... }
 &lt;button&gt;Launch...&lt;/button&gt;
 ...
 &lt;div ... &gt;
-	&lt;div&gt;My custom dialog&lt;/div&gt;
-	...
+    &lt;div&gt;My custom dialog&lt;/div&gt;
+    ...
 &lt;/div&gt;
 </code></pre>
 <p>example: <a target=_blank href="../demos/modal/">modal dialog</a></p>
@@ -1242,8 +1240,8 @@ button[aria-pressed="true"] { ... }
 &lt;button&gt;Launch...&lt;/button&gt;
 ...
 &lt;div <mark>role="dialog"</mark>
-	 <mark>aria-labelledby="dialog-header"</mark>
-	 <mark>aria-describedby="modalDialogDescription"</mark> ... &gt;
+     <mark>aria-labelledby="dialog-header"</mark>
+     <mark>aria-describedby="modalDialogDescription"</mark> ... &gt;
   &lt;div id="modalDialogHeader"&gt;My custom dialog&lt;/div&gt;
   &lt;div id="modalDialogDescription"&gt;
     ... 
@@ -1297,8 +1295,8 @@ function closeModal() {
 &lt;button&gt;Launch...&lt;/button&gt;
 ...
 &lt;div role="dialog" <mark>aria-modal="true"</mark>
-	 aria-labelledby="dialog-header"
-	 aria-describedby="modalDialogDescription" ... &gt;
+     aria-labelledby="dialog-header"
+     aria-describedby="modalDialogDescription" ... &gt;
   &lt;div id="modalDialogHeader"&gt;My custom dialog&lt;/div&gt;
   &lt;div id="modalDialogDescription"&gt;
     ... 
@@ -1437,13 +1435,13 @@ o.innerHTML = "Surprise!"; // show the notification
 <section class="slide code listing"><div>
 <pre><code>
 &lt;span <mark>role="status"</mark>&gt;
-	some form of status bar message...
+    some form of status bar message...
 &lt;/span&gt;
 </code></pre>
 <p>example: <a target=_blank href="../demos/liveregion-implicit/role-status.html">status bar</a></p>
 <pre><code>
 &lt;span <mark>role="alert"</mark>&gt;
-	an alert message (no user interaction)
+    an alert message (no user interaction)
 &lt;/span&gt;
 </code></pre>
 <p>example: <a target=_blank href="../demos/liveregion-implicit/role-alert.html">alert</a></p>
@@ -1559,15 +1557,15 @@ document.body.appendChild(newDiv);
 <section class="slide code listing"><div>
 <pre><code class="html">
 &lt;div <mark>role="menubar"</mark>&gt;
-	&lt;div <mark>role="menuitem"</mark> ...&gt; ...
-	&lt;div <mark>role="menu"</mark>&lt;/div>
-		&lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
-		&lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
-		&lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
-		...
-	&lt;/div&gt;
-	&lt;/div&gt;
-	...
+  &lt;div <mark>role="menuitem"</mark> ...&gt; ...
+    &lt;div <mark>role="menu"</mark>&lt;/div&gt;
+      &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
+      &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
+      &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
+      ...
+    &lt;/div&gt;
+  &lt;/div&gt;
+  ...
 &lt;/div&gt;
 </code></pre>
 <p>example: <a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/menubar/menubar-1/menubar-1.html">ARIA Practices 1.1 Navigation Menubar</a></p>
