@@ -1256,18 +1256,18 @@ button[aria-pressed="true"] { ... }
 <!-- -->
 
 <section class="slide code listing"><div>
-<pre><code>&lt;div id="wrapper">&gt;
+<pre><code>&lt;div id="wrapper"&gt;
   &lt;button&gt;Launch...&lt;/button&gt;
 &lt;/div&gt;
 ...
-&lt;div <mark>role="dialog"</mark> ...&lt;/div&gt;</code></pre>
+&lt;div <mark>role="dialog"</mark> ...&gt; ... &lt;/div&gt;</code></pre>
 <pre><code class="js">function openModal() {
- document.getElementById("wrapper").setAttribute("aria-hidden","true");
- ...
+ document.getElementById("wrapper")
+         .setAttribute("aria-hidden","true"); ...
 }
 function closeModal() {
- document.getElementById("wrapper").removeAttribute("aria-hidden");
- ...
+ document.getElementById("wrapper")
+        .removeAttribute("aria-hidden"); ...
 }</code></pre>
 <p>example: <a target=_blank href="../demos/modal/index-focus-aria-hidden.html">modal dialog with aria-hidden</a></p>
 <p>note: <code>aria-hidden</code> does <strong>not</strong> prevent regular keyboard focus!</p>
