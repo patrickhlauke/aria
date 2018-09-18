@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="../style.css">
 <style>
 /* override some of the generic demo styles */
-[role="button"] {
+button, [role="button"], .button {
     width: auto;
     text-overflow: initial;
 }
@@ -16,29 +16,39 @@
 </head>
 <body>
 <h1>Accessible name calculation</h1>
-<p>Various examples/alternatives of how to provide a <em>name</em> to a control (in this case, a <code>&lt;span&gt;</code> with <code>role="button"</code>).</p>
+<p>Various examples/alternatives of how to provide a <em>name</em> to a control.</p>
 
 <h2>Content (with visually hidden text)</h2>
-<span tabindex="0" role="button">
+<button>
 <span class="glyphicon glyphicon-remove">
 <span class="sr-only">Delete</span>
 </span>
-</span>
+</button>
 
 <h2><code>title</code> attribute</h2>
-<span tabindex="0" role="button" title="Delete">
+<button title="Delete">
 <span class="glyphicon glyphicon-remove"></span>
-</span>
+</button>
+
+<h2><code>title</code> attribute and actual text</h2>
+<button title="Delete">
+<span class="glyphicon glyphicon-remove"></span> Del
+</button>
 
 <h2><code>aria-label</code> attribute</h2>
-<span tabindex="0" role="button" aria-label="Delete">
+<button aria-label="Delete">
 <span class="glyphicon glyphicon-remove"></span>
-</span>
+</button>
+
+<h2><code>aria-label</code> attribute and actual text</h2>
+<button aria-label="Delete">
+<span class="glyphicon glyphicon-remove"></span> Del
+</button>
 
 <h2><code>aria-labelledby</code> attribute</h2>
-<span tabindex="0" role="button" aria-labelledby="label-for-delete-button">
+<button aria-labelledby="label-for-delete-button">
 <span class="glyphicon glyphicon-remove"></span>
-</span>
+</button>
 
 <span id="label-for-delete-button">Delete</span>
 
