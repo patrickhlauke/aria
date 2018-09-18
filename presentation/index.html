@@ -606,12 +606,14 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide"><div>
 	<img src="pictures/chrome-devtools-aria-hidden.png" alt="Screenshot of Chrome Developer Tools' accessibility panel, showing how aria-hidden elements, and elements whose ancestor is aria-hidden, are denoted">
+	<p>Chrome DevTools indicates when a node is hidden<br>(directly, or due to an ancestor being hidden)</p>
 </div></section>
 
 <!-- -->
 
 <section class="slide"><div>
 	<img src="pictures/firefox-accessibility-inspector-aria-hidden.png" alt="Screenshot of Firefox accessibility inspector - aria-hidden nodes are not shown at all in the accessibility tree representation">
+	<p><code>aria-hidden</code> removes nodes from the accessibility tree<br>(as seen here in Firefox's accessibility inspector)</p>
 </div></section>
 
 <!-- -->
@@ -690,17 +692,14 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <!-- -->
 
-<section class="slide statement"><div>
-<div>
-	<p>ARIA is used when building/denoting things that native HTML can't do</p>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide statement"><div>
-<div>
-	<p>HTML5 introduced new elements, element types, attributes that solve some of these situations</p>
+<section class="slide listing"><div>
+	<h3>ARIA and HTML5</h3>
+	<ul>
+		<li>ARIA is used when building things that native HTML can't do</li>
+		<li>for many years, ARIA was a "bridging technology" to overcome HTML semantic limitations</li>
+		<li>HTML5 introduced new elements, element types, attributes that solve some of these situations</li>
+		<li>there are still things that HTML can't express, so ARIA is here to stay...</li>
+	</ul>
 </div>
 </div></section>
 
@@ -736,7 +735,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide"><div>
 	<img src="pictures/w3c-validator-html5-aria.png" alt="W3C Validator result, showing an error for an inappropriately used ARIA role">
-	<p>...and you can validate pages with (static) ARIA <a target=_blank href="https://validator.w3.org/">validator.w3.org</a></p>
+	<p>side note: you can validate pages with (static) ARIA <a target=_blank href="https://validator.w3.org/">validator.w3.org</a></p>
 </div></section>
 
 <!-- -->
