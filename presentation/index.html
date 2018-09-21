@@ -813,6 +813,20 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <!-- -->
 
+<section class="slide code listing"><div>
+<p><code>&lt;img&gt;</code> is identified as an image by assistive technologies, and you can provide> alternative text.</p>
+<pre><code>
+&lt;img src="..." alt="alternative text"&gt;
+</code></pre>
+<p>if you're using embedded <code>&lt;svg&gt;</code>, use ARIA to achieve the same:</p>
+<pre><code>
+&lt;svg <mark>role="img"</mark> <mark>aria-label="alternative text"</mark>&gt; ... &lt;/svg&gt;
+</code></pre>
+<p>example: <a target=_blank href="../demos/image/index.html">embedded SVG image</a></p>
+</div></section>
+
+<!-- -->
+
 <section class="slide statement"><div>
 <div>
 	<h4>removing semantics</h4>
