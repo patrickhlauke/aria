@@ -647,7 +647,6 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <!-- -->
 
 <section class="slide listing code"><div>
-	
 <pre><code class="html">
 &lt;!-- don't do this... --&gt;
 
@@ -700,6 +699,14 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 	<img src="pictures/chrome-devtools-accessibility-panel-accessible-name.png" alt="Screenshot of Chrome Developer Tools' accessibility panel, showing details about which attributes - content, title, aria-label, aria-labelledby - contribute to the element's name">
 	<p>Chrome DevTools' accessibility panel can help understand which attributes contribute to an element's name</p>
 	<p>example: <a target=_blank href="../demos/accessible-name-calculation/">accessible name calculation</a></p>
+</div></section>
+
+
+<!-- -->
+
+<section class="slide"><div>
+	<img src="pictures/sites/developer-paciellogroup-note-on-aria-label.png" alt="">
+	<p>side note: <code>aria-label</code> / <code>aria-labelledby</code> / <code>aria-describedby</code> and arbitrary elements (see <a href="https://developer.paciellogroup.com/blog/2017/07/short-note-on-aria-label-aria-labelledby-and-aria-describedby/">developer.paciellogroup.com</a>)</p>
 </div></section>
 
 <!-- -->
@@ -1598,6 +1605,14 @@ document.body.appendChild(newDiv);
 <section class="slide"><div>
 	<img src="pictures/aria-menu-inappropriate-construct.png" alt="Example of a non-standard dropdown with a search form field - this cannot be expressed with ARIA, as it doesn't allow anything other than menu items, menu checkboxes, menu radio buttons">
 	<p>menu with a form control - not a valid ARIA menu...</p>
+</div></section>
+
+<!-- -->
+
+<section class="slide statement"><div>
+<div>
+	<h3>example:<br><strong>touchscreen</strong> + <strong>assistive technology</strong></h3>
+</div>
 </div></section>
 
 <!-- -->
