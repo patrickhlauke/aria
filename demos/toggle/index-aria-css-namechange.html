@@ -13,11 +13,15 @@
 window.addEventListener('load',function() {
 	var b = document.getElementById("b");
 	b.addEventListener('click',function () {
-		if (this.classList.contains("toggled")) {
+		/* note that aria boolean attributes are still *strings*, so can't use boolean logic */
+		if (this.getAttribute('aria-pressed') === "true") {
+			this.setAttribute('aria-pressed',"false");
 			this.querySelector(".label").innerHTML = "Mute";
 		} else {
+			this.setAttribute('aria-pressed', "true");
 			this.querySelector(".label").innerHTML = "Unmute";
 		}
+
         this.classList.toggle("toggled"); /* IE10+ support only - otherwise, use more verbose method to setting/unsetting class */
     });
 })
@@ -25,8 +29,8 @@ window.addEventListener('load',function() {
 </head>
 <body>
 <!-- using an actual <button> element - ARIA can be used to enhance even native HTML elements -->
-<button id="b"><span class="glyphicon" aria-hidden="true"></span> <span class="label">Mute</span></button>
-<p>If you're changing the actual name/content of the toggle, you likely <em>don't</em> want to use <code>aria-pressed</code>, as it would result in weird/confusing announcements by assistive technologies.</p>
+<button id="b" aria-pressed="false"><span class="glyphicon" aria-hidden="true"></span> <span class="label">Mute</span></button>
+<p>If you're changing the actual name/content of the toggle, you likely <em>don't</em> want to use <code>aria-pressed</code>, as it would result in weird/confusing announcements by assistive technologies. The above example shows what <strong>not</strong> to do (it changes both the name of the control <em>and</em> <code>aria-pressed</code>.</p>
 <p>Note that in some browser/assistive technology combinations, the dynamic change of label/name may not be announced...</p>
 </body>
 </html>
