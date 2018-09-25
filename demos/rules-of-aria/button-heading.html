@@ -17,15 +17,15 @@ button, [role="button"], .button {
 <h1>Don't change native semantics</h1>
 <p><code>role</code> attributes completely override native element semantics.</p>
 
-<h1 role="button">Test 1</h1>
+<h1 role="button" tabindex="0">Test 1</h1>
 
-<pre><code>&lt;h1 role="button"&gt;Test 1&lt;/h1&gt;</code></pre>
+<pre><code>&lt;h1 role="button" tabindex="0"&gt;Test 1&lt;/h1&gt;</code></pre>
 
 <hr>
 
-<h1><span role="button">Test 2</span></h1>
+<h1><span role="button" tabindex="0">Test 2</span></h1>
 
-<pre><code>&lt;h1&gt;&lt;span role="button"&gt;Test 2&lt;/span&gt;&lt;/h1&gt;</code></pre>
+<pre><code>&lt;h1&gt;&lt;span role="button" tabindex="0"&gt;Test 2&lt;/span&gt;&lt;/h1&gt;</code></pre>
 
 <hr>
 
