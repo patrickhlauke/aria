@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Live region - ARIA demos</title>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Live region</h1>
+<div id="notification" aria-live="polite" >I packed my bag and in it I put:
+	<ul></ul>
+</div>
+<button>Add an item</button>
+<p>A live region with an <code>aria-live="polite"</code> attribute. Every time an item is added, a new list item element is appended to the list with <code>appendChild()</code>. However (depending on browser/AT combination) only the last added item is announced, not the whole list.</p>
+</body>
+<script>
+/* basic JavaScript to update the list */
+var items = ['a pair of shoes', 'a pink plate', 'a comic book', 'a mobile phone', 'an old calculator', 'a live chicken']
+var i = 0;
+function addItem() {
+	if (i < items.length) {
+		var item = document.createElement('li');
+		item.innerHTML = items[i];
+		document.querySelector("#notification ul").appendChild(item);
+		i++;
+	} else {
+		document.querySelector('button').setAttribute('disabled', 'disabled');
+	}
+}
+document.querySelector('button').addEventListener('click', addItem, true);
+</script>
+</html>
