@@ -54,7 +54,7 @@ window.addEventListener('load',function() {
 <main>
 <h1>Modal with focus handling and <code>aria-hidden="..."</code></h1>
 <p>The button will launch a modal dialog.</p>
-<p>Uses <code>aria-hidden="true"</code> on the underlying page when the modal is open, to avoid assistive technology users from straying out of the modal (e.g. using heading navigation).</p>
+<p>Uses <code>aria-hidden="true"</code> on the underlying page when the modal is open, to avoid assistive technology users from straying out of the modal (e.g. using heading navigation). We still need to manage focus handling ourselves though (as <code>aria-hidden="true"</code> doesn't prevent focusable elements from being focusabl, it only hides things from the accessibility tree).</p>
 <button id="modalTrigger">Launch...</button>
 </main>
 <div id="modalDialog" role="dialog" aria-labelledby="modalDialogHeader" aria-describedby="modalDialogDescription">

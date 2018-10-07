@@ -47,14 +47,15 @@ window.addEventListener('load',function() {
 </script>
 </head>
 <body>
-<!-- we separate the main part of the page from the actual modal container,
-     so the container is not a child of the "regular" page -->
+<!-- we DON'T need to separate the main part of the page from the actual modal container,
+     as - where supported - aria-modal will take care of hiding everything outside of the modal container
+     without the need for aria-hidden juggling -->
 <main>
 <h1>Modal with focus handling and <code>aria-modal="..."</code></h1>
 <p>The button will launch a modal dialog.</p>
-<p>Uses <code>aria-modal="true"</code> on the dialog, to avoid assistive technology users from straying out of the modal (e.g. using heading navigation).</p>
+<p>Uses <code>aria-modal="true"</code> on the dialog, to avoid assistive technology users from straying out of the modal (e.g. using heading navigation). The attribute explicitly tells assistive technologies that the content outside of the modal should be hidden (so there's no need to apply <code>aria-hidden="true"</code>). Some assistive technologies <em>may</em> also prevent focus from moving outside of the dialog. However, this wouldn't work for non-AT keyboard users...so we still need some other mechanism to keep keyboard focus inside the modal.</p>
+<p>One advantage of <code>aria-modal="..."</code>: (once supported everywhere) it allows for the modal dialog container to be a child element of the regular page, as we're not having to apply <code>aria-hidden="true"</code> to the page, so don't have issues with needing to have the dialog outside of the now hidden branch in the accessibility tree.</p>
 <button id="modalTrigger">Launch...</button>
-</main>
 <div id="modalDialog" role="dialog" aria-modal="true" aria-labelledby="modalDialogHeader" aria-describedby="modalDialogDescription">
     <h1 id="modalDialogHeader">Example dialog</h1>
     <div id="modalDialogDescription">
@@ -63,5 +64,6 @@ window.addEventListener('load',function() {
     </div>
     <button id="modalClose">Close</button>
 </div>
+</main>
 </body>
 </html>
