@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Modal - ARIA demos</title>
+<title>Modal with inert - ARIA demos</title>
 <meta charset=utf-8>
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../style.css">
@@ -38,7 +38,7 @@ window.addEventListener('load',function() {
         closeModal();
     });
 
-    /* thanks to inert attribute, we don't have to worry about focus handling */
+    /* thanks to inert attribute, we don't have to worry about focus handling/trapping */
 
 })
 </script>
@@ -47,9 +47,10 @@ window.addEventListener('load',function() {
 <!-- we separate the main part of the page from the actual modal container,
      so the container is not a child of the "regular" page -->
 <main>
-<h1>Modal dialog</h1>
+<h1>Modal with <code>inert</code> </h1>
 <p>The button will launch a modal dialog.</p>
-<p>Uses <code>inert</code> (via the <a target=_blank href="https://github.com/WICG/inert">inert polyfill</a>) to take care of focus management and hide the underlying page when the modal is open.</p>
+<p>Uses <code>inert</code> to take care of focus management (by making any focusable element in the underlying page non-focusable, though we still need to manually move the focus <em>to</em> the dialog and reset it correctly <em>after</em> the dialog is closed) and hide the underlying page from assistive technologies when the modal is open, without the need for <code>aria-hidden="..."</code>.</p>
+<p><small>This demo uses the <a target=_blank href="https://github.com/WICG/inert">inert polyfill</a>), which "fakes" <code>inert</code> support by adding tabindex="-1" to focusable elements and adding <code>aria-hidden="true"</code></small></p>
 <button id="modalTrigger">Launch...</button>
 </main>
 <div id="modalDialog" role="dialog" aria-labelledby="modalDialogHeader" aria-describedby="modalDialogDescription">

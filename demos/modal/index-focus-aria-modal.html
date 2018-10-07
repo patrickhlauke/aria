@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Modal - ARIA demos</title>
+<title>Modal with focus handling and aria-modal - ARIA demos</title>
 <meta charset=utf-8>
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../style.css">
@@ -50,7 +50,7 @@ window.addEventListener('load',function() {
 <!-- we separate the main part of the page from the actual modal container,
      so the container is not a child of the "regular" page -->
 <main>
-<h1>Modal dialog</h1>
+<h1>Modal with focus handling and <code>aria-modal="..."</code></h1>
 <p>The button will launch a modal dialog.</p>
 <p>Uses <code>aria-modal="true"</code> on the dialog, to avoid assistive technology users from straying out of the modal (e.g. using heading navigation).</p>
 <button id="modalTrigger">Launch...</button>
