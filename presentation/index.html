@@ -1349,12 +1349,11 @@ function closeModal() {
 </div></section>
 
 <!-- -->
-
 <section class="slide listing"><div>
-	<h4>keyboard navigation within widgets</h4>
+	<p>there are two approaches for focus:</p>
 	<ul>
-	<li>either: "roving" <code>tabindex</code> (only one element inside widget has <code>tabindex="0"</code>, all others <code>tabindex="-1"</code>)</li>
-	<li>or: focus remains on widget itself, denote active child element with <code>aria-activedescendant</code> (and manually scroll into view, provide highlight via CSS)</li>
+	<li><strong>roving <code>tabindex</code></strong>: only one element inside widget has <code>tabindex="0"</code>, all others <code>tabindex="-1"</code></li>
+	<li><strong><code>aria-activedescendant</code></strong>: focus remains on the widget container (or one specific part of the widget), then the <code>aria-activedescendant</code> attribute points to the <code>id</code> of the "active" subcomponent</li>
 	</ul>
 	<p><a target=_blank href="https://www.w3.org/TR/wai-aria-practices/#kbd_general_within">W3C WAI-ARIA 1.1 Authoring Practices - 5.6 Keyboard Navigation Inside Components</a></p>
 </div></section>
@@ -1362,17 +1361,17 @@ function closeModal() {
 <!-- -->
 
 <section class="slide code listing"><div>
-<pre><code class="html">
-&lt;span tabindex="-1" role="radio"
-      aria-checked="false" class="..."&gt;Yes&lt;/span&gt;
-&lt;span <mark>tabindex="0"</mark> role="radio"
-      <mark>aria-checked="true"</mark> class="... selected"&gt;No&lt;/span&gt;
-&lt;span tabindex="-1" role="radio"
-      aria-checked="false" class="..."&gt;Maybe&lt;/span&gt;
-</code></pre>
-<p>only one <code>radio</code> button inside the group has focus. changing the selection using <kbd>CURSOR</kbd> keys, dynamically changes <code>tabindex</code>, <code>aria-checked</code> and sets <code>focus()</code> on the newly selected <code>radio</code> button</p>
-<p>example: <a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/radio/radio-1/radio-1.html">ARIA Practices 1.1 - Radio Group Using Roving tabindex</a></p>
-</div></section>
+	<pre><code class="html">
+	&lt;span tabindex="-1" role="radio"
+		  aria-checked="false" class="..."&gt;Yes&lt;/span&gt;
+	&lt;span <mark>tabindex="0"</mark> role="radio"
+		  <mark>aria-checked="true"</mark> class="... selected"&gt;No&lt;/span&gt;
+	&lt;span tabindex="-1" role="radio"
+		  aria-checked="false" class="..."&gt;Maybe&lt;/span&gt;
+	</code></pre>
+	<p>only one <code>radio</code> button inside the group has focus. changing the selection using <kbd>CURSOR</kbd> keys, dynamically changes <code>tabindex</code>, <code>aria-checked</code> and sets <code>focus()</code> on the newly selected <code>radio</code> button</p>
+	<p>example: <a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/radio/radio-1/radio-1.html">ARIA Practices 1.1 - Radio Group Using Roving tabindex</a></p>
+	</div></section>
 
 <!-- -->
 
