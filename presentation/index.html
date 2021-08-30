@@ -976,7 +976,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <pre><code class="js">
 foo.addEventListener('keyup', function(e) {
   // Space key
-  if (e.keyCode === 32) {
+  if (e.key === " ") {
     // stop default behavior (usually, scrolling)
     e.preventDefault();
     // trigger the existing click behavior
@@ -994,7 +994,7 @@ foo.addEventListener('keyup', function(e) {
 var buttons = document.querySelectorAll("[role='button']");
 for (var i=0; i&lt;buttons.length; i++) {
   buttons[i].addEventListener('keyup', function(e) {
-    if (e.keyCode === 32) {
+    if (e.key === " ") {
       e.preventDefault();
       this.click();
     }
