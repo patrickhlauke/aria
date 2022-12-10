@@ -37,7 +37,7 @@ window.addEventListener('load',function() {
     /* very hacky "constrain focus" code, very specific to this example with only a close control in the modal */
     c.addEventListener('keydown', function(e) {
         /* if we're on the close button - the only focusable element in the modal - ignore TAB/SHIFT+TAB */
-        if ((e.keyCode === 9) || (e.shiftKey && e.keyCode === 9 )) {
+        if ((e.key === "Tab") || (e.shiftKey && e.key === "Tab" )) {
             e.preventDefault();
         }
         /* if your actual modal had more focusable elements, you'd want to implement some "cycling" behavior on the first and last item */

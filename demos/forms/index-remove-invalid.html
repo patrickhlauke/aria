@@ -6,7 +6,7 @@
 <script>
 window.addEventListener('load',function() {
 	document.getElementById("input2").addEventListener("keydown", function(e) {
-		if (e.keyCode != 9) {
+		if (e.key !== "Tab") {
 			/* if it's not a TAB (including SHIFT+TAB) that moves away from the form field... */
 			document.getElementById("input2").removeAttribute("aria-invalid");
 		}

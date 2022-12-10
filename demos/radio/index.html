@@ -49,7 +49,7 @@ window.addEventListener('load',function() {
             }
         });
         radios[i].addEventListener('keyup',function (e) {
-            if (e.keyCode == 32) {
+            if (e.key ===  " ") {
                 this.click();
                 e.preventDefault(); }
         });
