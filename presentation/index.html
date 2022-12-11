@@ -245,14 +245,21 @@
 
 <section class="slide"><div>
 	<img src="pictures/chrome-devtools-accessibility-panel.png" alt="Chrome DevTools' accessibility panel, showing the accessibility tree and accessibility properties - exposed by Chrome to the platform/OS accessibility API - of an element in a page">
-	<p><a target=_blank href="https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#pane">Chrome DevTools Accessibility panel</a></p>
+	<p><a target=_blank href="https://developer.chrome.com/docs/devtools/accessibility/reference/#pane">Chrome DevTools Accessibility pane</a></p>
+</div></section>
+
+<!-- -->
+
+<section class="slide"><div>
+	<img src="pictures/chrome-devtools-accessibility-tree.png" alt="Chrome DevTools' full accessibility tree, showing the accessibility tree and accessibility properties - exposed by Chrome to the platform/OS accessibility API - of an element in a page">
+	<p><a target=_blank href="https://developer.chrome.com/docs/devtools/accessibility/reference/#explore-tree">Chrome DevTools (Preview) Explore the full-page accessibility tree</a></p>
 </div></section>
 
 <!-- -->
 
 <section class="slide"><div>
 	<img src="pictures/safari-web-inspector-accessibility-panel.png" alt="Safari's Web Inspector, showing a separate 'Accessibility' section under its 'Node' inspection sidebar, listing basic information such as the current node's computed role">
-	<p><a target=_blank href="https://webkit.org/blog/3302/aria-and-accessibility-inspector/">James Craig - Using ARIA 1.0 and the WebKit Accessibility Node Inspector</a></p>
+	<p><a target=_blank href="https://webkit.org/web-inspector/elements-tab/">Web Inspector Elements tab</a></p>
 </div></section>
 
 <!-- -->
@@ -440,14 +447,14 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 	<li>ARIA roles/attributes are a "promise" to users / assistive technologies (e.g. "this component is actually a button...") – you must ensure that it then behaves correctly</li>
 	<li>if you're not sure how to represent a particular complex widget or control, don't just throw ARIA roles and attributes at your markup – you're more likely to make things worse / more confusing / non-functional for assistive technology users</li>
 	</ul>
-	<p><small><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria">W3C - WAI-ARIA 1.1 Authoring Practices</a></small></p>
+	<p><small><a href="https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/#x2-1-no-aria-is-better-than-bad-aria">W3C - ARIA Authoring Practices Guide (APG)</a></small></p>
 </div></section>
 
 <!-- -->
 
 <section class="slide"><div>
 	<img src="pictures/sites/w3c-aria-authoring-practices.png" alt="">
-	<p>WAI-ARIA spec can be dry/technical - use for reference<br><a target=_blank href="https://www.w3.org/TR/wai-aria-practices/">W3C - WAI-ARIA 1.1 Authoring Practices</a> more digestible.</p>
+	<p>WAI-ARIA spec can be dry/technical - use for reference<br><a target=_blank href="https://www.w3.org/WAI/ARIA/apg/">W3C - ARIA Authoring Practices Guide (APG)</a> is more digestible.</p>
 </div></section>
 
 <!-- -->
@@ -584,7 +591,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide listing"><div>
 	<p>All interactive widgets must be focusable and scripted to respond to standard key strokes or key stroke combinations where applicable. [...]</p>
-	<p>Refer to the <a target=_blank href="https://www.w3.org/TR/wai-aria-practices/#keyboard">keyboard and structural navigation</a> and <a target=_blank href="https://www.w3.org/TR/wai-aria-practices/#aria_ex">design patterns and widgets</a> sections of the <a target=_blank href="https://www.w3.org/TR/wai-aria-practices/">WAI-ARIA 1.1 Authoring Practices</a></p>
+	<p>Refer to the <a target=_blank href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/">keyboard and structural navigation</a> and <a target=_blank href="https://www.w3.org/WAI/ARIA/apg/patterns/">design patterns</a> sections of the <a target=_blank href="https://www.w3.org/WAI/ARIA/apg/">ARIA Authoring Practices Guide</a></p>
 </div></section>
 
 <!-- -->
@@ -729,13 +736,6 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <section class="slide"><div>
 	<img src="pictures/sites/w3c-html-accessibility-api-mappings.png" alt="">
 	<p><a target=_blank href="https://www.w3.org/TR/html-aam-1.0/">W3C HTML Accessibility API Mappings 1.0</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/sites/html5accessibility.png" alt="">
-	<p><a target=_blank href="http://html5accessibility.com/">HTML5 accessibility</a></p>
 </div></section>
 
 <!-- -->
@@ -1187,7 +1187,7 @@ button[aria-pressed="true"] { ... }
 <section class="slide listing"><div>
 	<ul>
 	<li>ARIA Practices 1.0 suggested using a tab panel pattern (we'll briefly look at this in a moment)</li>
-	<li>ARIA Practices 1.1 is more pragmatic: an accordion is seen simply as a series of disclosure widgets (see <a target=_blank href="https://www.w3.org/TR/wai-aria-practices/#accordion">ARIA Practices 1.1 - 3.1 Accordion</a>)</li>
+	<li>ARIA Authoring Practices Guide is more pragmatic: an accordion is seen simply as a series of disclosure widgets (see <a target=_blank href="https://www.w3.org/WAI/ARIA/apg/patterns/accordion/">ARIA Authoring Practices Guide - Accordion</a>)</li>
 	</ul>
 </div></section>
 
@@ -1346,7 +1346,7 @@ function closeModal() {
 	<li><strong>roving <code>tabindex</code></strong>: only one element inside widget has <code>tabindex="0"</code>, all others <code>tabindex="-1"</code></li>
 	<li><strong><code>aria-activedescendant</code></strong>: focus remains on the widget container (or one specific part of the widget), then the <code>aria-activedescendant</code> attribute points to the <code>id</code> of the "active" subcomponent</li>
 	</ul>
-	<p><a target=_blank href="https://www.w3.org/TR/wai-aria-practices/#kbd_general_within">W3C WAI-ARIA 1.1 Authoring Practices - 5.6 Keyboard Navigation Inside Components</a></p>
+	<p><a target=_blank href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#x6-6-keyboard-navigation-inside-components">ARIA Authoring Practices Guide - Keyboard Navigation Inside Components</a></p>
 </div></section>
 
 <!-- -->
@@ -1361,14 +1361,14 @@ function closeModal() {
 		  aria-checked="false" class="..."&gt;Maybe&lt;/span&gt;
 	</code></pre>
 	<p>only one <code>radio</code> button inside the group has focus. changing the selection using <kbd>CURSOR</kbd> keys, dynamically changes <code>tabindex</code>, <code>aria-checked</code> and sets <code>focus()</code> on the newly selected <code>radio</code> button</p>
-	<p>example: <a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/radio/radio-1/radio-1.html">ARIA Practices 1.1 - Radio Group Using Roving tabindex</a></p>
+	<p>example: <a target=_blank href="https://www.w3.org/WAI/ARIA/apg/example-index/radio/radio.html">ARIA Authoring Practices Guide - Radio Group Using Roving tabindex</a></p>
 	</div></section>
 
 <!-- -->
 
 <section class="slide listing"><div>
 	<p>not all complex widgets lend themselves to "roving" <code>tabindex</code> – e.g. <code>role="combobox"</code> needs <code>aria-activedescendant</code>, as actual focus must remain inside the textbox.</p>
-	<p>example: <a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/combobox/aria1.1pattern/listbox-combo.html">ARIA Practices 1.1 Combobox with Listbox Popup</a></p>
+	<p>example: <a target=_blank href="https://www.w3.org/WAI/ARIA/apg/example-index/combobox/combobox-autocomplete-list.html">ARIA Authoring Practices Guide - Editable Combobox With List Autocomplete Example</a></p>
 	<p>this approach can be complex, and not always supported by assistive technologies (particularly on mobile).</p>
 </div></section>
 
@@ -1532,7 +1532,7 @@ document.body.appendChild(newDiv);
 &lt;div <mark>role="tabpanel"</mark> id="panel2" <mark>aria-hidden="true"</mark>&gt;...&lt;/div&gt;
 &lt;div <mark>role="tabpanel"</mark> id="panel3" <mark>aria-hidden="true"</mark>&gt;...&lt;/div&gt;
 </code></pre>
-<p>example: <a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">ARIA Practices 1.1 Tabs with Automatic Activation</a></p>
+<p>example: <a target=_blank href="https://www.w3.org/WAI/ARIA/apg/example-index/tabs/tabs-automatic.html">ARIA Authoring Practices Guide - Tabs with Automatic Activation</a></p>
 <p>variations: <a target=_blank href="https://www.marcozehe.de/2013/02/02/advanced-aria-tip-1-tabs-in-web-apps/">Marco Zehe: Advanced ARIA tip #1: Tabs in web apps</a></p>
 <p><strong>not appropriate</strong> if you're just marking up a site navigation...</p>
 </div></section>
@@ -1580,7 +1580,7 @@ document.body.appendChild(newDiv);
   ...
 &lt;/div&gt;
 </code></pre>
-<p>example: <a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/menubar/menubar-1/menubar-1.html">ARIA Practices 1.1 Navigation Menubar</a></p>
+<p>example: <a target=_blank href="https://www.w3.org/WAI/ARIA/apg/example-index/menubar/menubar-navigation.html">ARIA Authoring Practices Guide - Navigation Menubar</a></p>
 <p>most suitable for "application-like" web-app menus, not for general "website navigation"</p>
 <p><a target=_blank href="https://www.marcozehe.de/2018/09/22/wai-aria-menus-and-why-you-should-generally-avoid-using-them/">Marco Zehe: WAI-ARIA menus, and why you should generally avoid using them</a></p>
 </div></section>
@@ -1619,28 +1619,28 @@ document.body.appendChild(newDiv);
 
 <section class="slide"><div>
 	<img src="pictures/problem-slider-android.png" alt="Montage of screenshots for slider on Android, showing the announcement to use volume keys to change value">
-	<p><a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/slider/slider-1.html">ARIA Practices 1.1 - Horizontal Slider</a> on Android / Chrome / TalkBack<br><small>(use volume keys...)</small></p>
+	<p><a target=_blank href="https://www.w3.org/WAI/ARIA/apg/example-index/slider/slider-color-viewer.html">ARIA Authoring Practices Guide - Color Viewer Slider Example</a> on Android / Chrome / TalkBack<br><small>(use volume keys...)</small></p>
 </div></section>
 
 <!-- -->
 
 <section class="slide"><div>
 	<img src="pictures/problem-slider-ios.png" alt="Screenshot of the slider on iOS">
-	<p><a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/slider/slider-1.html">ARIA Practices 1.1 - Horizontal Slider</a> on iOS / Safari / VoiceOver<br><small>(swipe up or down...)</small></p>
+	<p><a target=_blank href="https://www.w3.org/WAI/ARIA/apg/example-index/slider/slider-color-viewer.html">ARIA Authoring Practices Guide - Color Viewer Slider Example</a> on iOS / Safari / VoiceOver<br><small>(swipe up or down...)</small></p>
 </div></section>
 
 <!-- -->
 
 <section class="slide"><div>
 	<img src="pictures/problem-combobox-android.png" alt="Montage of screenshots for combobox on Android, showing no announcement of the combobox appearing">
-	<p><a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/combobox/aria1.1pattern/listbox-combo.html">ARIA Practices 1.1 - Combobox with Listbox Popup</a><br>on Android / Chrome / TalkBack</p>
+	<p><a target=_blank href="https://www.w3.org/WAI/ARIA/apg/example-index/combobox/combobox-autocomplete-list.html">ARIA Authoring Practices Guide - Editable Combobox With List Autocomplete Example</a><br>on Android / Chrome / TalkBack</p>
 </div></section>
 
 <!-- -->
 
 <section class="slide"><div>
 	<img src="pictures/problem-combobox-ios.png" alt="Screenshot of the combobox on iOS">
-	<p><a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/combobox/aria1.1pattern/listbox-combo.html">ARIA Practices 1.1 - Combobox with Listbox Popup</a><br>on iOS / Safari / VoiceOver</p>
+	<p><a target=_blank href="https://www.w3.org/WAI/ARIA/apg/example-index/combobox/combobox-autocomplete-list.html">ARIA Authoring Practices Guide - Editable Combobox With List Autocomplete Example</a><br>on iOS / Safari / VoiceOver</p>
 </div></section>
 
 <!-- -->
@@ -1673,7 +1673,7 @@ document.body.appendChild(newDiv);
 
 <section class="slide"><div>
 	<img src="pictures/sites/docs-angularjs-accessibility.png" alt="">
-	<p><a target=_blank href="https://docs.angularjs.org/guide/accessibility">AngularJS Developer Guide - Accessibility with ngAria</a></p>
+	<p><a target=_blank href="https://docs.angularjs.org/guide/accessibility">AngularJS Developer Guide - Accessibility with ngARIA</a></p>
 </div></section>
 
 <!-- -->
@@ -1716,8 +1716,8 @@ document.body.appendChild(newDiv);
 	<ul>
 		<li>understand/break-up complex app into simple component elements</li>
 		<li>you don't always need ARIA – appropriate HTML usually best</li>
-		<li><a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria">No ARIA is better than Bad ARIA</a></li>
-		<li>consult <a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/">ARIA Practices</a> to see if they match an existing pattern</li>
+		<li><a target=_blank href="https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/#x2-1-no-aria-is-better-than-bad-aria">No ARIA is better than Bad ARIA</a></li>
+		<li>consult the <a target=_blank href="https://www.w3.org/WAI/ARIA/apg/">ARIA Authoring Practices Guide</a> to see if they match an existing pattern</li>
 		<li>follow the <a target=_blank href="https://www.w3.org/TR/using-aria/">rules of ARIA</a></li>
 		<li>check main <a target=_blank href="https://www.w3.org/TR/wai-aria/">ARIA specification</a> for correct syntax, expected attributes, valid values</li>
 		<li>test in actual browser/AT</li>
