@@ -34,8 +34,6 @@ window.addEventListener('load',function() {
     for (var i = 0; i < radios.length; i++) {
         radios[i].addEventListener('click',function () {
             /* note that dataset boolean attributes are still *strings*, so can't use boolean logic */
-            /* IE11+ support - otherwise, use classic getAttribute/setAttribute */
-
             /* if the radio button isn't already checked */
             if (this.dataset.checked === "false") {
                 /* loop through all radio buttons and make sure they're not checked */

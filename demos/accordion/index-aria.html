@@ -22,9 +22,8 @@ window.addEventListener('load',function() {
 	var headers = document.querySelectorAll(".accordionHeader");
 	for (var i = 0; i < headers.length; i++) {
         headers[i].addEventListener('click',function () {
-            /* IE11+ support - otherwise, use classic getAttribute/setAttribute */
             var p = this.getAttribute("aria-controls");
-            document.getElementById(p).classList.toggle("open"); /* IE10+ support only - otherwise, use more verbose method to setting/unsetting class */
+            document.getElementById(p).classList.toggle("open");
             if (this.getAttribute('aria-expanded') === "false") {
                 this.setAttribute('aria-expanded', "true");
             } else {

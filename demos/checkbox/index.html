@@ -37,9 +37,8 @@ window.addEventListener('load',function() {
 	var checkboxes = document.querySelectorAll(".checkbox");
     for (var i = 0; i < checkboxes.length; i++) {
         checkboxes[i].addEventListener('click',function () {
-            this.classList.toggle("checked"); /* IE10+ support only - otherwise, use more verbose method to setting/unsetting class */
+            this.classList.toggle("checked");
             /* note that dataset boolean attributes are still *strings*, so can't use boolean logic */
-            /* IE11+ support - otherwise, use classic getAttribute/setAttribute */
             if (this.dataset.checked === "true") {
                 this.dataset.checked = "false";
             } else {

@@ -21,9 +21,8 @@
 window.addEventListener('load',function() {
 	var b = document.getElementById("b");
 	b.addEventListener('click',function () {
-         /* IE11+ support - otherwise, use classic getAttribute/setAttribute */
         var p = this.getAttribute('aria-controls');
-        document.getElementById(p).classList.toggle("show"); /* IE10+ support only - otherwise, use more verbose method to setting/unsetting class */
+        document.getElementById(p).classList.toggle("show");
         if (this.getAttribute('aria-expanded') === "false") {
             this.setAttribute('aria-expanded', "true");
         } else {

@@ -40,7 +40,6 @@ window.addEventListener('load',function() {
     for (var i = 0; i < checkboxes.length; i++) {
         checkboxes[i].addEventListener('click',function () {
             /* note that aria boolean attributes are still *strings*, so can't use boolean logic */
-            /* IE11+ support - otherwise, use classic getAttribute/setAttribute */
             if (this.getAttribute('aria-checked') === "true") {
                 this.setAttribute('aria-checked',"false");
             } else {
