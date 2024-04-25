@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ARIA live region tests</title>
+<style>
+  .hidden { display: none; }
+  .notification { margin: 1em 0; padding: 1em; border: 1px solid #555; background: #eee; }
+  body { font-family: Helvetica, Arial, sans; }
+  h2 { margin-top: 1em; padding-top: 1em; border-top: 1px solid #bbb; }
+  h3 { margin-top: 0.5em; padding-top: 0.5em; }
+</style>
+</head>
+<body>
+<h1>ARIA live region tests</h1>
+
+<p>Test page to verify current browser/screen reader behaviour for live regions - see <a href="https://github.com/w3c/aria/issues/2154" target=_blank>w3c/aria/issues/2154</a> for context.</p>
+<p>Note that <code>role="alert"</code> is slightly "magic" and triggers an announcement even in cases where you generally don't expect it - see <a href="https://github.com/w3c/aria/issues/2153" target=_blank>w3c/aria/issues/2153</a>.</p>
+<p>Does <em>not</em> include <code>role="marquee"</code> and <code>role="timer"</code> at this stage, as they have an intrinsic <code>aria-live="off"</code> and will require a different type of test - see <a href="https://github.com/w3c/aria/issues/2144" target=_blank>w3c/aria/issues/2144</a>.</p>
+
+<h2>Already present on page load</h2>
+
+<p>Load/reload codepen to verify if any of these get announced on page load.</p>
+
+<div aria-live="polite" class="notification">
+  This is the <code>&lt;div aria-live="polite"&gt;</code> already present and populated on page load.
+</div>
+
+<div aria-live="assertive" class="notification">
+  This is the <code>&lt;div aria-live="assertive"&gt;</code> already present and populated on page load.
+</div>
+
+<div role="status" class="notification">
+  This is the <code>&lt;div role="status"&gt;</code> already present and populated on page load.
+</div>
+
+<div role="alert" class="notification">
+  This is the <code>&lt;div role="alert"&gt;</code> already present and populated on page load.
+</div>
+
+<div role="log" class="notification">
+  This is the <code>&lt;div role="log"&gt;</code> already present and populated on page load.
+</div>
+
+<h2>Flipping <code>display:none</code> on a fully-populated live region container</h2>
+
+<h3>Fully populated generic <code>&lt;div aria-live="polite"&gt;</code></h3>
+
+<button class="displayflip">Toggle</button>
+<div id="div-aria-live-polite" aria-live="polite" class="notification hidden">
+  This is the <code>&lt;div aria-live="polite"&gt;</code> made visible.
+</div>
+
+<h3>Fully populated generic <code>&lt;div aria-live="assertive"&gt;</code></h3>
+
+<button class="displayflip">Toggle</button>
+<div id="div-aria-live-assertive" aria-live="assertive" class="notification hidden">
+  This is the <code>&lt;div aria-live="assertive"&gt;</code> made visible.
+</div>
+
+<h3>Fully populated <code>&lt;div role="status"&gt;</code></h3>
+
+<button class="displayflip">Toggle</button>
+<div id="div-role-status" role="status" class="notification hidden">
+  This is the <code>&lt;div role="status"&gt;</code> made visible.
+</div>
+
+<h3>Fully populated <code>&lt;div role="alert"&gt;</code></h3>
+
+<button class="displayflip">Toggle</button>
+<div id="div-role-alert" role="alert" class="notification hidden">
+  This is the <code>&lt;div role="alert"&gt;</code> made visible.
+</div>
+
+<h3>Fully populated <code>&lt;div role="log"&gt;</code></h3>
+
+<button class="displayflip">Toggle</button>
+<div role="log" class="notification hidden">
+  This is the <code>&lt;div role="log"&gt;</code> made visible.
+</div>
+
+<h2>Dynamically generating a fully-populated live region container</h2>
+
+<h3>Fully populated generic <code>&lt;div aria-live="polite"&gt;</code></h3>
+
+<button class="generate" data-live="polite">Generate</button>
+
+<h3>Fully populated generic <code>&lt;div aria-live="assertive"&gt;</code></h3>
+
+<button class="generate" data-live="assertive">Generate</button>
+
+<h3>Fully populated <code>&lt;div role="status"&gt;</code></h3>
+
+<button class="generate" data-role="status">Generate</button>
+
+<h3>Fully populated <code>&lt;div role="alert"&gt;</code></h3>
+
+<button class="generate" data-role="alert">Generate</button>
+
+<h3>Fully populated <code>&lt;div role="log"&gt;</code></h3>
+
+<button class="generate" data-role="log">Generate</button>
+
+<h2>Injecting message dynamically into existing live region container</h2>
+
+<h3>Existing generic <code>&lt;div aria-live="polite"&gt;</code></h3>
+
+<button class="inject">Inject</button>
+<div id="div-aria-live-polite" aria-live="polite" class="notification"></div>
+
+<h3>Existing generic <code>&lt;div aria-live="assertive"&gt;</code></h3>
+
+<button class="inject">Inject</button>
+<div id="div-aria-live-assertive" aria-live="assertive" class="notification"></div>
+
+<h3>Existing <code>&lt;div role="status"&gt;</code></h3>
+
+<button class="inject">Inject</button>
+<div id="div-role-status" role="status" class="notification"></div>
+
+<h3>Existing <code>&lt;div role="alert"&gt;</code></h3>
+
+<button class="inject">Inject</button>
+<div id="div-role-alert" role="alert" class="notification"></div>
+
+<h3>Existing <code>&lt;div role="log"&gt;</code></h3>
+
+<button class="inject">Inject</button>
+<div role="log" class="notification"></div>
+
+<h2>Dynamically generating live region, then after delay injecting message</h2>
+
+<p>Using a <code>150ms</code> delay.</p>
+
+<h3>Generate generic <code>&lt;div aria-live="polite"&gt;</code>, then inject</h3>
+
+<button class="generateInject" data-live="polite">Generate then inject</button>
+
+<h3>Generate generic <code>&lt;div aria-live="assertive"&gt;</code>, then inject</h3>
+
+<button class="generateInject" data-live="assertive">Generate then inject</button>
+
+<h3>Generate <code>&lt;div role="status"&gt;</code>, then inject</h3>
+
+<button class="generateInject" data-role="status">Generate then inject</button>
+
+<h3>Generate  <code>&lt;div role="alert"&gt;</code>, then inject</h3>
+
+<button class="generateInject" data-role="alert">Generate then inject</button>
+
+<h3>Generate  <code>&lt;div role="log"&gt;</code>, then inject</h3>
+
+<button class="generateInject" data-role="log">Generate then inject</button>
+
+<script>
+const displayFlipButtons = document.querySelectorAll("button.displayflip");
+
+displayFlipButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    button.nextElementSibling.classList.toggle('hidden');
+  });
+});
+
+const generateButtons = document.querySelectorAll("button.generate");
+
+generateButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const newLiveRegion= document.createElement("div");
+    newLiveRegion.classList.add("notification");
+    if (button.dataset.live) {
+      newLiveRegion.setAttribute("aria-live",button.dataset.live);
+      var message = document.createTextNode("Generated "+button.dataset.live+" already containing a message");
+    }
+    if (button.dataset.role) {
+      newLiveRegion.setAttribute("role",button.dataset.role);
+      var message = document.createTextNode("Generated "+button.dataset.role+" already containing a message");
+    }
+    newLiveRegion.appendChild(message);
+    button.after(newLiveRegion);
+  });
+});
+
+const injectExistingButtons = document.querySelectorAll("button.inject");
+
+injectExistingButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const liveRegion = button.nextElementSibling;
+    if (liveRegion.getAttribute("aria-live")) {
+      var message = document.createTextNode("Injecting message into existing "+liveRegion.getAttribute("aria-live")+" container");
+    }
+    if (liveRegion.getAttribute("role")) {
+      var message = document.createTextNode("Injecting message into existing "+liveRegion.getAttribute("role")+" container");
+    }
+    liveRegion.appendChild(message);
+  });
+});
+
+const generateInjectButtons = document.querySelectorAll("button.generateInject");
+
+generateInjectButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const newLiveRegion= document.createElement("div");
+    newLiveRegion.classList.add("notification");
+    if (button.dataset.live) {
+      newLiveRegion.setAttribute("aria-live",button.dataset.live);
+      var message = document.createTextNode("Generated "+button.dataset.live+" then injected a message");
+    }
+    if (button.dataset.role) {
+      newLiveRegion.setAttribute("role",button.dataset.role);
+      var message = document.createTextNode("Generated "+button.dataset.role+" then injected a message");
+    }
+    button.after(newLiveRegion);
+    
+    setTimeout(() => {
+      newLiveRegion.appendChild(message);
+    }, 150);
+  });
+});
+</script>
+</body>
+</html>
