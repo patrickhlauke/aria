@@ -17,7 +17,7 @@
 <p>Note that <code>role="alert"</code> is slightly "magic" and triggers an announcement even in cases where you generally don't expect it - see <a href="https://github.com/w3c/aria/issues/2153" target=_blank>w3c/aria/issues/2153</a>.</p>
 <p>Does <em>not</em> include <code>role="marquee"</code> and <code>role="timer"</code> at this stage, as they have an intrinsic <code>aria-live="off"</code> and will require a different type of test - see <a href="https://github.com/w3c/aria/issues/2144" target=_blank>w3c/aria/issues/2144</a>.</p>
 
-<p><small>Ported over from <a href="https://codepen.io/patrickhlauke/pen/zYbgvdL">codepen</a></small>
+<p><small>Ported over from <a href="https://codepen.io/patrickhlauke/pen/zYbgvdL">codepen</a></small></p>
 
 <p><a href="results.html">Test results 27/04/2024</a>.</p>
 
@@ -50,28 +50,28 @@
 <h3>Fully populated generic <code>&lt;div aria-live="polite"&gt;</code></h3>
 
 <button class="displayflip">Toggle</button>
-<div id="div-aria-live-polite" aria-live="polite" class="notification hidden">
+<div aria-live="polite" class="notification hidden">
   This is the <code>&lt;div aria-live="polite"&gt;</code> made visible.
 </div>
 
 <h3>Fully populated generic <code>&lt;div aria-live="assertive"&gt;</code></h3>
 
 <button class="displayflip">Toggle</button>
-<div id="div-aria-live-assertive" aria-live="assertive" class="notification hidden">
+<div aria-live="assertive" class="notification hidden">
   This is the <code>&lt;div aria-live="assertive"&gt;</code> made visible.
 </div>
 
 <h3>Fully populated <code>&lt;div role="status"&gt;</code></h3>
 
 <button class="displayflip">Toggle</button>
-<div id="div-role-status" role="status" class="notification hidden">
+<div role="status" class="notification hidden">
   This is the <code>&lt;div role="status"&gt;</code> made visible.
 </div>
 
 <h3>Fully populated <code>&lt;div role="alert"&gt;</code></h3>
 
 <button class="displayflip">Toggle</button>
-<div id="div-role-alert" role="alert" class="notification hidden">
+<div role="alert" class="notification hidden">
   This is the <code>&lt;div role="alert"&gt;</code> made visible.
 </div>
 
@@ -109,22 +109,22 @@
 <h3>Existing generic <code>&lt;div aria-live="polite"&gt;</code></h3>
 
 <button class="inject">Inject</button>
-<div id="div-aria-live-polite" aria-live="polite" class="notification"></div>
+<div aria-live="polite" class="notification"></div>
 
 <h3>Existing generic <code>&lt;div aria-live="assertive"&gt;</code></h3>
 
 <button class="inject">Inject</button>
-<div id="div-aria-live-assertive" aria-live="assertive" class="notification"></div>
+<div aria-live="assertive" class="notification"></div>
 
 <h3>Existing <code>&lt;div role="status"&gt;</code></h3>
 
 <button class="inject">Inject</button>
-<div id="div-role-status" role="status" class="notification"></div>
+<div role="status" class="notification"></div>
 
 <h3>Existing <code>&lt;div role="alert"&gt;</code></h3>
 
 <button class="inject">Inject</button>
-<div id="div-role-alert" role="alert" class="notification"></div>
+<div role="alert" class="notification"></div>
 
 <h3>Existing <code>&lt;div role="log"&gt;</code></h3>
 
