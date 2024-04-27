@@ -3,14 +3,170 @@
 <head>
 <title>ARIA live region tests - Results</title>
 <style>
-  .hidden { display: none; }
-  .notification { margin: 1em 0; padding: 1em; border: 1px solid #555; background: #eee; }
   body { font-family: Helvetica, Arial, sans; }
   h2 { margin-top: 1em; padding-top: 1em; border-top: 1px solid #bbb; }
   h3 { margin-top: 0.5em; padding-top: 0.5em; }
+  table { border-collapse: collapse; }
+  th, td { padding: 1em; border: 2px solid #fff;}
+  th:not(:empty) { background: #eee; }
+  .no { background: #f88;}
+  .partial { background: #fe9}
+  .yes { background: #9f9;}
 </style>
 </head>
 <body>
 <h1>ARIA live region tests - Results</h1>
+<p>Test results for the <a href="./">ARIA live region tests</a>. Updated 27/04/2024.</p>
+<p>Note that for the pre-populated tests, we only want to have <code>role="alert"</code> working (as it is treated differently from other live regions). If other types of live regions are announced, that goes against expectations/the specification.</p>
+<table>
+  <thead>
+  <tr>
+  <th></th>
+  <th>Populated live region on load</th>
+  <th>Populated live region via CSS</th>
+  <th>Populated live region via JS</th>
+  <th>Inject into existing live region</th>
+  <th>Generate live region via JS, then populate</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <th>Chrome 124 / NVDA 2024.1</th>
+  <td class="partial">Only <code>role="alert"</code> inconsistently announced</td>
+  <td class="yes">Only <code>role="alert"</code> (prefixed with "Alert")</td>
+  <td class="yes">Only <code>role="alert"</code> (prefixed with "Alert")</td>
+  <td class="yes"><em>All announced</em> (<code>role="alert"</code> <em>not</em> prefixed)</td>
+  <td class="yes"><em>All announced</em> (<code>role="alert"</code> <em>not</em> prefixed)</td>
+  </tr>
+  <tr>
+  <th>Edge 124 / NVDA 2024.1</th>
+  <td class="partial">Only <code>role="alert"</code> inconsistently announced</td>
+  <td class="yes">Only <code>role="alert"</code> (prefixed with "Alert")</td>
+  <td class="yes">Only <code>role="alert"</code> (prefixed with "Alert")</td>
+  <td class="yes"><em>All announced</em> (<code>role="alert"</code> <em>not</em> prefixed)</td>
+  <td class="yes"><em>All announced</em> (<code>role="alert"</code> <em>not</em> prefixed)</td>
+  </tr>
+  <tr>
+  <th>Firefox 125 / NVDA 2024.1</th>
+  <td class="no">Not supported</td>
+  <td class="yes">Only <code>role="alert"</code> (prefixed with "Alert")</td>
+  <td class="yes">Only <code>role="alert"</code> (prefixed with "Alert")</td>
+  <td class="yes"><em>All announced</em> (<code>role="alert"</code> prefixed with "Alert")</td>
+  <td class="yes"><em>All announced</em> (<code>role="alert"</code> prefixed with "Alert")</td>
+  </tr>
+  <tr>
+  <th>Chrome 124 / JAWS 2024.2403.3</th>
+  <td class="partial">Only <code>role="alert"</code> inconsistently announced</td>
+  <td class="yes">Only <code>role="alert"</code> (prefixed with "Alert")</td>
+  <td class="yes">Only <code>role="alert"</code> (prefixed with "Alert")</td>
+  <td class="yes"><em>All announced</em> (<code>role="alert"</code> <em>not</em> prefixed)</td>
+  <td class="yes"><em>All announced</em> (<code>role="alert"</code> <em>not</em> prefixed)</td>
+  </tr>
+  <tr>
+  <th>Edge 124 / JAWS 2024.2403.3</th>
+  <td class="partial">Only <code>role="alert"</code> inconsistently announced</td>
+  <td class="yes">Only <code>role="alert"</code> (prefixed with "Alert")</td>
+  <td class="yes">Only <code>role="alert"</code> (prefixed with "Alert")</td>
+  <td class="yes"><em>All announced</em> (<code>role="alert"</code> <em>not</em> prefixed)</td>
+  <td class="yes"><em>All announced</em> (<code>role="alert"</code> <em>not</em> prefixed)</td>
+  </tr>
+  <tr>
+  <th>Firefox 125 / JAWS 2024.2403.3</th>
+  <td class="no">Not supported</td>
+  <td class="partial"><em>All announced</em> (<code>role="alert"</code> prefixed with "Alert")</td>
+  <td class="partial"><em>All announced</em> (<code>role="alert"</code> prefixed with "Alert")</td>
+  <td class="yes"><em>All announced</em> (<code>role="alert"</code> prefixed with "Alert")</td>
+  <td class="yes"><em>All announced</em> (<code>role="alert"</code> prefixed with "Alert")</td>
+  </tr>
+  <tr>
+  <th>Chrome 124 / Narrator (Windows 11 23H2)</th>
+  <td class="partial">Only <code>role="alert"</code> inconsistently announced</td>
+  <td class="yes">Only <code>role="alert"</code> (prefixed with "Alert")</td>
+  <td class="yes">Only <code>role="alert"</code> (prefixed with "Alert")</td>
+  <td class="yes"><em>All announced</em> (<code>role="alert"</code> <em>not</em> prefixed)</td>
+  <td class="yes"><em>All announced</em> (<code>role="alert"</code> prefixed with "Alert")</td>
+  </tr>
+  <tr>
+  <th>Edge 124 / Narrator (Windows 11 23H2)</th>
+  <td class="partial">Only <code>aria-live="assertive"</code> and <code>role="alert"</code> inconsistently announced</td>
+  <td class="partial"><em>All announced</em></td>
+  <td class="partial"><em>All announced</em></td>
+  <td class="yes"><em>All announced</em></td>
+  <td class="yes"><em>All announced</em></td>
+  </tr>
+  <tr>
+  <th>Firefox 125 / Narrator (Windows 11 23H2)</th>
+  <td class="no">Not supported</td>
+  <td class="no">Not supported</td>
+  <td class="no">Not supported</td>
+  <td class="no">Not supported</td>
+  <td class="no">Not supported</td>
+  </tr>
+  <tr>
+  <th>Chromium 124 / Orca 42</th>
+  <td class="no">Not supported</td>
+  <td class="partial"><em>All announced</em></td>
+  <td class="partial"><em>All announced</em></td>
+  <td class="yes"><em>All announced</em></td>
+  <td class="yes"><em>All announced</em></td>
+  </tr>
+  <tr>
+  <th>Firefox 125 / Orca 42</th>
+  <td class="no">Not supported</td>
+  <td class="yes">Only <code>role="alert"</code></td>
+  <td class="yes">Only <code>role="alert"</code></td>
+  <td class="partial"><code>role="alert"</code> is <em>not</em> announced<br>all others work consistently</td>
+  <td class="partial"><code>role="alert"</code> inconsistently announced<br>all others work consistently</td>
+  </tr>
+  <tr>
+  <th>Safari  17.4.1 / VoiceOver (macOS 14.4.1)</th>
+  <td class="no">Not supported</td>
+  <td class="yes">Only <code>role="alert"</code> (prefixed with earcon)</td>
+  <td class="yes">Only <code>role="alert"</code> (prefixed with earcon)</td>
+  <td class="yes"><em>All announced</em> (<code>aria-live="assertive"</code> and <code>role="alert"</code> prefixed with earcon)</td>
+  <td class="yes"><em>All announced</em> (<code>aria-live="assertive"</code> and <code>role="alert"</code> prefixed with earcon)</td>
+  </tr>
+  <tr>
+  <th>Chrome 124 / VoiceOver (macOS 14.4.1)</th>
+  <td class="no">Not supported</td>
+  <td class="yes">Only <code>role="alert"</code> (prefixed with earcon)</td>
+  <td class="yes">Only <code>role="alert"</code> (prefixed with earcon)</td>
+  <td class="yes"><em>All announced</em> (<code>aria-live="assertive"</code> and <code>role="alert"</code> prefixed with earcon)</td>
+  <td class="yes"><em>All announced</em> (<code>aria-live="assertive"</code> and <code>role="alert"</code> prefixed with earcon)</td>
+  </tr>
+  <tr>
+  <th>Firefox 125 / VoiceOver (macOS 14.4.1)</th>
+  <td class="no">Not supported</td>
+  <td class="yes">Only <code>role="alert"</code> (prefixed with earcon)</td>
+  <td class="yes">Only <code>role="alert"</code> (prefixed with earcon)</td>
+  <td class="partial">Only <code>aria-live="assertive"</code> (prefixed with earcon), <code>role="alert"</code> (prefixed with earcon), and <code>role="log"</code></td>
+  <td class="yes"><em>All announced</em> (<code>aria-live="assertive"</code> and <code>role="alert"</code> prefixed with earcon)</td>
+  </tr>
+  <tr>
+  <th>Safari / VoiceOver (iOS 17.4.1)</th>
+  <td class="partial">Only <code>role="alert"</code> inconsistently announced</td>
+  <td class="partial"><em>All announced</em></td>
+  <td class="partial"><em>All announced</em></td>
+  <td class="yes"><em>All announced</em></td>
+  <td class="yes"><em>All announced</em></td>
+  </tr>
+  <tr>
+  <th>Chrome 124 / TalkBack (Android 14)</th>
+  <td class="partial"><em>All announced</em></td>
+  <td class="partial"><em>All announced</em></td>
+  <td class="partial"><em>All announced</em></td>
+  <td class="yes"><em>All announced</em></td>
+  <td class="yes"><em>All announced</em></td>
+  </tr>
+  <tr>
+  <th>Firefox 125 / TalkBack (Android 14)</th>
+  <td class="no">Not supported</td>
+  <td class="no">Not supported</td>
+  <td class="no">Not supported</td>
+  <td class="partial">Only <code>aria-live="polite"</code>, <code>aria-live="assertive"</code>, <code>role="log"</code></td>
+  <td class="partial">Only <code>aria-live="polite"</code>, <code>aria-live="assertive"</code>, <code>role="log"</code></td>
+  </tr>
+  </tbody>
+  </table>
 </body>
 </html>
