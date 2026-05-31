@@ -21,7 +21,7 @@
 
 <section class="slide cover title" id="Cover"><div>
 	<div class="titlestrap">
-    	<h2>WAI-ARIA</h2>
+    <h2>WAI-ARIA</h2>
 		<p>An introduction to <strong>Accessible Rich Internet Applications</strong></p>
     </div>
 	<p class="info">Patrick H. Lauke</p>
@@ -1250,8 +1250,8 @@ button[aria-pressed="true"] { ... }
 &lt;button&gt;Launch...&lt;/button&gt;
 ...
 &lt;div <mark>role="dialog"</mark>
-     <mark>aria-labelledby="modalDialogHeader"</mark>
-     <mark>aria-describedby="modalDialogDescription"</mark> ... &gt;
+    <mark>aria-labelledby="modalDialogHeader"</mark>
+    <mark>aria-describedby="modalDialogDescription"</mark> ... &gt;
   &lt;div id="modalDialogHeader"&gt;My custom dialog&lt;/div&gt;
   &lt;div id="modalDialogDescription"&gt;
     ... 
@@ -1272,12 +1272,12 @@ button[aria-pressed="true"] { ... }
 ...
 &lt;div <mark>role="dialog"</mark> ...&gt; ... &lt;/div&gt;</code></pre>
 <pre><code class="js">function openModal() {
- document.getElementById("wrapper")
-         .setAttribute("aria-hidden","true"); ...
+  document.getElementById("wrapper")
+          .setAttribute("aria-hidden","true"); ...
 }
 function closeModal() {
- document.getElementById("wrapper")
-        .removeAttribute("aria-hidden"); ...
+  document.getElementById("wrapper")
+          .removeAttribute("aria-hidden"); ...
 }</code></pre>
 <p>example: <a target=_blank href="../demos/modal/index-focus-aria-hidden.html">modal dialog with aria-hidden</a></p>
 <p>note: <code>aria-hidden</code> does <strong>not</strong> prevent regular keyboard focus!</p>
@@ -1287,12 +1287,12 @@ function closeModal() {
 
 <section class="slide code listing"><div>
 <pre><code class="js">function openModal() {
- document.getElementById("wrapper").setAttribute("inert","");
- ...
+  document.getElementById("wrapper").setAttribute("inert","");
+  ...
 }
 function closeModal() {
- document.getElementById("wrapper").removeAttribute("inert");
- ...
+  document.getElementById("wrapper").removeAttribute("inert");
+  ...
 }</code></pre>
 <p>example: <a target=_blank href="../demos/modal/index-aria-inert.html">modal dialog with inert</a></p>
 <p>note: <code>inert</code> <strong>does</strong> hide elements from accessibility tree <em>and</em> remove behavior such as keyboard focusability. however, not natively supported yet – use the <a target=_blank href="https://github.com/WICG/inert">inert polyfill</a></p>
@@ -1305,8 +1305,8 @@ function closeModal() {
 &lt;button&gt;Launch...&lt;/button&gt;
 ...
 &lt;div role="dialog" <mark>aria-modal="true"</mark>
-     aria-labelledby="modalDialogHeader"
-     aria-describedby="modalDialogDescription" ... &gt;
+    aria-labelledby="modalDialogHeader"
+    aria-describedby="modalDialogDescription" ... &gt;
   &lt;div id="modalDialogHeader"&gt;My custom dialog&lt;/div&gt;
   &lt;div id="modalDialogDescription"&gt;
     ... 
@@ -1354,11 +1354,11 @@ function closeModal() {
 <section class="slide code listing"><div>
 	<pre><code class="html">
 	&lt;span tabindex="-1" role="radio"
-		  aria-checked="false" class="..."&gt;Yes&lt;/span&gt;
+      aria-checked="false" class="..."&gt;Yes&lt;/span&gt;
 	&lt;span <mark>tabindex="0"</mark> role="radio"
-		  <mark>aria-checked="true"</mark> class="... selected"&gt;No&lt;/span&gt;
+      <mark>aria-checked="true"</mark> class="... selected"&gt;No&lt;/span&gt;
 	&lt;span tabindex="-1" role="radio"
-		  aria-checked="false" class="..."&gt;Maybe&lt;/span&gt;
+      aria-checked="false" class="..."&gt;Maybe&lt;/span&gt;
 	</code></pre>
 	<p>only one <code>radio</code> button inside the group has focus. changing the selection using <kbd>CURSOR</kbd> keys, dynamically changes <code>tabindex</code>, <code>aria-checked</code> and sets <code>focus()</code> on the newly selected <code>radio</code> button</p>
 	<p>example: <a target=_blank href="https://www.w3.org/WAI/ARIA/apg/example-index/radio/radio.html">ARIA Authoring Practices Guide - Radio Group Using Roving tabindex</a></p>
@@ -1523,7 +1523,7 @@ document.body.appendChild(newDiv);
 <pre><code>
 &lt;div <mark>role="tablist"</mark> ...&gt;
   &lt;div <mark>role="tab"</mark> <mark>aria-controls="panel1"</mark>
-       <mark>aria-selected="true"</mark>...&gt;Tab 1&lt;/div&gt;
+      <mark>aria-selected="true"</mark>...&gt;Tab 1&lt;/div&gt;
   &lt;div <mark>role="tab"</mark> <mark>aria-controls="panel2"</mark> ...&gt;Tab 2&lt;/div&gt;
   &lt;div <mark>role="tab"</mark> <mark>aria-controls="panel3"</mark> ...&gt;Tab 2&lt;/div&gt;
 &lt;/div&gt;
